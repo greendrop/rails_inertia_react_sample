@@ -7,6 +7,7 @@ gem 'rails', '~> 8.1.1'
 gem 'bootsnap', require: false
 gem 'image_processing', '~> 1.2'
 gem 'importmap-rails'
+gem 'inertia_rails'
 gem 'jbuilder'
 gem 'kamal', require: false
 gem 'pg', '~> 1.1'
@@ -19,6 +20,7 @@ gem 'stimulus-rails'
 gem 'thruster', require: false
 gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[windows jruby]
+gem 'vite_rails'
 
 group :development, :test do
   gem 'brakeman', require: false
