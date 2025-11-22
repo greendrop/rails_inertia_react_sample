@@ -15,7 +15,6 @@ AllCops:
     - 'node_modules/**/*'
     - 'tmp/**/*'
     - 'vendor/bundle/**/*'
-  TargetRubyVersion: 3.4
 
 Layout/LineLength:
   Max: 120
