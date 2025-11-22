@@ -1,12 +1,22 @@
 version: 2
 updates:
-- package-ecosystem: bundler
-  directory: "/"
-  schedule:
-    interval: weekly
-  open-pull-requests-limit: 10
-- package-ecosystem: github-actions
-  directory: "/"
-  schedule:
-    interval: weekly
-  open-pull-requests-limit: 10
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    rebase-strategy: 'disabled'
+    schedule:
+      interval: 'daily'
+  - package-ecosystem: 'bundler'
+    directory: '/'
+    rebase-strategy: 'disabled'
+    schedule:
+      interval: 'daily'
+    ignore:
+      - dependency-name: 'puma'
+        update-types: ['version-update:semver-minor']
+      - dependency-name: 'rails'
+        update-types: ['version-update:semver-minor']
+    groups:
+      rubocop:
+        patterns:
+          - 'rubocop'
+          - 'rubocop-*'
