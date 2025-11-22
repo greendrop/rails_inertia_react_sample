@@ -406,7 +406,7 @@ DEPENDENCIES
   thruster
   turbo-rails
   tzinfo-data
-  vite_rails (~> 3.0)
+  vite_rails
   web-console
 
 BUNDLED WITH
