@@ -3,6 +3,9 @@ name: Ruby Audit
 
 on:
   pull_request:
+  push:
+    branches:
+      - main
 
 jobs:
   audit:
