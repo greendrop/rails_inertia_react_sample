@@ -2,6 +2,7 @@
   "private": true,
   "type": "module",
   "devDependencies": {
+    "opencode-ai": "^1.0.108",
     "vite": "^7.2.4",
     "vite-plugin-ruby": "^5.1.1"
   },
@@ -19,6 +20,7 @@
     "typescript": "^5.9.3"
   },
   "scripts": {
-    "check": "tsc -p tsconfig.app.json && tsc -p tsconfig.node.json"
+    "check": "tsc -p tsconfig.app.json && tsc -p tsconfig.node.json",
+    "opencode": "opencode"
   }
 }
