@@ -86,7 +86,7 @@
 
 - Inertia.jsを利用するため、従来のViewテンプレート（ERBなど）は使用せず、全てのページレンダリングはReactコンポーネント経由で行う
 
-### Parformance Constraints
+### Performance Constraints
 
 - ブログ用途であるため、初期ロードの体感速度を重要視し、バンドルサイズの最適化に努める
 
