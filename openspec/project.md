@@ -32,8 +32,6 @@
 
 - PrettierとESLintを使用し、標準的なTypeScriptのスタイルルールに準拠
 
-[Describe your code style preferences, formatting rules, and naming conventions]
-
 ### Architecture Patterns
 
 #### Backend
