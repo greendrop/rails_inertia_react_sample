@@ -2,6 +2,7 @@
   "private": true,
   "type": "module",
   "devDependencies": {
+    "@fission-ai/openspec": "^0.16.0",
     "opencode-ai": "^1.0.108",
     "vite": "^7.2.4",
     "vite-plugin-ruby": "^5.1.1"
@@ -21,6 +22,7 @@
   },
   "scripts": {
     "check": "tsc -p tsconfig.app.json && tsc -p tsconfig.node.json",
-    "opencode": "opencode"
+    "opencode": "opencode",
+    "openspec": "openspec"
   }
 }
