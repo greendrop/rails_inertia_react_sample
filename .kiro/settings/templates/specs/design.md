@@ -14,7 +14,7 @@
 
 > Sections may be reordered (e.g., surfacing Requirements Traceability earlier or moving Data Models nearer Architecture) when it improves clarity. Within each section, keep the flow **Summary → Scope → Decisions → Impacts/Risks** so reviewers can scan consistently.
 
-## Overview 
+## Overview
 2-3 paragraphs max
 **Purpose**: This feature delivers [specific value] to [target users].
 **Users**: [Target user groups] will utilize this for [specific workflows].
