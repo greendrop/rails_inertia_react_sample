@@ -40,7 +40,7 @@
 
 - **Backend**: RSpecを使用し、モデル、コントローラーの単体テストと統合テストを重視します。
 - **Frontend**: Vitestを使用し、ユニットテストと統合テストを実施します。ReactコンポーネントのテストにはReact Testing Libraryを使用します。
-- **E2E**; Rspec + Capybaraを使用して、主要なユーザーフローのエンドツーエンドテストを実施します。
+- **E2E**: Rspec + Capybaraを使用して、主要なユーザーフローのエンドツーエンドテストを実施します。
 - **Coverage**: コードカバレッジツール（例: SimpleCov / Jest Coverage）を導入し、80%以上のカバレッジを最低要件とします。
 
 ## Development Environment
