@@ -34,7 +34,7 @@
 
 - **Backend**: RuboCopを使用してコードスタイルと品質を維持します。主要なルールセットはプロジェクトの`.rubocop.yml`に定義されています。
 - **Frontend**: ESLintとPrettierを使用してコードスタイルと品質を維持します。主要なルールセットはプロジェクトの`.eslintrc.js`および`.prettierrc`に定義されています。
-- ** Naming Conventions**: Ruby/RailsではSnake Case (snake_case)を、TypeScript/ReactではCamel Case (camelCase)を厳守します。
+- **Naming Conventions**: Ruby/RailsではSnake Case (snake_case)を、TypeScript/ReactではCamel Case (camelCase)を厳守します。
 
 ### Testing
 
