@@ -102,7 +102,7 @@ Generate technical design document for feature **$1** based on approved requirem
    - Update `updated_at` timestamp
 
 ## Critical Constraints
- - **Type Safety**:
+- **Type Safety**:
    - Enforce strong typing aligned with the project's technology stack.
    - For statically typed languages, define explicit types/interfaces and avoid unsafe casts.
    - For TypeScript, never use `any`; prefer precise types and generics.
