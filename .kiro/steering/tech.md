@@ -2,7 +2,9 @@
 
 ## Architecture
 
-**Monolithic Backend with Hybrid SPA (Inertia.js) Approach.** システムの核となるのは、標準的なRailsのMVCパターンです。Railsは主にバックエンド（ルーティング、セッション管理、認証、APIとしてのデータ供給）を担当します。
+**Monolithic Backend with Hybrid SPA (Inertia.js) Approach.**
+
+システムの核となるのは、標準的なRailsのMVCパターンです。Railsは主にバックエンド（ルーティング、セッション管理、認証、APIとしてのデータ供給）を担当します。
 
 フロントエンドには**React**を採用し、**Inertia.js**を介してRailsと連携させます。これにより、ルーティングはRailsで行いつつ、ページ遷移時にクライアント側でコンポーネントのみをレンダリングする**ハイブリッドSPA（Single Page Application）**の体験を提供し、リッチなUIと高い開発効率を両立します。
 
