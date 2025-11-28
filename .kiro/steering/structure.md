@@ -40,7 +40,7 @@
 ### Frontend Pages
 **Location**: `app/frontend/pages/`
 **Purpose**: InertiaによってマウントされるルートレベルのReactコンポーネントを格納します。これらは、特定のRailsコントローラのアクションに対応する「ページ」全体を表します。
-**Example**: `app/frontend/pages/Articles/Index.jsx`, `app/frontend/pages/Auth/Login.jsx`
+**Example**: `app/frontend/pages/articles/index.tsx`, `app/frontend/pages/auth/login.tsx`
 
 ### Frontend: Components
 **Location**: `app/frontend/components/`
