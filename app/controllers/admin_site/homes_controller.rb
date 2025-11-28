@@ -3,7 +3,7 @@
 module AdminSite
   class HomesController < AdminSite::ApplicationController
     def show
-      render inertia: 'AdminSite/Homes/Show'
+      render inertia: {}
     end
   end
 end
