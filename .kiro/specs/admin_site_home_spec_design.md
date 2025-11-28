@@ -24,15 +24,14 @@ language: ja
      例（Inertia を利用する場合）:
        class AdminSite::HomesController < ApplicationController
          def show
-           render inertia: 'AdminSite/Homes/Show' # または適切なコンポーネント名
+           render inertia: {} # Inertia の自動解決に合わせたコンポーネント名
          end
        end
    - 理由: 将来の機能追加でコントローラ内に権限チェックやデータ準備を追加しやすくするため。
 
 3. ビュー / フロントエンドコンポーネント
    - 追加ファイル候補:
-     - app/frontend/components/AdminSite/Homes/Show.jsx (または .tsx)
-     - もしくは app/views/admin_site/homes/show.html.erb（Inertia 未使用時）
+     - app/frontend/pages/admin_site/homes/show.tsx
    - 内容: シンプルにタイトル（例: 「管理ホーム」）を表示する空のプレースホルダ。
    - 理由: フロントエンドが Inertia+React 構成のため、React コンポーネントで統一した方が将来の拡張が容易。
 

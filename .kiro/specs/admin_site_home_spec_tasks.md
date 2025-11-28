@@ -19,12 +19,12 @@ language: ja
 
 2. コントローラを作成する
    - ファイル: app/controllers/admin_site/homes_controller.rb
-   - 内容: AdminSite::HomesController を作成し、show アクションで Inertia（または通常のレンダー）を返す実装にする。例: render inertia: 'AdminSite/Homes/Show'
+   - 内容: AdminSite::HomesController を作成し、show アクションで Inertia（または通常のレンダー）を返す実装にする。例: render inertia: {} (Inertiaが自動的に `admin_site/homes/show` をコンポーネント名として解決します）
    - 目的: ルーティング先のアクションを実装する。
    - 見積: 0.5h
 
 3. フロントエンドの最小コンポーネントを追加する
-   - ファイル: app/frontend/components/AdminSite/Homes/Show.jsx（または .tsx）
+   - ファイル: app/frontend/pages/admin_site/homes/show.tsx
    - 内容: 単純な React コンポーネントを配置し、タイトル（例: "管理ホーム"）の表示を行う空のプレースホルダを実装する。
    - 目的: 管理ホームの最小表示を提供し将来の拡張に備える。
    - 見積: 1h
