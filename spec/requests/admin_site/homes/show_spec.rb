@@ -8,8 +8,7 @@ RSpec.describe 'AdminSite::Homes' do
     it 'GET /admin が 200 を返し、Inertia ペイロードが含まれること' do
       get '/admin'
       expect(response).to have_http_status(:ok)
-
-      raise 'Not Found Inertia payload' unless response.body =~ /data-page="([^"]+)"/
+      expect(response.body).to match(/data-page="([^"]+)"/)
 
       page_json = CGI.unescapeHTML(Regexp.last_match(1))
       json = JSON.parse(page_json)
