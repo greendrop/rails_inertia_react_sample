@@ -20,7 +20,7 @@ language: ja
 
 2. コントローラ
    - 追加ファイル: app/controllers/user_site/homes_controller.rb
-   - 実装: UserSite::HomesController を作成し、show アクションで Inertia レスポンス（render inertia: 'UserSite/Homes/Show'）または通常の HTML を返す。基底クラスは ApplicationController を継承し、必要に応じて UserSite::ApplicationController を追加する。
+   - 実装: UserSite::HomesController を作成し、show アクションで Inertia レスポンス（render inertia: {}）または通常の HTML を返す。基底クラスは ApplicationController を継承し、必要に応じて UserSite::ApplicationController を追加する。
    - 例（Inertia を使用する場合）:
      module UserSite
        class HomesController < ApplicationController
@@ -33,12 +33,12 @@ language: ja
 3. フロントエンド / ビュー
    - 追加候補:
      - app/frontend/pages/user_site/homes/show.tsx
-   - 内容: 単純にタイトル（例: "ユーザーホーム"）を表示する空のプレースホルダコンポーネント。
+   - 内容: 単純にタイトル（例: 「ユーザーホーム」）を表示する空のプレースホルダコンポーネント。
    - 理由: クライアント側描画の準備と統一された構成を確保するため。
 
 4. テスト
    - 追加ファイル: spec/requests/user_site/homes/show_spec.rb
-   - テスト内容: GET / が HTTP 200 を返すこと、レスポンスに "ユーザーホーム" が HTML 内か Inertia ペイロード（component または props）に含まれることを確認する。Inertia を使用する場合は data-page 埋め込み JSON か Accept: application/json と X-Inertia ヘッダでの JSON レスポンスを検証する。
+   - テスト内容: GET / が HTTP 200 を返すこと、レスポンスに 「ユーザーホーム」 が HTML 内か Inertia ペイロード（component または props）に含まれることを確認する。Inertia を使用する場合は data-page 埋め込み JSON か Accept: application/json と X-Inertia ヘッダでの JSON レスポンスを検証する。
 
 最小実装手順（順序）
 1. config/routes.rb にルーティングを追加して root を UserSite::HomesController#show に向ける。
