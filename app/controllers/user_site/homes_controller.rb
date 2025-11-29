@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module UserSite
-  class HomesController < ApplicationController
+  class HomesController < UserSite::ApplicationController
     def show
       render inertia: {}
     end
