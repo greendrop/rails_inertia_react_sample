@@ -20,4 +20,5 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   draw :admin_site
+  draw :user_site
 end
