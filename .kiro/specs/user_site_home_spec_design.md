@@ -25,7 +25,7 @@ language: ja
      module UserSite
        class HomesController < ApplicationController
          def show
-           render inertia: 'UserSite/Homes/Show'
+           render inertia: {}
          end
        end
      end

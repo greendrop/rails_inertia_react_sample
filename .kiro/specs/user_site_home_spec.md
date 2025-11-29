@@ -18,12 +18,12 @@ language: ja
 
 受け入れ基準
 - GET / が HTTP 200 を返すこと。
-- レスポンスの HTML または Inertia JSON に "ユーザーホーム" が含まれること。
+- レスポンスの HTML または Inertia JSON に 「ユーザーホーム」が含まれること。
 
 技術的制約
 - 最小変更で実装すること。
 - 既存のネームスペースやルーティングと競合しないこと。
 
-担当: 未定
+担当者: 未定
 期限: 未定
 備考: 実装タスクは .kiro/specs/user_site_home_spec_tasks.md にて定義する。
