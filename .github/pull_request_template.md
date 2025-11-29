@@ -19,7 +19,7 @@
 [want] → 推奨される変更点や修正点
 [imo] → 個人的な意見や提案
 [ask] → 質問や確認事項
-[nit] → 細かい修正点やスタイルの指摘
+[nitpick] → 細かい修正点やスタイルの指摘
 [fyi] → 参考情報や補足説明
 
 <!-- for GitHub Copilot review rule -->
