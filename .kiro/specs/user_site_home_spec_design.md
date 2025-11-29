@@ -32,8 +32,7 @@ language: ja
 
 3. フロントエンド / ビュー
    - 追加候補:
-     - app/frontend/components/UserSite/Homes/Show.jsx (または .tsx)
-     - あるいは app/views/user_site/homes/show.html.erb （Inertia 未使用時）
+     - app/frontend/pages/user_site/homes/show.tsx
    - 内容: 単純にタイトル（例: "ユーザーホーム"）を表示する空のプレースホルダコンポーネント。
    - 理由: クライアント側描画の準備と統一された構成を確保するため。
 
@@ -44,7 +43,7 @@ language: ja
 最小実装手順（順序）
 1. config/routes.rb にルーティングを追加して root を UserSite::HomesController#show に向ける。
 2. app/controllers/user_site/homes_controller.rb を作成し show を実装する（Inertia を使用する場合は render inertia を使う）。
-3. フロントエンドに簡単な UserSite/Homes/Show コンポーネントを追加する（タイトル表示）。
+3. フロントエンドに簡単な user_site/homes/show コンポーネントを追加する（タイトル表示）。
 4. spec/requests/user_site/homes/show_spec.rb を追加して受け入れ基準を検証する。
 5. RSpec を実行し必要最小限の修正を行う。
 

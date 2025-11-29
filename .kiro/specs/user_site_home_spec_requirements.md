@@ -19,7 +19,7 @@ language: ja
 
 受け入れ基準
 - GET / が HTTP 200 を返す。
-- レスポンスの HTML または Inertia JSON に「ユーザーホーム」が含まれること、または component が 'user_site/homes/show' であること。
+- レスポンスの HTML または Inertia JSON に「ユーザーホーム」が含まれること、または component が user_site/homes/show であること。
 
 技術的制約
 - 既存のネームスペースやルーティングに衝突しないこと。
