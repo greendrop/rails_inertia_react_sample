@@ -19,13 +19,13 @@ language: ja
 
 2. コントローラを作成する
    - ファイル: app/controllers/user_site/homes_controller.rb
-   - 内容: module UserSite; class HomesController < ApplicationController; def show; render inertia: 'UserSite/Homes/Show' (または通常レンダー); end; end; end
+   - 内容: module UserSite; class HomesController < ApplicationController; def show; render inertia: {}
    - 目的: ルーティング先のアクションを実装する。
    - 見積: 0.5h
 
 3. フロントエンドの最小コンポーネントを追加する
-   - ファイル: app/frontend/components/UserSite/Homes/Show.jsx（または .tsx） もしくは app/views/user_site/homes/show.html.erb
-   - 内容: 単純な React コンポーネントまたは HTML でタイトル（例: "ユーザーホーム"）を表示する空のプレースホルダを実装する。
+   - ファイル: app/frontend/pages/user_site/homes/show.tsx
+   - 内容: 単純な React コンポーネントでタイトル（例: "ユーザーホーム"）を表示する空のプレースホルダを実装する。
    - 目的: ユーザーホームの最小表示を提供し将来の拡張に備える。
    - 見積: 1h
 
