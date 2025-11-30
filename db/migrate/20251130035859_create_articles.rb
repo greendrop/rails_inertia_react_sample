@@ -9,6 +9,8 @@ class CreateArticles < ActiveRecord::Migration[8.1]
       t.text :body, null: false
       t.integer :status, null: false, default: 0
       t.datetime :published_at
+
+      t.index :published_at
     end
   end
 end
