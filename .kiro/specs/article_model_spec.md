@@ -14,7 +14,7 @@ language: ja
 推奨フィールド（最小）
 - title: string（必須）
 - body: text（必須）
-- status: string（例: "draft" / "published"。enum または文字列で実装可）
+- status: integer（enumで実装。例: draft: 0, published: 1）
 - published_at: datetime（公開日時、任意）
 - timestamps
 
