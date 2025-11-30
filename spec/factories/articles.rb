@@ -4,8 +4,8 @@ FactoryBot.define do
   factory :article do
     sequence(:title) { |n| "Title #{n}" }
     sequence(:body) { |n| "Body content for article #{n}" }
-    status { %i[draft published].sample }
-    published_at { Time.current }
+    status { :draft }
+    published_at { nil }
 
     trait :draft do
       status { :draft }
