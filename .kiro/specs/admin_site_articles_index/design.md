@@ -19,9 +19,9 @@
 - Article（記事）
   - id: number
   - title: string
+  - status: string # 'draft' または 'published' など
   - created_at: datetime
   - updated_at: datetime
-  - published: boolean
 
 ## 処理フロー
 1. 管理者が記事一覧ページにアクセス
