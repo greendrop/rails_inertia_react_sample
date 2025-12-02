@@ -5,7 +5,7 @@ tools: ['search/codebase', 'search', 'github', 'create_pull_request', 'update_pu
 ---
 # Create GitHub Pull Request from Specification
 
-Create GitHub Pull Request for the specification at `${workspaceFolder}/.github/pull_request_template.md` .
+Create GitHub Pull Request for the specification at `.github/pull_request_template.md` .
 
 ## Process
 
