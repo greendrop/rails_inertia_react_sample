@@ -36,6 +36,7 @@
     "vscode": {
       "extensions": [
         "bradlc.vscode-tailwindcss",
+        "GitHub.vscode-pull-request-github",
         "KoichiSasada.vscode-rdbg",
         "Shopify.ruby-lsp"
       ]
