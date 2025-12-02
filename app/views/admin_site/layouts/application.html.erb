@@ -25,12 +25,12 @@
 
     <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
-    <%= vite_stylesheet_tag "application" %>
+    <%= vite_stylesheet_tag "entrypoints/admin_site/application" %>
     <%= vite_react_refresh_tag %>
     <%= vite_client_tag %>
-    <%= vite_typescript_tag "inertia.tsx" %>
+    <%= vite_typescript_tag "entrypoints/admin_site/inertia.tsx" %>
     <%= inertia_ssr_head %>
-    <%= vite_javascript_tag 'application' %>
+    <%= vite_typescript_tag 'entrypoints/admin_site/application' %>
 
     <%#
       If using a TypeScript entrypoint file:
