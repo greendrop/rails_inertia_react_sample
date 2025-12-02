@@ -9,7 +9,7 @@ Create GitHub Pull Request for the specification at `.github/pull_request_templa
 
 ## Process
 
-1. Analyze specification file template from '${workspaceFolder}/.github/pull_request_template.md' to extract requirements by 'search' tool.
+1. Analyze specification file template from '.github/pull_request_template.md' to extract requirements by 'search' tool.
 2. Create pull request draft template by using 'create_pull_request' tool on to `${input:targetBranch}`. and make sure don't have any pull request of current branch was exist `get_pull_request`. If has continue to step 4, and skip step 3.
 3. Get changes in pull request by using 'get_pull_request_diff' tool to analyze information that was changed in pull Request.
 4. Update the pull request body and title created in the previous step using the 'update_pull_request' tool. Incorporate the information from the template obtained in the first step to update the body and title as needed.
