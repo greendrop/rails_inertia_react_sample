@@ -6,6 +6,11 @@
       "file": ".github/instructions/commit-message.instructions.md"
     }
   ],
+  "github.copilot.chat.pullRequestDescriptionGeneration.instructions": [
+    {
+      "file": ".github/instructions/pull-request-description.instructions.md"
+    }
+  ],
   "tailwindCSS.includeLanguages": {
     "erb": "html"
   },
