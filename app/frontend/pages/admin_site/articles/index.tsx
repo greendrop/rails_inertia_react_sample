@@ -1,14 +1,7 @@
 import { Head } from '@inertiajs/react'
 import Layout from '@/components/admin_site/Layout'
 import ArticleTable from '@/components/admin_site/articles/index/ArticleTable'
-
-type Article = {
-  id: number
-  title: string
-  status: string
-  created_at: string
-  updated_at: string
-}
+import { Article } from '@/types/admin_site/articles'
 
 export default function Index({ articles }: { articles: Article[] }) {
   return (
