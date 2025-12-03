@@ -19,7 +19,15 @@ module AdminSite
       attr_reader :articles
 
       def generate_articles
-        articles.as_json(only: %i[id title status created_at updated_at])
+        articles.map do |article|
+          {
+            id: article.id,
+            title: article.title,
+            status: article.status,
+            createdAt: article.created_at,
+            updatedAt: article.updated_at
+          }
+        end
       end
 
       def generate_article_column_names
@@ -27,8 +35,8 @@ module AdminSite
           id: 'ID',
           title: 'タイトル',
           status: 'ステータス',
-          created_at: '作成日時',
-          updated_at: '更新日時'
+          createdAt: '作成日時',
+          updatedAt: '更新日時'
         }
       end
     end

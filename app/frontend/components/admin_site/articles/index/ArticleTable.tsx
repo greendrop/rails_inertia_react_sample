@@ -7,6 +7,7 @@ export default function ArticleTable({ articles }: { articles: Article[] }) {
     <Table>
       <TableHeader>
         <TableRow>
+          <TableCell>ID</TableCell>
           <TableCell>タイトル</TableCell>
           <TableCell>ステータス</TableCell>
           <TableCell>作成日</TableCell>
