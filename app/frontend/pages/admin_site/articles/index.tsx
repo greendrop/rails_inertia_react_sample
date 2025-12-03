@@ -1,9 +1,9 @@
 import { Head } from '@inertiajs/react'
 import Layout from '@/components/admin_site/Layout'
 import ArticleTable from '@/components/admin_site/articles/index/ArticleTable'
-import { Article } from '@/types/admin_site/articles'
+import { Article, ArticleColumnNames } from '@/types/admin_site/articles'
 
-export default function Index({ articles }: { articles: Article[] }) {
+export default function Index({ articles, articleColumnNames }: { articles: Article[], articleColumnNames: ArticleColumnNames }) {
   return (
     <>
       <Head title="記事一覧" />
@@ -11,7 +11,7 @@ export default function Index({ articles }: { articles: Article[] }) {
         <div>
           <h1>記事一覧</h1>
 
-          <ArticleTable articles={articles} />
+          <ArticleTable articles={articles} articleColumnNames={articleColumnNames} />
         </div>
       </Layout>
     </>

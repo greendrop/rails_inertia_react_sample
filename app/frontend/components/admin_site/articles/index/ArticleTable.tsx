@@ -1,17 +1,17 @@
 import { Table, TableHeader, TableBody, TableRow, TableCell } from '@/components/admin_site/ui/table'
 import ArticleTableRow from './ArticleTableRow'
-import { Article } from '@/types/admin_site/articles/index'
+import { Article, ArticleColumnNames } from '@/types/admin_site/articles/index'
 
-export default function ArticleTable({ articles }: { articles: Article[] }) {
+export default function ArticleTable({ articles, articleColumnNames }: { articles: Article[], articleColumnNames: ArticleColumnNames }) {
   return (
     <Table>
       <TableHeader>
         <TableRow>
-          <TableCell>ID</TableCell>
-          <TableCell>タイトル</TableCell>
-          <TableCell>ステータス</TableCell>
-          <TableCell>作成日</TableCell>
-          <TableCell>更新日</TableCell>
+          <TableCell>{articleColumnNames.id}</TableCell>
+          <TableCell>{articleColumnNames.title}</TableCell>
+          <TableCell>{articleColumnNames.status}</TableCell>
+          <TableCell>{articleColumnNames.createdAt}</TableCell>
+          <TableCell>{articleColumnNames.updatedAt}</TableCell>
         </TableRow>
       </TableHeader>
       <TableBody>

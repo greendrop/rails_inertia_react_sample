@@ -10,7 +10,7 @@ module AdminSite
       def generate
         {
           articles: generate_articles,
-          article_column_names: generate_article_column_names
+          articleColumnNames: generate_article_column_names
         }
       end
 
