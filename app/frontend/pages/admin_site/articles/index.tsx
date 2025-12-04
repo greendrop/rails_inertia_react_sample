@@ -3,7 +3,12 @@ import Layout from '@/components/admin_site/Layout'
 import ArticleTable from '@/components/admin_site/articles/index/ArticleTable'
 import { Article, ArticleColumnNames } from '@/types/admin_site/articles'
 
-export default function Index({ articles, articleColumnNames }: { articles: Article[], articleColumnNames: ArticleColumnNames }) {
+type IndexProps = {
+  articles: Article[]
+  articleColumnNames: ArticleColumnNames
+}
+
+export default function Index({ articles, articleColumnNames }: IndexProps) {
   return (
     <>
       <Head title="記事一覧" />
