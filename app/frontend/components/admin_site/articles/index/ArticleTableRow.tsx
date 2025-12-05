@@ -1,6 +1,10 @@
 import { TableRow, TableCell } from '@/components/admin_site/ui/table'
 import { Article } from '@/types/admin_site/articles/index'
 
+export type ArticleTableRowProps = {
+  article: Article
+}
+
 export default function ArticleTableRow({ article }: { article: Article }) {
   return (
     <TableRow>

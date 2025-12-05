@@ -2,7 +2,12 @@ import { Table, TableHeader, TableBody, TableRow, TableCell } from '@/components
 import ArticleTableRow from './ArticleTableRow'
 import { Article, ArticleColumnNames } from '@/types/admin_site/articles/index'
 
-export default function ArticleTable({ articles, articleColumnNames }: { articles: Article[], articleColumnNames: ArticleColumnNames }) {
+export type ArticleTableProps = {
+  articles: Article[]
+  articleColumnNames: ArticleColumnNames
+}
+
+export default function ArticleTable({ articles, articleColumnNames }: ArticleTableProps) {
   return (
     <Table>
       <TableHeader>
