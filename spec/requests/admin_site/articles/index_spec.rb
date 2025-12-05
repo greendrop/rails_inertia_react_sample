@@ -16,8 +16,19 @@ RSpec.describe 'AdminSite::Articles' do
 
       page_json = CGI.unescapeHTML(match[1])
       json = JSON.parse(page_json)
+
       expect(json['component']).to eq('admin_site/articles/index')
-      expect(json['props']['articles']).to eq(articles.reverse.as_json(only: %i[id title status created_at updated_at]))
+
+      expected = articles.reverse.map do |article|
+        {
+          'id' => article.id,
+          'title' => article.title,
+          'status' => article.status,
+          'createdAt' => article.created_at.as_json,
+          'updatedAt' => article.updated_at.as_json
+        }
+      end
+      expect(json['props']['articles']).to eq(expected)
     end
   end
 end
