@@ -5,6 +5,6 @@ module AdminSite
     layout 'admin_site/layouts/application'
 
     inertia_share flash: -> { flash.to_hash }
-    inertia_share sidebar: -> { AdminSite::SidebarPropsGenerator.new.call }
+    inertia_share sidebar: -> { AdminSite::SidebarPropsGenerator.call }
   end
 end

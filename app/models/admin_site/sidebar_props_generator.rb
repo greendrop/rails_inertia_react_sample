@@ -2,6 +2,7 @@
 
 module AdminSite
   class SidebarPropsGenerator
+    include Callable
     include Rails.application.routes.url_helpers
 
     def call

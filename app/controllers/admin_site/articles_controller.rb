@@ -4,7 +4,7 @@ module AdminSite
   class ArticlesController < ApplicationController
     def index
       articles = Article.order(created_at: :desc).limit(50)
-      props = AdminSite::Articles::IndexPropsGenerator.new(articles:).generate
+      props = AdminSite::Articles::IndexPropsGenerator.call(articles:)
 
       render inertia: props
     end

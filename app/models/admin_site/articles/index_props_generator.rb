@@ -3,11 +3,13 @@
 module AdminSite
   module Articles
     class IndexPropsGenerator
+      include Callable
+
       def initialize(articles:)
         @articles = articles
       end
 
-      def generate
+      def call
         {
           articles: generate_articles,
           articleColumnNames: generate_article_column_names
