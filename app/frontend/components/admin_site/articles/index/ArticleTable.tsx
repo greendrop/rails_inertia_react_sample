@@ -1,4 +1,4 @@
-import { Table, TableHeader, TableBody, TableRow, TableCell } from '@/components/admin_site/ui/table'
+import { Table, TableHeader, TableBody, TableRow, TableHead } from '@/components/admin_site/ui/table'
 import ArticleTableRow from './ArticleTableRow'
 import { Article, ArticleColumnNames } from '@/types/admin_site/articles/index'
 
@@ -12,11 +12,11 @@ export default function ArticleTable({ articles, articleColumnNames }: ArticleTa
     <Table>
       <TableHeader>
         <TableRow>
-          <TableCell>{articleColumnNames.id}</TableCell>
-          <TableCell>{articleColumnNames.title}</TableCell>
-          <TableCell>{articleColumnNames.status}</TableCell>
-          <TableCell>{articleColumnNames.createdAt}</TableCell>
-          <TableCell>{articleColumnNames.updatedAt}</TableCell>
+          <TableHead>{articleColumnNames.id}</TableHead>
+          <TableHead>{articleColumnNames.title}</TableHead>
+          <TableHead>{articleColumnNames.status}</TableHead>
+          <TableHead>{articleColumnNames.createdAt}</TableHead>
+          <TableHead>{articleColumnNames.updatedAt}</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
