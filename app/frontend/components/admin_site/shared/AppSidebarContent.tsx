@@ -1,4 +1,4 @@
-import { SidebarContent, SidebarGroup } from "../ui/sidebar";
+import { SidebarContent, SidebarGroup, SidebarMenu } from "../ui/sidebar";
 import AppSidebarContentItem, { AppSidebarContentItemProps } from "./AppSidebarContentItem";
 
 export type AppSidebarContentProps = {
@@ -10,14 +10,16 @@ export default function AppSidebarContent({ items }: AppSidebarContentProps) {
   return (
     <SidebarContent>
       <SidebarGroup>
-        {items.map((item) => (
-          <AppSidebarContentItem
-            key={item.title}
-            title={item.title}
-            url={item.url}
-            children={item.children}
-          />
-        ))}
+        <SidebarMenu>
+          {items.map((item) => (
+            <AppSidebarContentItem
+              key={item.title}
+              title={item.title}
+              url={item.url}
+              children={item.children}
+            />
+          ))}
+        </SidebarMenu>
       </SidebarGroup>
     </SidebarContent>
   );
