@@ -5,7 +5,7 @@ export type ArticleTableRowProps = {
   article: Article
 }
 
-export default function ArticleTableRow({ article }: { article: Article }) {
+export default function ArticleTableRow({ article }: ArticleTableRowProps) {
   return (
     <TableRow>
       <TableCell>{article.id}</TableCell>
