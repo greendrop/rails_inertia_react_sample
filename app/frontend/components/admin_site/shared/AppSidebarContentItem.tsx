@@ -13,10 +13,7 @@ export type AppSidebarContentItemProps = {
 export default function AppSidebarContentItem({ title, url, children, depth = 0 }: AppSidebarContentItemProps) {
   if (children && children.length > 0) {
     return (
-      <Collapsible
-        key={title}
-        className="group/collapsible"
-      >
+      <Collapsible className="group/collapsible">
         <SidebarMenuItem>
           <CollapsibleTrigger asChild>
             <SidebarMenuButton>
@@ -45,7 +42,7 @@ export default function AppSidebarContentItem({ title, url, children, depth = 0 
 
   if (depth > 0) {
     return (
-      <SidebarMenuSubItem key={title}>
+      <SidebarMenuSubItem>
         <SidebarMenuButton asChild>
           <Link href={url}>{title}</Link>
         </SidebarMenuButton>
@@ -54,7 +51,7 @@ export default function AppSidebarContentItem({ title, url, children, depth = 0 
   }
 
   return (
-    <SidebarMenuItem key={title}>
+    <SidebarMenuItem>
       <SidebarMenuButton asChild>
         <Link href={url}>{title}</Link>
       </SidebarMenuButton>
