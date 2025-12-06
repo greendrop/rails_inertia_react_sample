@@ -2,4 +2,5 @@
 
 scope module: :admin_site, path: '/admin', as: :admin_site do
   root to: 'homes#show'
+  resources :articles, only: [:index]
 end
