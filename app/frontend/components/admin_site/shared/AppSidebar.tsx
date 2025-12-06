@@ -1,4 +1,4 @@
-import { Sidebar, SidebarContent, SidebarRail } from "../ui/sidebar";
+import { Sidebar, SidebarRail } from "../ui/sidebar";
 import AppSidebarContent, { AppSidebarContentItemProps } from "./AppSidebarContent";
 
 export type AppSidebarProps = {
@@ -10,9 +10,7 @@ export default function AppSidebar({ contentItems }: AppSidebarProps) {
 
   return (
     <Sidebar>
-      <SidebarContent>
-        <AppSidebarContent items={contentItems} />
-      </SidebarContent>
+      <AppSidebarContent items={contentItems} />
       <SidebarRail />
     </Sidebar>
   );
