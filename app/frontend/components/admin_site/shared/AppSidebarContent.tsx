@@ -24,5 +24,3 @@ export default function AppSidebarContent({ items }: AppSidebarContentProps) {
     </SidebarContent>
   );
 }
-
-
