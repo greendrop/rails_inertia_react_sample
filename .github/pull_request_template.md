@@ -1,3 +1,4 @@
+<!-- I want to review in Japanese. -->
 ## 概要
 
 <!-- PRの目的や背景を簡潔に記載してください。 -->
@@ -9,7 +10,6 @@
 ## レビューについて
 
 <!-- for GitHub Copilot review rule -->
-<!-- I want to review in Japanese. -->
 
 レビューコメントには、以下のプレフィックスを付けましょう。
 
@@ -22,3 +22,4 @@
 [fyi] → 参考情報や補足説明
 
 <!-- for GitHub Copilot review rule -->
+<!-- I want to review in Japanese. -->
