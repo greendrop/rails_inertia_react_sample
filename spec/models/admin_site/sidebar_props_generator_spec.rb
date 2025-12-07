@@ -16,7 +16,7 @@ RSpec.describe AdminSite::SidebarPropsGenerator do
           {
             title: '記事',
             url: '#',
-            children: [
+            items: [
               {
                 title: '記事一覧',
                 url: '/admin/articles'
