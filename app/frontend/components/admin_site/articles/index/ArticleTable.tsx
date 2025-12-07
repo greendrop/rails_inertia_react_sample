@@ -1,13 +1,25 @@
-import { Table, TableHeader, TableBody, TableRow, TableHead } from '@/components/admin_site/ui/table'
-import ArticleTableRow from './ArticleTableRow'
-import { Article, ArticleColumnNames } from '@/types/admin_site/articles/index'
+import {
+  Table,
+  TableBody,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/admin_site/ui/table"
+import type {
+  Article,
+  ArticleColumnNames,
+} from "@/types/admin_site/articles/index"
+import ArticleTableRow from "./ArticleTableRow"
 
 export type ArticleTableProps = {
   articles: Article[]
   articleColumnNames: ArticleColumnNames
 }
 
-export default function ArticleTable({ articles, articleColumnNames }: ArticleTableProps) {
+export default function ArticleTable({
+  articles,
+  articleColumnNames,
+}: ArticleTableProps) {
   return (
     <Table>
       <TableHeader>

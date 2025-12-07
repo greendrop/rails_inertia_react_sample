@@ -1,4 +1,4 @@
-import { AppSidebarProps } from "@/components/admin_site/shared/AppSidebar"
+import type { AppSidebarProps } from "@/components/admin_site/shared/AppSidebar"
 
 export type Flash = {
   notice?: string

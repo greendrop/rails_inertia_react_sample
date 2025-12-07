@@ -1,10 +1,12 @@
-import { SidebarContent, SidebarGroup, SidebarMenu } from "../ui/sidebar";
-import AppSidebarContentItem, { AppSidebarContentItemProps } from "./AppSidebarContentItem";
+import { SidebarContent, SidebarGroup, SidebarMenu } from "../ui/sidebar"
+import AppSidebarContentItem, {
+  type AppSidebarContentItemProps,
+} from "./AppSidebarContentItem"
 
 export type AppSidebarContentProps = {
-  items: AppSidebarContentItemProps[];
-};
-export type { AppSidebarContentItemProps };
+  items: AppSidebarContentItemProps[]
+}
+export type { AppSidebarContentItemProps }
 
 export default function AppSidebarContent({ items }: AppSidebarContentProps) {
   return (
@@ -16,11 +18,11 @@ export default function AppSidebarContent({ items }: AppSidebarContentProps) {
               key={item.title}
               title={item.title}
               url={item.url}
-              children={item.children}
+              items={item.items}
             />
           ))}
         </SidebarMenu>
       </SidebarGroup>
     </SidebarContent>
-  );
+  )
 }
