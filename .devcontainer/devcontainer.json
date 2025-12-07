@@ -35,6 +35,7 @@
   "customizations": {
     "vscode": {
       "extensions": [
+        "biomejs.biome",
         "bradlc.vscode-tailwindcss",
         "GitHub.vscode-pull-request-github",
         "KoichiSasada.vscode-rdbg",
