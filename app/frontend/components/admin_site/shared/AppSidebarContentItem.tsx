@@ -1,17 +1,31 @@
-import { Minus, Plus } from "lucide-react";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "../ui/collapsible";
-import { SidebarMenuButton, SidebarMenuItem, SidebarMenuSub, SidebarMenuSubItem } from "../ui/sidebar";
-import { Link } from "@inertiajs/react";
+import { Link } from "@inertiajs/react"
+import { Minus, Plus } from "lucide-react"
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "../ui/collapsible"
+import {
+  SidebarMenuButton,
+  SidebarMenuItem,
+  SidebarMenuSub,
+  SidebarMenuSubItem,
+} from "../ui/sidebar"
 
 export type AppSidebarContentItemProps = {
-  title: string;
-  url: string;
-  children?: AppSidebarContentItemProps[];
-  depth?: number;
-};
+  title: string
+  url: string
+  items?: AppSidebarContentItemProps[]
+  depth?: number
+}
 
-export default function AppSidebarContentItem({ title, url, children, depth = 0 }: AppSidebarContentItemProps) {
-  if (children && children.length > 0) {
+export default function AppSidebarContentItem({
+  title,
+  url,
+  items,
+  depth = 0,
+}: AppSidebarContentItemProps) {
+  if (items && items.length > 0) {
     return (
       <Collapsible className="group/collapsible">
         <SidebarMenuItem>
@@ -24,12 +38,12 @@ export default function AppSidebarContentItem({ title, url, children, depth = 0 
           </CollapsibleTrigger>
           <CollapsibleContent>
             <SidebarMenuSub>
-              {children.map((child) => (
+              {items.map((item) => (
                 <AppSidebarContentItem
-                  key={child.title}
-                  title={child.title}
-                  url={child.url}
-                  children={child.children}
+                  key={item.title}
+                  title={item.title}
+                  url={item.url}
+                  items={item.items}
                   depth={depth + 1}
                 />
               ))}
@@ -37,7 +51,7 @@ export default function AppSidebarContentItem({ title, url, children, depth = 0 
           </CollapsibleContent>
         </SidebarMenuItem>
       </Collapsible>
-    );
+    )
   }
 
   if (depth > 0) {
@@ -47,7 +61,7 @@ export default function AppSidebarContentItem({ title, url, children, depth = 0 
           <Link href={url}>{title}</Link>
         </SidebarMenuButton>
       </SidebarMenuSubItem>
-    );
+    )
   }
 
   return (
@@ -56,5 +70,5 @@ export default function AppSidebarContentItem({ title, url, children, depth = 0 
         <Link href={url}>{title}</Link>
       </SidebarMenuButton>
     </SidebarMenuItem>
-  );
+  )
 }

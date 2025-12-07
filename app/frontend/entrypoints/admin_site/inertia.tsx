@@ -1,6 +1,6 @@
-import { createInertiaApp, type ResolvedComponent } from '@inertiajs/react'
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+import { createInertiaApp, type ResolvedComponent } from "@inertiajs/react"
+import { StrictMode } from "react"
+import { createRoot } from "react-dom/client"
 
 void createInertiaApp({
   // Set default page title
@@ -14,7 +14,7 @@ void createInertiaApp({
   // progress: false,
 
   resolve: (name) => {
-    const pages = import.meta.glob<ResolvedComponent>('../../pages/**/*.tsx', {
+    const pages = import.meta.glob<ResolvedComponent>("../../pages/**/*.tsx", {
       eager: true,
     })
     const page = pages[`../../pages/${name}.tsx`]
@@ -35,7 +35,7 @@ void createInertiaApp({
     createRoot(el).render(
       <StrictMode>
         <App {...props} />
-      </StrictMode>
+      </StrictMode>,
     )
   },
 
@@ -58,8 +58,8 @@ void createInertiaApp({
   } else {
     console.error(
       "Missing root element.\n\n" +
-      "If you see this error, it probably means you loaded Inertia.js on non-Inertia pages.\n" +
-      'Consider moving <%= vite_typescript_tag "inertia.tsx" %> to the Inertia-specific layout instead.',
+        "If you see this error, it probably means you loaded Inertia.js on non-Inertia pages.\n" +
+        'Consider moving <%= vite_typescript_tag "inertia.tsx" %> to the Inertia-specific layout instead.',
     )
   }
 })

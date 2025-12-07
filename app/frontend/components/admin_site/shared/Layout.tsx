@@ -1,13 +1,13 @@
-import { ReactNode } from "react";
-import AppSidebar, { AppSidebarProps } from "./AppSidebar";
-import { SidebarInset, SidebarProvider, SidebarTrigger } from "../ui/sidebar";
-import { Separator } from "../ui/separator";
+import type { ReactNode } from "react"
+import { Separator } from "../ui/separator"
+import { SidebarInset, SidebarProvider, SidebarTrigger } from "../ui/sidebar"
+import AppSidebar, { type AppSidebarProps } from "./AppSidebar"
 
 export type LayoutProps = {
-  children: ReactNode;
-  sidebar: AppSidebarProps;
-};
-export type { AppSidebarProps };
+  children: ReactNode
+  sidebar: AppSidebarProps
+}
+export type { AppSidebarProps }
 
 export default function Layout({ children, sidebar }: LayoutProps) {
   return (

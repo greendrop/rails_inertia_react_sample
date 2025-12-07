@@ -38,6 +38,6 @@
     "copilot": "copilot",
     "opencode": "opencode",
     "lint": "biome check",
-    "lint:fix": "biome checck --write"
+    "lint:fix": "biome check --write"
   }
 }

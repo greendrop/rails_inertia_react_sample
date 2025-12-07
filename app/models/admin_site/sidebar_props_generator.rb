@@ -22,7 +22,7 @@ module AdminSite
         {
           title: '記事',
           url: '#',
-          children: [
+          items: [
             {
               title: '記事一覧',
               url: admin_site_articles_path

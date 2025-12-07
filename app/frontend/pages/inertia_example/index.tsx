@@ -1,11 +1,11 @@
-import { Head } from '@inertiajs/react'
-import { useState } from 'react'
+import { Head } from "@inertiajs/react"
+import { useState } from "react"
 
-import inertiaSvg from '/assets/inertia.svg'
-import reactSvg from '/assets/react.svg'
-import viteRubySvg from '/assets/vite_ruby.svg'
+import inertiaSvg from "/assets/inertia.svg"
+import reactSvg from "/assets/react.svg"
+import viteRubySvg from "/assets/vite_ruby.svg"
 
-import cs from './index.module.css'
+import cs from "./index.module.css"
 
 export default function InertiaExample({ name }: { name: string }) {
   const [count, setCount] = useState(0)
@@ -18,17 +18,21 @@ export default function InertiaExample({ name }: { name: string }) {
         <h1 className={cs.h1}>Hello {name}!</h1>
 
         <div>
-          <a href="https://inertia-rails.dev" target="_blank">
+          <a href="https://inertia-rails.dev" target="_blank" rel="noreferrer">
             <img className={cs.logo} src={inertiaSvg} alt="Inertia logo" />
           </a>
-          <a href="https://vite-ruby.netlify.app" target="_blank">
+          <a
+            href="https://vite-ruby.netlify.app"
+            target="_blank"
+            rel="noreferrer"
+          >
             <img
               className={`${cs.logo} ${cs.vite}`}
               src={viteRubySvg}
               alt="Vite Ruby logo"
             />
           </a>
-          <a href="https://react.dev" target="_blank">
+          <a href="https://react.dev" target="_blank" rel="noreferrer">
             <img
               className={`${cs.logo} ${cs.react}`}
               src={reactSvg}
@@ -41,14 +45,15 @@ export default function InertiaExample({ name }: { name: string }) {
 
         <div className="card">
           <button
+            type="button"
             className={cs.button}
             onClick={() => setCount((count) => count + 1)}
           >
             count is {count}
           </button>
           <p>
-            Edit <code>app/frontend/pages/inertia_example/index.tsx</code> and save to
-            test HMR
+            Edit <code>app/frontend/pages/inertia_example/index.tsx</code> and
+            save to test HMR
           </p>
         </div>
         <p className={cs.readTheDocs}>

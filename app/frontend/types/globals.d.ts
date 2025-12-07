@@ -1,6 +1,6 @@
-import type { SharedProps } from '@/types'
+import type { SharedProps } from "@/types"
 
-declare module '@inertiajs/core' {
+declare module "@inertiajs/core" {
   export interface InertiaConfig {
     sharedPageProps: SharedProps
     errorValueType: string[]
