@@ -36,6 +36,8 @@
   "scripts": {
     "check": "tsc -p tsconfig.app.json && tsc -p tsconfig.node.json",
     "copilot": "copilot",
-    "opencode": "opencode"
+    "opencode": "opencode",
+    "lint": "biome check",
+    "lint:fix": "biome checck --write"
   }
 }
