@@ -43,7 +43,7 @@ export default function AppSidebarContentItem({
                   key={item.title}
                   title={item.title}
                   url={item.url}
-                  items={item.items}
+                  items={item.items ?? []}
                   depth={depth + 1}
                 />
               ))}
