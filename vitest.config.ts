@@ -3,7 +3,7 @@ import viteConfig from './vite.config.ts'
 
 export default mergeConfig(viteConfig, defineConfig({
   test: {
-    environment: 'jsdom',
+    environment: 'happy-dom',
     include: [
       '../../spec/frontend/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',
     ],
