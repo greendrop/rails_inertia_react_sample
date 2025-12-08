@@ -1,7 +1,10 @@
 import { render } from "@testing-library/react"
 import { describe, expect, it } from "vitest"
 import ArticleTable from "@/components/admin_site/articles/index/ArticleTable"
-import type { Article, ArticleColumnNames } from "@/types/admin_site/articles/index"
+import type {
+  Article,
+  ArticleColumnNames,
+} from "@/types/admin_site/articles/index"
 
 const articles: Article[] = [
   {
@@ -31,7 +34,10 @@ const articleColumnNames: ArticleColumnNames = {
 describe("ArticleTable", () => {
   it("正しくレンダリングされる（スナップショット）", () => {
     const { container } = render(
-      <ArticleTable articles={articles} articleColumnNames={articleColumnNames} />
+      <ArticleTable
+        articles={articles}
+        articleColumnNames={articleColumnNames}
+      />,
     )
     expect(container).toMatchSnapshot()
   })

@@ -1,6 +1,8 @@
 import { render } from "@testing-library/react"
 import { describe, expect, it } from "vitest"
-import Layout, { type AppSidebarProps } from "@/components/admin_site/shared/Layout"
+import Layout, {
+  type AppSidebarProps,
+} from "@/components/admin_site/shared/Layout"
 
 const sidebar: AppSidebarProps = {
   contentItems: [
