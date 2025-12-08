@@ -18,7 +18,7 @@ export default function AppSidebarContent({ items }: AppSidebarContentProps) {
               key={item.title}
               title={item.title}
               url={item.url}
-              items={item.items}
+              items={item.items ?? []}
             />
           ))}
         </SidebarMenu>

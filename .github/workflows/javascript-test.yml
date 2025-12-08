@@ -1,5 +1,5 @@
 ---
-name: JavaScript Lint
+name: JavaScript Test
 
 on:
   pull_request:
@@ -8,9 +8,9 @@ on:
       - main
 
 jobs:
-  lint:
-    runs-on: ubuntu-slim
-    timeout-minutes: 15
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
     permissions:
       contents: read
 
@@ -35,10 +35,6 @@ jobs:
         run: |
           npm install --ignore-engines
 
-      - name: Run npm run lint
+      - name: Run npm run test
         run: |
-          npm run lint
-
-      - name: Run npm run typecheck
-        run: |
-          npm run typecheck
+          npm run test
