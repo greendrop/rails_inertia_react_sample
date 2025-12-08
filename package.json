@@ -43,6 +43,7 @@
     "lint": "biome check",
     "lint:fix": "biome check --write",
     "test": "vitest run",
+    "test:update": "vitest run --update",
     "typecheck": "tsc --noEmit"
   }
 }
