@@ -7,6 +7,7 @@
   },
   "files": {
     "includes": [
+      "*",
       "app/frontend/**/*",
       "!app/frontend/components/**/ui/**/*",
       "spec/frontend/**/*"
