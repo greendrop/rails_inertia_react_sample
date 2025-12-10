@@ -18,7 +18,7 @@ export default function Layout({ children, sidebar }: LayoutProps) {
           <SidebarTrigger className="-ml-1" />
           <Separator orientation="vertical" className="mr-2 h-4" />
         </header>
-        <main className="p-8">{children}</main>
+        <div className="p-8">{children}</div>
       </SidebarInset>
     </SidebarProvider>
   )
