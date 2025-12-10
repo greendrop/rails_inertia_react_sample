@@ -3,14 +3,14 @@
 require 'capybara/rspec'
 require 'capybara-playwright-driver'
 
-module PlaywrightHepler
+module PlaywrightHelper
   def playwright_driver_options
     { headless: true, browser_type: :chromium }
   end
 end
 
 RSpec.configure do |config|
-  config.include PlaywrightHepler, type: :system
+  config.include PlaywrightHelper, type: :system
 
   config.before(:suite) do
     if ENV['CI'].blank?
