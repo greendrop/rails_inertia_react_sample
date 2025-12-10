@@ -29,10 +29,6 @@ RSpec.configure do |config|
     end
   end
 
-  config.before(type: :system, js: true) do
-    driven_by(:playwright, options: playwright_driver_options)
-  end
-
   config.before(:each, type: :system) do
     driven_by :rack_test
   end
