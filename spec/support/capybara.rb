@@ -23,6 +23,9 @@ RSpec.configure do |config|
       install_location = matched[1] if matched
 
       system('npx playwright install --with-deps chromium') if install_location.nil? || !Dir.exist?(install_location)
+    else
+      # CI環境の場合は強制的にインストールする
+      system('npx playwright install --with-deps chromium')
     end
   end
 
