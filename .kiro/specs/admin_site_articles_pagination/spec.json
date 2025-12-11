@@ -1,0 +1,8 @@
+{
+  "name": "admin_site_articles_pagination",
+  "title": "管理画面の記事一覧にページネーションを追加",
+  "created_at": "2025-12-11T07:05:19.729Z",
+  "status": "initialized",
+  "language": "ja",
+  "author": "copilot-cli"
+}
