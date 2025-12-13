@@ -1,5 +1,5 @@
 import type { AppSidebarProps } from "@/components/admin_site/shared/AppSidebar"
-import type { QueryParametors } from "@/lib/query_parametor"
+import type { QueryParametors } from "@/lib/query_parameter"
 
 export type Flash = {
   notice?: string

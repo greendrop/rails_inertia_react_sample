@@ -1,7 +1,7 @@
 import {
   flattenQueryParametors,
-  type QueryParametors,
-} from "@/lib/query_parametor"
+  type QueryParameters,
+} from "@/lib/query_parameter"
 import type { Pagination as PaginationType } from "@/types/admin_site"
 import {
   Pagination,
@@ -46,7 +46,7 @@ function isLastPageLinkShown({
 function buildSearchParams({
   currentQueryParameters,
 }: {
-  currentQueryParameters: QueryParametors
+  currentQueryParameters: QueryParameters
 }): URLSearchParams {
   const flattenedQueryParameters = flattenQueryParametors(
     currentQueryParameters,
@@ -67,7 +67,7 @@ function buildPages({
   pageWindow,
 }: {
   currentPath: string
-  currentQueryParameters: QueryParametors
+  currentQueryParameters: QueryParameters
   pageParameterName: string
   currentPage: number
   totalPages: number
@@ -91,7 +91,7 @@ function buildFirstPageHref({
   pageParameterName,
 }: {
   currentPath: string
-  currentQueryParameters: QueryParametors
+  currentQueryParameters: QueryParameters
   pageParameterName: string
 }): string {
   const searchParams = buildSearchParams({ currentQueryParameters })
@@ -106,7 +106,7 @@ function buildLastPageHref({
   totalPages,
 }: {
   currentPath: string
-  currentQueryParameters: QueryParametors
+  currentQueryParameters: QueryParameters
   pageParameterName: string
   totalPages: number
 }): string {
@@ -122,7 +122,7 @@ function buildPrevPageHref({
   prevPage,
 }: {
   currentPath: string
-  currentQueryParameters: QueryParametors
+  currentQueryParameters: QueryParameters
   pageParameterName: string
   prevPage: number
 }): string {
@@ -138,7 +138,7 @@ function buildNextPageHref({
   nextPage,
 }: {
   currentPath: string
-  currentQueryParameters: QueryParametors
+  currentQueryParameters: QueryParameters
   pageParameterName: string
   nextPage: number
 }): string {
