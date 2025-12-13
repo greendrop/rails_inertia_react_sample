@@ -2,7 +2,7 @@ import {
   flattenQueryParametors,
   type QueryParametors,
 } from "@/lib/query_parametor"
-import type { Pagination as PaginationType } from "~/types/admin_site"
+import type { Pagination as PaginationType } from "@/types/admin_site"
 import {
   Pagination,
   PaginationContent,
