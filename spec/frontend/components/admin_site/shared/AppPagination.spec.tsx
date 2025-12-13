@@ -21,6 +21,9 @@ function buildPagination(
     prevPageLabel: "前へ",
     nextPageAriaLabel: "次のページへ",
     prevPageAriaLabel: "前のページへ",
+    isFirstPage: true,
+    isLastPage: true,
+    isOutOfRange: false,
     ...overrides,
   }
 }
