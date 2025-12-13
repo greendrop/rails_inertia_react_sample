@@ -61,6 +61,9 @@ describe("Index (記事一覧ページ)", () => {
         prevPageLabel: "前へ",
         nextPageAriaLabel: "次のページへ",
         prevPageAriaLabel: "前のページへ",
+        isFirstPage: true,
+        isLastPage: true,
+        isOutOfRange: false,
       }
 
       const { container } = render(
@@ -110,6 +113,9 @@ describe("Index (記事一覧ページ)", () => {
         prevPageLabel: "前へ",
         nextPageAriaLabel: "次のページへ",
         prevPageAriaLabel: "前のページへ",
+        isFirstPage: false,
+        isLastPage: false,
+        isOutOfRange: false,
       }
 
       const { container } = render(
