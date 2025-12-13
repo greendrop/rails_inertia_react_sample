@@ -1,5 +1,5 @@
 import type { AppSidebarProps } from "@/components/admin_site/shared/AppSidebar"
-import type { QueryParametors } from "@/lib/query_parameter"
+import type { QueryParameters } from "@/lib/query_parameter"
 
 export type Flash = {
   notice?: string
@@ -13,7 +13,7 @@ export type SharedProps = {
 
 export type Pagination = {
   currentPath: string
-  currentQueryParameters: QueryParametors
+  currentQueryParameters: QueryParameters
   pageParameterName: string
   perPageParameterName: string
   currentPage: number
