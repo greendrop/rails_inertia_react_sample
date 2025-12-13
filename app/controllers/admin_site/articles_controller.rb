@@ -3,9 +3,12 @@
 module AdminSite
   class ArticlesController < ApplicationController
     def index
-      articles = Article.order(created_at: :desc).limit(50)
-      props = AdminSite::Articles::IndexPropsGenerator.call(articles:)
+      articles = Article.order(id: :asc).page(page).per(per_page)
 
+      props = AdminSite::Articles::IndexPropsGenerator.call(
+        articles:,
+        pagination: props_generator_pagination_args_by_kaminari(articles)
+      )
       render inertia: props
     end
   end

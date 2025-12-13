@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react"
 import { describe, expect, it, vi } from "vitest"
 import Index from "@/pages/admin_site/articles/index"
-import type { SharedProps } from "@/types/admin_site"
+import type { Pagination, SharedProps } from "@/types/admin_site"
 import type { Article, ArticleColumnNames } from "@/types/admin_site/articles"
 
 vi.mock("@inertiajs/react", async () => {
@@ -10,6 +10,7 @@ vi.mock("@inertiajs/react", async () => {
   return {
     ...actual,
     Head: () => null,
+    Link: ({ children }: { children: React.ReactNode }) => <>{children}</>,
   }
 })
 
@@ -34,16 +35,6 @@ const sidebar: SharedProps["sidebar"] = {
   ],
 }
 
-const articles: Article[] = [
-  {
-    id: 1,
-    title: "テスト記事1",
-    status: "draft",
-    createdAt: "2025-12-01T00:00:00Z",
-    updatedAt: "2025-12-01T00:00:00Z",
-  },
-]
-
 const articleColumnNames: ArticleColumnNames = {
   id: "ID",
   title: "タイトル",
@@ -53,15 +44,85 @@ const articleColumnNames: ArticleColumnNames = {
 }
 
 describe("Index (記事一覧ページ)", () => {
-  it("正しくレンダリングされる（スナップショット）", () => {
-    const { container } = render(
-      <Index
-        flash={flash}
-        sidebar={sidebar}
-        articles={articles}
-        articleColumnNames={articleColumnNames}
-      />,
-    )
-    expect(container).toMatchSnapshot()
+  describe("記事が空の場合", () => {
+    it("正しくレンダリングされる（スナップショット）", () => {
+      const articles: Article[] = []
+      const pagination: Pagination = {
+        currentPath: "/admin/articles",
+        currentQueryParameters: {},
+        pageParameterName: "page",
+        perPageParameterName: "per",
+        currentPage: 1,
+        perPage: 50,
+        totalPages: 0,
+        totalCount: 0,
+        nextPage: 2,
+        prevPage: 0,
+        nextPageLabel: "次へ",
+        prevPageLabel: "前へ",
+        nextPageAriaLabel: "次のページへ",
+        prevPageAriaLabel: "前のページへ",
+      }
+
+      const { container } = render(
+        <Index
+          flash={flash}
+          sidebar={sidebar}
+          articles={articles}
+          articleColumnNames={articleColumnNames}
+          pagination={pagination}
+        />,
+      )
+      expect(container).toMatchSnapshot()
+    })
+  })
+
+  describe("記事が存在する場合", () => {
+    it("正しくレンダリングされる（スナップショット）", () => {
+      const articles: Article[] = [
+        {
+          id: 1,
+          title: "テスト記事1",
+          status: "draft",
+          createdAt: "2025-12-01T00:00:00Z",
+          updatedAt: "2025-12-01T00:00:00Z",
+        },
+        {
+          id: 2,
+          title: "テスト記事2",
+          status: "published",
+          createdAt: "2025-12-02T00:00:00Z",
+          updatedAt: "2025-12-02T00:00:00Z",
+        },
+      ]
+
+      const pagination: Pagination = {
+        currentPath: "/admin/articles",
+        currentQueryParameters: { page: 5 },
+        pageParameterName: "page",
+        perPageParameterName: "per",
+        currentPage: 5,
+        perPage: 50,
+        totalPages: 10,
+        totalCount: 500,
+        nextPage: 6,
+        prevPage: 4,
+        nextPageLabel: "次へ",
+        prevPageLabel: "前へ",
+        nextPageAriaLabel: "次のページへ",
+        prevPageAriaLabel: "前のページへ",
+      }
+
+      const { container } = render(
+        <Index
+          flash={flash}
+          sidebar={sidebar}
+          articles={articles}
+          articleColumnNames={articleColumnNames}
+          pagination={pagination}
+        />,
+      )
+      expect(container).toMatchSnapshot()
+    })
   })
 })

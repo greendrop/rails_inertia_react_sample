@@ -15,6 +15,7 @@ RSpec.describe 'AdminSite::Articles#index', :js do
       within 'main' do
         expect(page).to have_content('First Article')
         expect(page).to have_content('Second Article')
+        expect(page).to have_css('nav[role="navigation"]')
       end
     end
   end

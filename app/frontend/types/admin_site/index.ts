@@ -1,4 +1,5 @@
 import type { AppSidebarProps } from "@/components/admin_site/shared/AppSidebar"
+import type { QueryParametors } from "@/lib/query_parametor"
 
 export type Flash = {
   notice?: string
@@ -8,4 +9,21 @@ export type Flash = {
 export type SharedProps = {
   flash: Flash
   sidebar: AppSidebarProps
+}
+
+export type Pagination = {
+  currentPath: string
+  currentQueryParameters: QueryParametors
+  pageParameterName: string
+  perPageParameterName: string
+  currentPage: number
+  perPage: number
+  totalPages: number
+  totalCount: number
+  nextPage: number | null
+  prevPage: number | null
+  nextPageLabel: string
+  prevPageLabel: string
+  nextPageAriaLabel: string
+  prevPageAriaLabel: string
 }
