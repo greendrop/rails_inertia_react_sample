@@ -53,7 +53,7 @@ function buildSearchParams({
   )
   const searchParams = new URLSearchParams()
   Object.entries(flattenedQueryParameters).forEach(([key, value]) => {
-    if (value !== null && value !== undefined) { 
+    if (value !== null && value !== undefined) {
       searchParams.append(key, String(value))
     }
   })
