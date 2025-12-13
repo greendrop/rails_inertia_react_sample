@@ -4,7 +4,7 @@ export type QueryParameters = {
 }
 export type FlatQueryParameters = { [key: string]: QueryParameterValue }
 
-export function flattenQueryParametors(
+export function flattenQueryParameters(
   queryParameters: QueryParameters,
   parentKey: string | null = null,
   result: FlatQueryParameters = {},
@@ -12,7 +12,7 @@ export function flattenQueryParametors(
   for (const [key, value] of Object.entries(queryParameters)) {
     const newKey = parentKey ? `${parentKey}[${key}]` : key
     if (value && typeof value === "object" && !Array.isArray(value)) {
-      flattenQueryParametors(value as QueryParameters, newKey, result)
+      flattenQueryParameters(value as QueryParameters, newKey, result)
     } else {
       result[newKey] = value as QueryParameterValue
     }

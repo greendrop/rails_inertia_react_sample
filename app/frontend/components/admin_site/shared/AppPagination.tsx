@@ -1,5 +1,5 @@
 import {
-  flattenQueryParametors,
+  flattenQueryParameters,
   type QueryParameters,
 } from "@/lib/query_parameter"
 import type { Pagination as PaginationType } from "@/types/admin_site"
@@ -48,7 +48,7 @@ function buildSearchParams({
 }: {
   currentQueryParameters: QueryParameters
 }): URLSearchParams {
-  const flattenedQueryParameters = flattenQueryParametors(
+  const flattenedQueryParameters = flattenQueryParameters(
     currentQueryParameters,
   )
   const searchParams = new URLSearchParams()
