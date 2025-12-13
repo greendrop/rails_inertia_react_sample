@@ -26,4 +26,7 @@ export type Pagination = {
   prevPageLabel: string
   nextPageAriaLabel: string
   prevPageAriaLabel: string
+  isFirstPage: boolean
+  isLastPage: boolean
+  isOutOfRange: boolean
 }
