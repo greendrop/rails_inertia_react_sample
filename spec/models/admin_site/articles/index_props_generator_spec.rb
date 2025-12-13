@@ -52,8 +52,8 @@ RSpec.describe AdminSite::Articles::IndexPropsGenerator do
       expected = {
         currentPath: '/admin/articles',
         currentQueryParameters: { search: 'test' },
-        pageParamatorName: 'page',
-        perPageParamatorName: 'per',
+        pageParameterName: 'page',
+        perPageParameterName: 'per',
         currentPage: 1,
         perPage: 10,
         totalPages: 5,

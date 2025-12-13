@@ -42,8 +42,8 @@ RSpec.describe 'AdminSite::Articles' do
       expected = {
         'currentPath' => '/admin/articles',
         'currentQueryParameters' => {},
-        'pageParamatorName' => 'page',
-        'perPageParamatorName' => 'per',
+        'pageParameterName' => 'page',
+        'perPageParameterName' => 'per',
         'currentPage' => 1,
         'perPage' => 20,
         'totalPages' => 1,

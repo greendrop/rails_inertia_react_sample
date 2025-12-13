@@ -48,8 +48,8 @@ module AdminSite
         {
           currentPath: pagination[:current_path],
           currentQueryParameters: pagination[:current_query_parameters],
-          pageParamatorName: pagination[:page_param_name],
-          perPageParamatorName: pagination[:per_page_param_name],
+          pageParameterName: pagination[:page_param_name],
+          perPageParameterName: pagination[:per_page_param_name],
           currentPage: pagination[:current_page],
           perPage: pagination[:limit_value],
           totalPages: pagination[:total_pages],
