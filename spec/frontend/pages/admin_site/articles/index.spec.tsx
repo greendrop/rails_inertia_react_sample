@@ -10,7 +10,6 @@ vi.mock("@inertiajs/react", async () => {
   return {
     ...actual,
     Head: () => null,
-    Link: ({ children }: { children: React.ReactNode }) => <>{children}</>,
   }
 })
 
