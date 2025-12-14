@@ -2,7 +2,9 @@ export type QueryParameterValue = string | number | boolean | null | undefined
 export type QueryParameters = {
   [key: string]: QueryParameterValue | QueryParameterValue[] | QueryParameters
 }
-export type FlatQueryParameters = { [key: string]: QueryParameterValue }
+export type FlatQueryParameters = {
+  [key: string]: QueryParameterValue | QueryParameterValue[]
+}
 
 export function flattenQueryParameters(
   queryParameters: QueryParameters,
