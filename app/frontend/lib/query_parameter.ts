@@ -24,10 +24,8 @@ export function flattenQueryParameters(
 
 export function buildSearchParamsByQueryParameters(
   queryParameters: QueryParameters,
-) : URLSearchParams {
-  const flattenedQueryParameters = flattenQueryParameters(
-    queryParameters,
-  )
+): URLSearchParams {
+  const flattenedQueryParameters = flattenQueryParameters(queryParameters)
   const searchParams = new URLSearchParams()
   Object.entries(flattenedQueryParameters).forEach(([key, value]) => {
     if (value === null || value === undefined) {
