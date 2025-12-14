@@ -38,6 +38,7 @@ describe("AppPagination", () => {
             currentPage: 1,
             nextPage: null,
             prevPage: null,
+            currentQueryParameters: { a: 1, b: { c: 2 }, d: [3, 4], e: null },
           })}
         />,
       )
@@ -54,6 +55,7 @@ describe("AppPagination", () => {
             currentPage: 3,
             nextPage: 4,
             prevPage: 2,
+            currentQueryParameters: { page: 3 },
           })}
         />,
       )
@@ -70,6 +72,7 @@ describe("AppPagination", () => {
             currentPage: 4,
             nextPage: 5,
             prevPage: 3,
+            currentQueryParameters: { page: 4 },
           })}
         />,
       )
