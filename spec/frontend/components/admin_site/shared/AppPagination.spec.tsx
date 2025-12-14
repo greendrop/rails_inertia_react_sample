@@ -79,4 +79,21 @@ describe("AppPagination", () => {
       expect(container).toMatchSnapshot()
     })
   })
+
+  describe("9ページあり、現在のページが5の場合", () => {
+    it("正しくレンダリングされる（スナップショット）", () => {
+      const { container } = render(
+        <AppPagination
+          pagination={buildPagination({
+            totalPages: 9,
+            currentPage: 5,
+            nextPage: 6,
+            prevPage: 4,
+            currentQueryParameters: { page: 5 },
+          })}
+        />,
+      )
+      expect(container).toMatchSnapshot()
+    })
+  })
 })
