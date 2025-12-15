@@ -38,18 +38,12 @@ export default function AppPagination({ pagination }: AppPaginationProps) {
             case "prev":
               return (
                 <PaginationItem key={link.key}>
-                  {link.href ? (
-                    <PaginationInertiaPrevious
-                      href={link.href}
-                      aria-label={pagination.prevPageAriaLabel}
-                    >
-                      {link.label}
-                    </PaginationInertiaPrevious>
-                  ) : (
-                    <PaginationPreviousDisabled>
-                      {link.label}
-                    </PaginationPreviousDisabled>
-                  )}
+                  <PaginationInertiaPrevious
+                    href={link.href}
+                    aria-label={pagination.prevPageAriaLabel}
+                  >
+                    {link.label}
+                  </PaginationInertiaPrevious>
                 </PaginationItem>
               )
             case "prevDisabled":
@@ -63,18 +57,12 @@ export default function AppPagination({ pagination }: AppPaginationProps) {
             case "next":
               return (
                 <PaginationItem key={link.key}>
-                  {link.href ? (
-                    <PaginationInertiaNext
-                      href={link.href}
-                      aria-label={pagination.nextPageAriaLabel}
-                    >
-                      {link.label}
-                    </PaginationInertiaNext>
-                  ) : (
-                    <PaginationNextDisabled>
-                      {link.label}
-                    </PaginationNextDisabled>
-                  )}
+                  <PaginationInertiaNext
+                    href={link.href}
+                    aria-label={pagination.nextPageAriaLabel}
+                  >
+                    {link.label}
+                  </PaginationInertiaNext>
                 </PaginationItem>
               )
             case "nextDisabled":
