@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react"
 import { describe, expect, it } from "vitest"
-import ArticleTable from "@/components/admin_site/articles/index/ArticleTable"
+import ArticleTable from "@/features/admin_site/articles/index/ArticleTable"
 import type {
   Article,
   ArticleColumnNames,

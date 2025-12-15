@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react"
 import { describe, expect, it } from "vitest"
-import ArticleTableRow from "@/components/admin_site/articles/index/ArticleTableRow"
+import ArticleTableRow from "@/features/admin_site/articles/index/ArticleTableRow"
 import type { Article } from "@/types/admin_site/articles/index"
 
 describe("ArticleTableRow", () => {

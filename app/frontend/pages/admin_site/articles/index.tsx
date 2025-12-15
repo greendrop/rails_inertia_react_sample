@@ -1,7 +1,7 @@
 import { Head } from "@inertiajs/react"
-import ArticleTable from "@/components/admin_site/articles/index/ArticleTable"
 import AppPagination from "@/components/admin_site/shared/AppPagination"
 import Layout from "@/components/admin_site/shared/Layout"
+import ArticleTable from "@/features/admin_site/articles/index/ArticleTable"
 import type { Pagination, SharedProps } from "@/types/admin_site"
 import type { Article, ArticleColumnNames } from "@/types/admin_site/articles"
 
