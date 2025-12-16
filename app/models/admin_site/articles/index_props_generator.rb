@@ -14,7 +14,8 @@ module AdminSite
         {
           articles: generate_articles,
           articleColumnNames: generate_article_column_names,
-          pagination: generate_pagination
+          pagination: generate_pagination,
+          noDataLabel: 'データがありません。'
         }
       end
 

@@ -33,6 +33,7 @@ const sidebar: SharedProps["sidebar"] = {
     },
   ],
 }
+const noDataLabel = "データがありません。"
 
 const articleColumnNames: ArticleColumnNames = {
   id: "ID",
@@ -73,6 +74,7 @@ describe("Index (記事一覧ページ)", () => {
           articles={articles}
           articleColumnNames={articleColumnNames}
           pagination={pagination}
+          noDataLabel={noDataLabel}
         />,
       )
       expect(container).toMatchSnapshot()
@@ -125,6 +127,7 @@ describe("Index (記事一覧ページ)", () => {
           articles={articles}
           articleColumnNames={articleColumnNames}
           pagination={pagination}
+          noDataLabel={noDataLabel}
         />,
       )
       expect(container).toMatchSnapshot()

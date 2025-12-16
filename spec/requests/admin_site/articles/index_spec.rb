@@ -59,6 +59,8 @@ RSpec.describe 'AdminSite::Articles' do
         'prevPageAriaLabel' => '前のページへ'
       }
       expect(json['props']['pagination']).to eq(expected)
+
+      expect(json['props']['noDataLabel']).to eq('データがありません。')
     end
   end
 end
