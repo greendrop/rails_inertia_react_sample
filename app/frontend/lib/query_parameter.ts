@@ -22,7 +22,7 @@ export function flattenQueryParameters(
   return result
 }
 
-export function buildSearchParamsByQueryParameters(
+export function buildURLSearchParamsByQueryParameters(
   queryParameters: QueryParameters,
 ): URLSearchParams {
   const flattenedQueryParameters = flattenQueryParameters(queryParameters)

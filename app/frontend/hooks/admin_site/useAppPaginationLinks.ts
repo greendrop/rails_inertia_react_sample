@@ -1,6 +1,6 @@
 import { useMemo } from "react"
 import {
-  buildSearchParamsByQueryParameters,
+  buildURLSearchParamsByQueryParameters,
   type QueryParameters,
 } from "@/lib/query_parameter"
 import type { Pagination as PaginationType } from "@/types/admin_site"
@@ -80,7 +80,7 @@ export default function useAppPaginationLinks({
     }
 
     // Page links
-    const searchParams = buildSearchParamsByQueryParameters(
+    const searchParams = buildURLSearchParamsByQueryParameters(
       pagination.currentQueryParameters,
     )
     for (
@@ -165,7 +165,7 @@ function prevPageLinkHref({
   pageParameterName: string
   prevPage: number
 }): string {
-  const searchParams = buildSearchParamsByQueryParameters(
+  const searchParams = buildURLSearchParamsByQueryParameters(
     currentQueryParameters,
   )
   searchParams.set(pageParameterName, String(prevPage))
@@ -183,7 +183,7 @@ function nextPageLinkHref({
   pageParameterName: string
   nextPage: number
 }): string {
-  const searchParams = buildSearchParamsByQueryParameters(
+  const searchParams = buildURLSearchParamsByQueryParameters(
     currentQueryParameters,
   )
   searchParams.set(pageParameterName, String(nextPage))
@@ -199,7 +199,7 @@ function firstPageHref({
   currentQueryParameters: QueryParameters
   pageParameterName: string
 }): string {
-  const searchParams = buildSearchParamsByQueryParameters(
+  const searchParams = buildURLSearchParamsByQueryParameters(
     currentQueryParameters,
   )
   searchParams.set(pageParameterName, "1")
@@ -217,7 +217,7 @@ function lastPageHref({
   pageParameterName: string
   totalPages: number
 }): string {
-  const searchParams = buildSearchParamsByQueryParameters(
+  const searchParams = buildURLSearchParamsByQueryParameters(
     currentQueryParameters,
   )
   searchParams.set(pageParameterName, String(totalPages))
