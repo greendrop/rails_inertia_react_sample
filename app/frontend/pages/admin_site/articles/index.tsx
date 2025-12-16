@@ -1,12 +1,14 @@
 import { Head } from "@inertiajs/react"
-import ArticleTable from "@/components/admin_site/articles/index/ArticleTable"
+import AppPagination from "@/components/admin_site/shared/AppPagination"
 import Layout from "@/components/admin_site/shared/Layout"
-import type { SharedProps } from "@/types/admin_site"
+import ArticleTable from "@/features/admin_site/articles/index/ArticleTable"
+import type { Pagination, SharedProps } from "@/types/admin_site"
 import type { Article, ArticleColumnNames } from "@/types/admin_site/articles"
 
 type IndexSpecificProps = {
   articles: Article[]
   articleColumnNames: ArticleColumnNames
+  pagination: Pagination
 }
 type IndexProps = SharedProps & IndexSpecificProps
 
@@ -14,6 +16,7 @@ export default function Index({
   sidebar,
   articles,
   articleColumnNames,
+  pagination,
 }: IndexProps) {
   return (
     <>
@@ -22,10 +25,16 @@ export default function Index({
         <div>
           <h1>記事一覧</h1>
 
-          <ArticleTable
-            articles={articles}
-            articleColumnNames={articleColumnNames}
-          />
+          <div className="mb-4">
+            <ArticleTable
+              articles={articles}
+              articleColumnNames={articleColumnNames}
+            />
+          </div>
+
+          <div className="mb-4 flex items-center justify-center">
+            <AppPagination pagination={pagination} />
+          </div>
         </div>
       </Layout>
     </>

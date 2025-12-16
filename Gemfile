@@ -10,6 +10,7 @@ gem 'importmap-rails'
 gem 'inertia_rails'
 gem 'jbuilder'
 gem 'kamal', require: false
+gem 'kaminari'
 gem 'pg', '~> 1.1'
 gem 'propshaft'
 gem 'puma', '>= 5.0'

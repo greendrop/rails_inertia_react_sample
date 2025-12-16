@@ -4,13 +4,31 @@ require 'rails_helper'
 
 RSpec.describe AdminSite::Articles::IndexPropsGenerator do
   describe '#call' do
-    subject { described_class.new(articles:).call }
+    subject { described_class.new(articles:, pagination:).call }
 
     let!(:article1) { create(:article, :draft, title: 'タイトル1') }
     let!(:article2) { create(:article, :draft, title: 'タイトル2') }
     let!(:articles) { [article1, article2] }
+    let(:pagination) do
+      {
+        current_path: '/admin/articles',
+        current_query_parameters: { search: 'test' },
+        page_param_name: 'page',
+        per_page_param_name: 'per',
+        current_page: 1,
+        limit_value: 10,
+        total_pages: 5,
+        total_count: 50,
+        next_page: 2,
+        prev_page: nil,
+        first_page?: true,
+        last_page?: false,
+        out_of_range?: false
+      }
+    end
 
     it '記事情報の配列とカラム名を返す' do
+      response = subject
       expected = articles.map do |article|
         {
           id: article.id,
@@ -20,7 +38,7 @@ RSpec.describe AdminSite::Articles::IndexPropsGenerator do
           updatedAt: article.updated_at
         }
       end
-      expect(subject[:articles]).to eq(expected)
+      expect(response[:articles]).to eq(expected)
 
       expected = {
         id: 'ID',
@@ -29,7 +47,28 @@ RSpec.describe AdminSite::Articles::IndexPropsGenerator do
         createdAt: '作成日時',
         updatedAt: '更新日時'
       }
-      expect(subject[:articleColumnNames]).to eq(expected)
+      expect(response[:articleColumnNames]).to eq(expected)
+
+      expected = {
+        currentPath: '/admin/articles',
+        currentQueryParameters: { search: 'test' },
+        pageParameterName: 'page',
+        perPageParameterName: 'per',
+        currentPage: 1,
+        perPage: 10,
+        totalPages: 5,
+        totalCount: 50,
+        nextPage: 2,
+        prevPage: nil,
+        isFirstPage: true,
+        isLastPage: false,
+        isOutOfRange: false,
+        nextPageLabel: '次へ',
+        prevPageLabel: '前へ',
+        nextPageAriaLabel: '次のページへ',
+        prevPageAriaLabel: '前のページへ'
+      }
+      expect(response[:pagination]).to eq(expected)
     end
   end
 end

@@ -19,7 +19,7 @@ RSpec.describe 'AdminSite::Articles' do
 
       expect(json['component']).to eq('admin_site/articles/index')
 
-      expected = articles.reverse.map do |article|
+      expected = articles.map do |article|
         {
           'id' => article.id,
           'title' => article.title,
@@ -29,6 +29,36 @@ RSpec.describe 'AdminSite::Articles' do
         }
       end
       expect(json['props']['articles']).to eq(expected)
+
+      expected = {
+        'id' => 'ID',
+        'title' => 'タイトル',
+        'status' => 'ステータス',
+        'createdAt' => '作成日時',
+        'updatedAt' => '更新日時'
+      }
+      expect(json['props']['articleColumnNames']).to eq(expected)
+
+      expected = {
+        'currentPath' => '/admin/articles',
+        'currentQueryParameters' => {},
+        'pageParameterName' => 'page',
+        'perPageParameterName' => 'per',
+        'currentPage' => 1,
+        'perPage' => 20,
+        'totalPages' => 1,
+        'totalCount' => 3,
+        'nextPage' => nil,
+        'prevPage' => nil,
+        'isFirstPage' => true,
+        'isLastPage' => true,
+        'isOutOfRange' => false,
+        'nextPageLabel' => '次へ',
+        'prevPageLabel' => '前へ',
+        'nextPageAriaLabel' => '次のページへ',
+        'prevPageAriaLabel' => '前のページへ'
+      }
+      expect(json['props']['pagination']).to eq(expected)
     end
   end
 end
