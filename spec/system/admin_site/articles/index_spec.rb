@@ -24,6 +24,8 @@ RSpec.describe 'AdminSite::Articles#index', :js do
 
       within 'main' do
         expect(page).to have_content('データがありません。')
+        expect(page).to have_no_table
+        expect(page).to have_no_css('nav[role="navigation"]')
       end
     end
   end
