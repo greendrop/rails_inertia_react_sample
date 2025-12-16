@@ -45,11 +45,11 @@ export default function useAppPaginationLinks({
         key: "prev",
         kind: "prev",
         label: pagination.prevPageLabel,
-        href: prevPageLinkHref({
+        href: pageLinkHref({
           currentPath: pagination.currentPath,
           currentQueryParameters: pagination.currentQueryParameters,
           pageParameterName: pagination.pageParameterName,
-          prevPage: pagination.prevPage,
+          page: pagination.prevPage,
         }),
         isActive: false,
       })
@@ -61,10 +61,11 @@ export default function useAppPaginationLinks({
         key: "first",
         kind: "first",
         label: "1",
-        href: firstPageHref({
+        href: pageLinkHref({
           currentPath: pagination.currentPath,
           currentQueryParameters: pagination.currentQueryParameters,
           pageParameterName: pagination.pageParameterName,
+          page: 1,
         }),
         isActive: false,
       })
@@ -117,11 +118,11 @@ export default function useAppPaginationLinks({
         key: "last",
         kind: "last",
         label: String(pagination.totalPages),
-        href: lastPageHref({
+        href: pageLinkHref({
           currentPath: pagination.currentPath,
           currentQueryParameters: pagination.currentQueryParameters,
           pageParameterName: pagination.pageParameterName,
-          totalPages: pagination.totalPages,
+          page: pagination.totalPages,
         }),
         isActive: false,
       })
@@ -141,11 +142,11 @@ export default function useAppPaginationLinks({
         key: "next",
         kind: "next",
         label: pagination.nextPageLabel,
-        href: nextPageLinkHref({
+        href: pageLinkHref({
           currentPath: pagination.currentPath,
           currentQueryParameters: pagination.currentQueryParameters,
           pageParameterName: pagination.pageParameterName,
-          nextPage: pagination.nextPage,
+          page: pagination.nextPage,
         }),
         isActive: false,
       })
@@ -153,76 +154,6 @@ export default function useAppPaginationLinks({
 
     return links
   }, [pagination])
-}
-
-function prevPageLinkHref({
-  currentPath,
-  currentQueryParameters,
-  pageParameterName,
-  prevPage,
-}: {
-  currentPath: string
-  currentQueryParameters: QueryParameters
-  pageParameterName: string
-  prevPage: number
-}): string {
-  const searchParams = buildURLSearchParamsByQueryParameters(
-    currentQueryParameters,
-  )
-  searchParams.set(pageParameterName, String(prevPage))
-  return `${currentPath}?${searchParams.toString()}`
-}
-
-function nextPageLinkHref({
-  currentPath,
-  currentQueryParameters,
-  pageParameterName,
-  nextPage,
-}: {
-  currentPath: string
-  currentQueryParameters: QueryParameters
-  pageParameterName: string
-  nextPage: number
-}): string {
-  const searchParams = buildURLSearchParamsByQueryParameters(
-    currentQueryParameters,
-  )
-  searchParams.set(pageParameterName, String(nextPage))
-  return `${currentPath}?${searchParams.toString()}`
-}
-
-function firstPageHref({
-  currentPath,
-  currentQueryParameters,
-  pageParameterName,
-}: {
-  currentPath: string
-  currentQueryParameters: QueryParameters
-  pageParameterName: string
-}): string {
-  const searchParams = buildURLSearchParamsByQueryParameters(
-    currentQueryParameters,
-  )
-  searchParams.set(pageParameterName, "1")
-  return `${currentPath}?${searchParams.toString()}`
-}
-
-function lastPageHref({
-  currentPath,
-  currentQueryParameters,
-  pageParameterName,
-  totalPages,
-}: {
-  currentPath: string
-  currentQueryParameters: QueryParameters
-  pageParameterName: string
-  totalPages: number
-}): string {
-  const searchParams = buildURLSearchParamsByQueryParameters(
-    currentQueryParameters,
-  )
-  searchParams.set(pageParameterName, String(totalPages))
-  return `${currentPath}?${searchParams.toString()}`
 }
 
 function pageLinkHref({
