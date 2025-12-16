@@ -31,7 +31,7 @@ export function buildURLSearchParamsByQueryParameters(
     if (value === null || value === undefined) {
       searchParams.append(key, "")
     } else if (Array.isArray(value)) {
-      Object.entries(value).forEach(([_, v]) => {
+      value.forEach((v) => {
         if (v !== null && v !== undefined) {
           searchParams.append(key, String(v))
         }
