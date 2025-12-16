@@ -28,7 +28,7 @@ export default function Index({
           <h1>記事一覧</h1>
 
           {articles.length === 0 ? (
-            <div className="my-4 text-center">{noDataLabel}</div>
+            <output className="my-4 text-center" aria-live="polite">{noDataLabel}</output>
           ) : (
             <>
               <div className="mb-4">

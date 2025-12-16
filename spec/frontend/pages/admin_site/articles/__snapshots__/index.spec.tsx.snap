@@ -785,11 +785,12 @@ exports[`Index (記事一覧ページ) > 記事が空の場合 > 正しくレン
           <h1>
             記事一覧
           </h1>
-          <div
+          <output
+            aria-live="polite"
             class="my-4 text-center"
           >
             データがありません。
-          </div>
+          </output>
         </div>
       </div>
     </main>
