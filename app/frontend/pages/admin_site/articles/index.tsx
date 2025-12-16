@@ -9,6 +9,7 @@ type IndexSpecificProps = {
   articles: Article[]
   articleColumnNames: ArticleColumnNames
   pagination: Pagination
+  noDataLabel: string
 }
 type IndexProps = SharedProps & IndexSpecificProps
 
@@ -17,6 +18,7 @@ export default function Index({
   articles,
   articleColumnNames,
   pagination,
+  noDataLabel,
 }: IndexProps) {
   return (
     <>
@@ -25,16 +27,24 @@ export default function Index({
         <div>
           <h1>記事一覧</h1>
 
-          <div className="mb-4">
-            <ArticleTable
-              articles={articles}
-              articleColumnNames={articleColumnNames}
-            />
-          </div>
+          {articles.length === 0 ? (
+            <output className="my-4 text-center" aria-live="polite">
+              {noDataLabel}
+            </output>
+          ) : (
+            <>
+              <div className="mb-4">
+                <ArticleTable
+                  articles={articles}
+                  articleColumnNames={articleColumnNames}
+                />
+              </div>
 
-          <div className="mb-4 flex items-center justify-center">
-            <AppPagination pagination={pagination} />
-          </div>
+              <div className="mb-4 flex items-center justify-center">
+                <AppPagination pagination={pagination} />
+              </div>
+            </>
+          )}
         </div>
       </Layout>
     </>

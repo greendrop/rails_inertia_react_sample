@@ -69,6 +69,7 @@ RSpec.describe AdminSite::Articles::IndexPropsGenerator do
         prevPageAriaLabel: '前のページへ'
       }
       expect(response[:pagination]).to eq(expected)
+      expect(response[:noDataLabel]).to eq('データがありません。')
     end
   end
 end
