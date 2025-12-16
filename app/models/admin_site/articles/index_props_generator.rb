@@ -15,7 +15,7 @@ module AdminSite
           articles: generate_articles,
           articleColumnNames: generate_article_column_names,
           pagination: generate_pagination,
-          noDataLabel: 'データがありません。'
+          noDataLabel: generate_no_data_label
         }
       end
 
@@ -65,6 +65,10 @@ module AdminSite
           nextPageAriaLabel: '次のページへ',
           prevPageAriaLabel: '前のページへ'
         }
+      end
+
+      def generate_no_data_label
+        'データがありません。'
       end
     end
   end
