@@ -80,9 +80,6 @@ export default function useAppPaginationLinks({
     }
 
     // Page links
-    const searchParams = buildURLSearchParamsByQueryParameters(
-      pagination.currentQueryParameters,
-    )
     for (
       let i = pagination.currentPage - pageWindow;
       i <= pagination.currentPage + pageWindow;
@@ -91,12 +88,16 @@ export default function useAppPaginationLinks({
       if (i < 1 || i > pagination.totalPages) {
         continue
       }
-      searchParams.set(pagination.pageParameterName, String(i))
       links.push({
         key: `page-${i}`,
         kind: "page",
         label: String(i),
-        href: `${pagination.currentPath}?${searchParams.toString()}`,
+        href: pageLinkHref({
+          currentPath: pagination.currentPath,
+          currentQueryParameters: pagination.currentQueryParameters,
+          pageParameterName: pagination.pageParameterName,
+          page: i,
+        }),
         isActive: i === pagination.currentPage,
       })
     }
@@ -221,5 +222,23 @@ function lastPageHref({
     currentQueryParameters,
   )
   searchParams.set(pageParameterName, String(totalPages))
+  return `${currentPath}?${searchParams.toString()}`
+}
+
+function pageLinkHref({
+  currentPath,
+  currentQueryParameters,
+  pageParameterName,
+  page,
+}: {
+  currentPath: string
+  currentQueryParameters: QueryParameters
+  pageParameterName: string
+  page: number
+}): string {
+  const searchParams = buildURLSearchParamsByQueryParameters(
+    currentQueryParameters,
+  )
+  searchParams.set(pageParameterName, String(page))
   return `${currentPath}?${searchParams.toString()}`
 }
