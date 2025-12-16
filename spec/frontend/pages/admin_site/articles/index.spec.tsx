@@ -38,8 +38,8 @@ const articleColumnNames: ArticleColumnNames = {
   id: "ID",
   title: "タイトル",
   status: "ステータス",
-  createdAt: "作成日",
-  updatedAt: "更新日",
+  createdAt: "作成日時",
+  updatedAt: "更新日時",
 }
 
 describe("Index (記事一覧ページ)", () => {

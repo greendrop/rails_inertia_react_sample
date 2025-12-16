@@ -239,13 +239,13 @@ exports[`Index (記事一覧ページ) > 記事が存在する場合 > 正しく
                       class="text-foreground h-10 px-2 text-left align-middle font-medium whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]"
                       data-slot="table-head"
                     >
-                      作成日
+                      作成日時
                     </th>
                     <th
                       class="text-foreground h-10 px-2 text-left align-middle font-medium whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]"
                       data-slot="table-head"
                     >
-                      更新日
+                      更新日時
                     </th>
                   </tr>
                 </thead>
@@ -826,13 +826,13 @@ exports[`Index (記事一覧ページ) > 記事が空の場合 > 正しくレン
                       class="text-foreground h-10 px-2 text-left align-middle font-medium whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]"
                       data-slot="table-head"
                     >
-                      作成日
+                      作成日時
                     </th>
                     <th
                       class="text-foreground h-10 px-2 text-left align-middle font-medium whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]"
                       data-slot="table-head"
                     >
-                      更新日
+                      更新日時
                     </th>
                   </tr>
                 </thead>
