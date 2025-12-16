@@ -28,7 +28,7 @@ export default function AppPagination({ pagination }: AppPaginationProps) {
               return (
                 <PaginationItem key={link.key}>
                   <PaginationInertiaLink
-                    href={link.href.toString()}
+                    href={link.href}
                     isActive={link.isActive}
                   >
                     {link.label}
