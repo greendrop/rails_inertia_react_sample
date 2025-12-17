@@ -14,7 +14,6 @@ vi.mock("@inertiajs/react", async () => {
 })
 
 const flash: SharedProps["flash"] = {}
-
 const sidebar: SharedProps["sidebar"] = {
   contentItems: [
     {
@@ -33,6 +32,8 @@ const sidebar: SharedProps["sidebar"] = {
     },
   ],
 }
+const headTitle = "記事一覧 | Admin Site"
+const pageHeaderTitle = "記事一覧"
 const noDataLabel = "データがありません。"
 
 const articleColumnNames: ArticleColumnNames = {
@@ -71,6 +72,8 @@ describe("Index (記事一覧ページ)", () => {
         <Index
           flash={flash}
           sidebar={sidebar}
+          headTitle={headTitle}
+          pageHeaderTitle={pageHeaderTitle}
           articles={articles}
           articleColumnNames={articleColumnNames}
           pagination={pagination}
@@ -124,6 +127,8 @@ describe("Index (記事一覧ページ)", () => {
         <Index
           flash={flash}
           sidebar={sidebar}
+          headTitle={headTitle}
+          pageHeaderTitle={pageHeaderTitle}
           articles={articles}
           articleColumnNames={articleColumnNames}
           pagination={pagination}

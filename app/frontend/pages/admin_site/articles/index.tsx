@@ -1,11 +1,16 @@
 import { Head } from "@inertiajs/react"
 import AppPagination from "@/components/admin_site/shared/AppPagination"
 import Layout from "@/components/admin_site/shared/Layout"
+import PageHeader from "@/components/admin_site/shared/PageHeader"
+import PageHeaderTitle from "@/components/admin_site/shared/PageHeaderTitle"
+import PageHeaderTitleText from "@/components/admin_site/shared/PageHeaderTitleText"
 import ArticleTable from "@/features/admin_site/articles/index/ArticleTable"
 import type { Pagination, SharedProps } from "@/types/admin_site"
 import type { Article, ArticleColumnNames } from "@/types/admin_site/articles"
 
 type IndexSpecificProps = {
+  headTitle: string
+  pageHeaderTitle: string
   articles: Article[]
   articleColumnNames: ArticleColumnNames
   pagination: Pagination
@@ -15,6 +20,8 @@ type IndexProps = SharedProps & IndexSpecificProps
 
 export default function Index({
   sidebar,
+  headTitle,
+  pageHeaderTitle,
   articles,
   articleColumnNames,
   pagination,
@@ -22,29 +29,37 @@ export default function Index({
 }: IndexProps) {
   return (
     <>
-      <Head title="記事一覧" />
+      <Head title={headTitle} />
       <Layout sidebar={sidebar}>
-        <div>
-          <h1>記事一覧</h1>
+        <div className="mb-4">
+          <PageHeader>
+            <PageHeaderTitle>
+              <PageHeaderTitleText>{pageHeaderTitle}</PageHeaderTitleText>
+            </PageHeaderTitle>
+          </PageHeader>
+        </div>
 
-          {articles.length === 0 ? (
-            <output className="my-4 text-center" aria-live="polite">
-              {noDataLabel}
-            </output>
-          ) : (
-            <>
-              <div className="mb-4">
-                <ArticleTable
-                  articles={articles}
-                  articleColumnNames={articleColumnNames}
-                />
-              </div>
+        <div className="flex">
+          <div className="flex-auto">
+            {articles.length === 0 ? (
+              <output className="my-4 text-center" aria-live="polite">
+                {noDataLabel}
+              </output>
+            ) : (
+              <>
+                <div className="mb-4">
+                  <ArticleTable
+                    articles={articles}
+                    articleColumnNames={articleColumnNames}
+                  />
+                </div>
 
-              <div className="mb-4 flex items-center justify-center">
-                <AppPagination pagination={pagination} />
-              </div>
-            </>
-          )}
+                <div className="mb-4 flex items-center justify-center">
+                  <AppPagination pagination={pagination} />
+                </div>
+              </>
+            )}
+          </div>
         </div>
       </Layout>
     </>

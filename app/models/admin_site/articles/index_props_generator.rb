@@ -12,6 +12,8 @@ module AdminSite
 
       def call
         {
+          headTitle: generate_head_title,
+          pageHeaderTitle: generate_page_header_title,
           articles: generate_articles,
           articleColumnNames: generate_article_column_names,
           pagination: generate_pagination,
@@ -22,6 +24,14 @@ module AdminSite
       private
 
       attr_reader :articles, :pagination
+
+      def generate_head_title
+        '記事一覧 | Admin Site'
+      end
+
+      def generate_page_header_title
+        '記事一覧'
+      end
 
       def generate_articles
         articles.map do |article|

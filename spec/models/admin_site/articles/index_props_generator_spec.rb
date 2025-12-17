@@ -27,9 +27,13 @@ RSpec.describe AdminSite::Articles::IndexPropsGenerator do
       }
     end
 
-    it '記事情報の配列とカラム名を返す' do
+    it '記事一覧で使用するpropsを返す' do
       response = subject
-      expected = articles.map do |article|
+      expected = {
+        headTitle: '記事一覧 | Admin Site',
+        pageHeaderTitle: '記事一覧'
+      }
+      expected[:articles] = articles.map do |article|
         {
           id: article.id,
           title: article.title,
@@ -38,18 +42,14 @@ RSpec.describe AdminSite::Articles::IndexPropsGenerator do
           updatedAt: article.updated_at
         }
       end
-      expect(response[:articles]).to eq(expected)
-
-      expected = {
+      expected[:articleColumnNames] = {
         id: 'ID',
         title: 'タイトル',
         status: 'ステータス',
         createdAt: '作成日時',
         updatedAt: '更新日時'
       }
-      expect(response[:articleColumnNames]).to eq(expected)
-
-      expected = {
+      expected[:pagination] = {
         currentPath: '/admin/articles',
         currentQueryParameters: { search: 'test' },
         pageParameterName: 'page',
@@ -68,8 +68,9 @@ RSpec.describe AdminSite::Articles::IndexPropsGenerator do
         nextPageAriaLabel: '次のページへ',
         prevPageAriaLabel: '前のページへ'
       }
-      expect(response[:pagination]).to eq(expected)
-      expect(response[:noDataLabel]).to eq('データがありません。')
+      expected[:noDataLabel] = 'データがありません。'
+
+      expect(response).to eq(expected)
     end
   end
 end

@@ -1,0 +1,19 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`PageHeader > 正しくレンダリングされること（スナップショット） 1`] = `
+<div>
+  <div
+    class="flex"
+  >
+    <div
+      class="flex-auto"
+    >
+      <h2
+        class="text-4xl"
+      >
+        タイトル
+      </h2>
+    </div>
+  </div>
+</div>
+`;
