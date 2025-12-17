@@ -19,7 +19,8 @@ RSpec.describe 'AdminSite::Articles' do
 
       expect(json['component']).to eq('admin_site/articles/index')
 
-      expected = articles.map do |article|
+      expected = {}
+      expected['articles'] = articles.map do |article|
         {
           'id' => article.id,
           'title' => article.title,
@@ -28,18 +29,14 @@ RSpec.describe 'AdminSite::Articles' do
           'updatedAt' => article.updated_at.as_json
         }
       end
-      expect(json['props']['articles']).to eq(expected)
-
-      expected = {
+      expected['articleColumnNames'] = {
         'id' => 'ID',
         'title' => 'タイトル',
         'status' => 'ステータス',
         'createdAt' => '作成日時',
         'updatedAt' => '更新日時'
       }
-      expect(json['props']['articleColumnNames']).to eq(expected)
-
-      expected = {
+      expected['pagination'] = {
         'currentPath' => '/admin/articles',
         'currentQueryParameters' => {},
         'pageParameterName' => 'page',
@@ -58,9 +55,10 @@ RSpec.describe 'AdminSite::Articles' do
         'nextPageAriaLabel' => '次のページへ',
         'prevPageAriaLabel' => '前のページへ'
       }
-      expect(json['props']['pagination']).to eq(expected)
+      expected['noDataLabel'] = 'データがありません。'
 
-      expect(json['props']['noDataLabel']).to eq('データがありません。')
+      except_keys = %w[flash errors sidebar]
+      expect(json['props'].except(*except_keys)).to eq(expected)
     end
   end
 end
