@@ -1,11 +1,11 @@
 import { render } from "@testing-library/react"
 import { describe, expect, it, vi } from "vitest"
+import type {
+  Article,
+  ArticleFieldNames,
+} from "@/features/admin_site/articles/show/types"
 import Show from "@/pages/admin_site/articles/show"
 import type { SharedProps } from "@/types/admin_site"
-import type {
-  ArticleDetail,
-  ArticleFieldNames,
-} from "@/types/admin_site/articles/show"
 
 vi.mock("@inertiajs/react", async () => {
   const actual: typeof import("@inertiajs/react") =
@@ -28,7 +28,7 @@ const sidebar: SharedProps["sidebar"] = {
 const headTitle = "記事詳細 | Admin Site"
 const pageHeaderTitle = "記事詳細"
 
-const article: ArticleDetail = {
+const article: Article = {
   id: 1,
   title: "テスト記事",
   status: "draft",

@@ -38,6 +38,7 @@ const sidebar: SharedProps["sidebar"] = {
 const headTitle = "記事一覧 | Admin Site"
 const pageHeaderTitle = "記事一覧"
 const noDataLabel = "データがありません。"
+const showLinkLabel = "詳細"
 
 const articleFieldNames: ArticleFieldNames = {
   id: "ID",
@@ -81,6 +82,7 @@ describe("Index (記事一覧ページ)", () => {
           articleFieldNames={articleFieldNames}
           pagination={pagination}
           noDataLabel={noDataLabel}
+          showLinkLabel={showLinkLabel}
         />,
       )
       expect(container).toMatchSnapshot()
@@ -96,6 +98,7 @@ describe("Index (記事一覧ページ)", () => {
           status: "draft",
           createdAt: "2025-12-01T00:00:00Z",
           updatedAt: "2025-12-01T00:00:00Z",
+          showLinkHref: "/admin/articles/1",
         },
         {
           id: 2,
@@ -103,6 +106,7 @@ describe("Index (記事一覧ページ)", () => {
           status: "published",
           createdAt: "2025-12-02T00:00:00Z",
           updatedAt: "2025-12-02T00:00:00Z",
+          showLinkHref: "/admin/articles/2",
         },
       ]
 
@@ -136,6 +140,7 @@ describe("Index (記事一覧ページ)", () => {
           articleFieldNames={articleFieldNames}
           pagination={pagination}
           noDataLabel={noDataLabel}
+          showLinkLabel={showLinkLabel}
         />,
       )
       expect(container).toMatchSnapshot()
