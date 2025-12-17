@@ -205,7 +205,9 @@ exports[`Index (記事一覧ページ) > 記事が存在する場合 > 正しく
             >
               <h2
                 class="text-4xl"
-              />
+              >
+                記事一覧
+              </h2>
             </div>
           </div>
         </div>
@@ -810,7 +812,9 @@ exports[`Index (記事一覧ページ) > 記事が空の場合 > 正しくレン
             >
               <h2
                 class="text-4xl"
-              />
+              >
+                記事一覧
+              </h2>
             </div>
           </div>
         </div>
