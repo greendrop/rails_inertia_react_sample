@@ -18,6 +18,7 @@ type IndexSpecificProps = {
   articleFieldNames: ArticleFieldNames
   pagination: Pagination
   noDataLabel: string
+  showLinkLabel: string
 }
 type IndexProps = SharedProps & IndexSpecificProps
 
@@ -29,6 +30,7 @@ export default function Index({
   articleFieldNames,
   pagination,
   noDataLabel,
+  showLinkLabel,
 }: IndexProps) {
   return (
     <>
@@ -54,6 +56,7 @@ export default function Index({
                   <ArticleTable
                     articles={articles}
                     articleFieldNames={articleFieldNames}
+                    showLinkLabel={showLinkLabel}
                   />
                 </div>
 

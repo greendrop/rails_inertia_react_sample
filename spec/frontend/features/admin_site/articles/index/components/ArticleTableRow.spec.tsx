@@ -11,12 +11,13 @@ describe("ArticleTableRow", () => {
       status: "published",
       createdAt: "2020-01-01T00:00:00.000Z",
       updatedAt: "2020-01-02T00:00:00.000Z",
+      showLinkHref: "/admin_site/articles/1",
     }
 
     const { container } = render(
       <table>
         <tbody>
-          <ArticleTableRow article={article} />
+          <ArticleTableRow article={article} showLinkLabel="詳細" />
         </tbody>
       </table>,
     )

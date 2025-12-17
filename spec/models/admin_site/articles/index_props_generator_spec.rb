@@ -3,6 +3,8 @@
 require 'rails_helper'
 
 RSpec.describe AdminSite::Articles::IndexPropsGenerator do
+  include Rails.application.routes.url_helpers
+
   describe '#call' do
     subject { described_class.new(articles:, pagination:).call }
 
@@ -39,7 +41,8 @@ RSpec.describe AdminSite::Articles::IndexPropsGenerator do
           title: article.title,
           status: article.status,
           createdAt: article.created_at,
-          updatedAt: article.updated_at
+          updatedAt: article.updated_at,
+          showLinkHref: admin_site_article_path(id: article.id)
         }
       end
       expected[:articleFieldNames] = {
@@ -69,6 +72,7 @@ RSpec.describe AdminSite::Articles::IndexPropsGenerator do
         prevPageAriaLabel: '前のページへ'
       }
       expected[:noDataLabel] = 'データがありません。'
+      expected[:showLinkLabel] = '詳細'
 
       expect(response).to eq(expected)
     end

@@ -11,11 +11,13 @@ import ArticleTableRow from "./ArticleTableRow"
 export type ArticleTableProps = {
   articles: Article[]
   articleFieldNames: ArticleFieldNames
+  showLinkLabel: string
 }
 
 export default function ArticleTable({
   articles,
   articleFieldNames,
+  showLinkLabel,
 }: ArticleTableProps) {
   return (
     <Table>
@@ -26,11 +28,16 @@ export default function ArticleTable({
           <TableHead>{articleFieldNames.status}</TableHead>
           <TableHead>{articleFieldNames.createdAt}</TableHead>
           <TableHead>{articleFieldNames.updatedAt}</TableHead>
+          <TableHead></TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
         {articles.map((article) => (
-          <ArticleTableRow key={article.id} article={article} />
+          <ArticleTableRow
+            key={article.id}
+            article={article}
+            showLinkLabel={showLinkLabel}
+          />
         ))}
       </TableBody>
     </Table>

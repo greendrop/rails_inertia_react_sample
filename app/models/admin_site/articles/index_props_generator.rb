@@ -4,6 +4,7 @@ module AdminSite
   module Articles
     class IndexPropsGenerator
       include Callable
+      include Rails.application.routes.url_helpers
 
       def initialize(articles:, pagination:)
         @articles = articles
@@ -17,7 +18,8 @@ module AdminSite
           articles: prop_articles,
           articleFieldNames: prop_article_field_names,
           pagination: prop_pagination,
-          noDataLabel: prop_no_data_label
+          noDataLabel: prop_no_data_label,
+          showLinkLabel: prop_show_link_label
         }
       end
 
@@ -40,7 +42,8 @@ module AdminSite
             title: article.title,
             status: article.status,
             createdAt: article.created_at,
-            updatedAt: article.updated_at
+            updatedAt: article.updated_at,
+            showLinkHref: admin_site_article_path(id: article.id)
           }
         end
       end
@@ -79,6 +82,10 @@ module AdminSite
 
       def prop_no_data_label
         'データがありません。'
+      end
+
+      def prop_show_link_label
+        '詳細'
       end
     end
   end

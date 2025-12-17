@@ -13,6 +13,7 @@ const articles: Article[] = [
     status: "published",
     createdAt: "2020-01-01T00:00:00.000Z",
     updatedAt: "2020-01-02T00:00:00.000Z",
+    showLinkHref: "/admin_site/articles/1",
   },
   {
     id: 2,
@@ -20,6 +21,7 @@ const articles: Article[] = [
     status: "draft",
     createdAt: "2020-02-01T00:00:00.000Z",
     updatedAt: "2020-02-02T00:00:00.000Z",
+    showLinkHref: "/admin_site/articles/2",
   },
 ]
 
@@ -31,12 +33,15 @@ const articleFieldNames: ArticleFieldNames = {
   updatedAt: "更新日",
 }
 
+const showLinkLabel = "表示"
+
 describe("ArticleTable", () => {
   it("正しくレンダリングされる（スナップショット）", () => {
     const { container } = render(
       <ArticleTable
         articles={articles}
         articleFieldNames={articleFieldNames}
+        showLinkLabel={showLinkLabel}
       />,
     )
     expect(container).toMatchSnapshot()

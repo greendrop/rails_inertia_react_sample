@@ -4,6 +4,7 @@ export type Article = {
   status: string
   createdAt: string
   updatedAt: string
+  showLinkHref: string
 }
 
 export type ArticleFieldNames = {
