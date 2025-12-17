@@ -29,7 +29,8 @@ RSpec.describe 'AdminSite::Articles' do
           'title' => article.title,
           'status' => article.status,
           'createdAt' => article.created_at.as_json,
-          'updatedAt' => article.updated_at.as_json
+          'updatedAt' => article.updated_at.as_json,
+          'showLinkHref' => "/admin/articles/#{article.id}"
         }
       end
       expected['articleFieldNames'] = {
