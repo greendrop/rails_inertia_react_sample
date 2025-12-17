@@ -6,7 +6,7 @@ export type Article = {
   updatedAt: string
 }
 
-export type ArticleColumnNames = {
+export type ArticleFieldNames = {
   id: string
   title: string
   status: string

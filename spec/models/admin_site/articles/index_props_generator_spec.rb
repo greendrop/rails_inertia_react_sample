@@ -42,7 +42,7 @@ RSpec.describe AdminSite::Articles::IndexPropsGenerator do
           updatedAt: article.updated_at
         }
       end
-      expected[:articleColumnNames] = {
+      expected[:articleFieldNames] = {
         id: 'ID',
         title: 'タイトル',
         status: 'ステータス',

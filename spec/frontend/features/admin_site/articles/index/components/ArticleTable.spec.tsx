@@ -3,7 +3,7 @@ import { describe, expect, it } from "vitest"
 import ArticleTable from "@/features/admin_site/articles/index/components/ArticleTable"
 import type {
   Article,
-  ArticleColumnNames,
+  ArticleFieldNames,
 } from "@/features/admin_site/articles/index/types"
 
 const articles: Article[] = [
@@ -23,7 +23,7 @@ const articles: Article[] = [
   },
 ]
 
-const articleColumnNames: ArticleColumnNames = {
+const articleFieldNames: ArticleFieldNames = {
   id: "ID",
   title: "タイトル",
   status: "ステータス",
@@ -36,7 +36,7 @@ describe("ArticleTable", () => {
     const { container } = render(
       <ArticleTable
         articles={articles}
-        articleColumnNames={articleColumnNames}
+        articleFieldNames={articleFieldNames}
       />,
     )
     expect(container).toMatchSnapshot()

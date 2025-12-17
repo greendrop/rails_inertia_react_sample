@@ -1,5 +1,5 @@
 import { TableCell, TableRow } from "@/components/admin_site/ui/table"
-import type { Article } from "@/types/admin_site/articles/index"
+import type { Article } from "../types"
 
 export type ArticleTableRowProps = {
   article: Article

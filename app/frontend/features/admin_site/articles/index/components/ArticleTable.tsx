@@ -5,27 +5,27 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/admin_site/ui/table"
-import type { Article, ArticleColumnNames } from "../types"
+import type { Article, ArticleFieldNames } from "../types"
 import ArticleTableRow from "./ArticleTableRow"
 
 export type ArticleTableProps = {
   articles: Article[]
-  articleColumnNames: ArticleColumnNames
+  articleFieldNames: ArticleFieldNames
 }
 
 export default function ArticleTable({
   articles,
-  articleColumnNames,
+  articleFieldNames,
 }: ArticleTableProps) {
   return (
     <Table>
       <TableHeader>
         <TableRow>
-          <TableHead>{articleColumnNames.id}</TableHead>
-          <TableHead>{articleColumnNames.title}</TableHead>
-          <TableHead>{articleColumnNames.status}</TableHead>
-          <TableHead>{articleColumnNames.createdAt}</TableHead>
-          <TableHead>{articleColumnNames.updatedAt}</TableHead>
+          <TableHead>{articleFieldNames.id}</TableHead>
+          <TableHead>{articleFieldNames.title}</TableHead>
+          <TableHead>{articleFieldNames.status}</TableHead>
+          <TableHead>{articleFieldNames.createdAt}</TableHead>
+          <TableHead>{articleFieldNames.updatedAt}</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>

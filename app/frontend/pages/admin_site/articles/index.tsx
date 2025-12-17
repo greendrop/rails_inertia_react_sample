@@ -7,7 +7,7 @@ import PageHeaderTitleText from "@/components/admin_site/shared/PageHeaderTitleT
 import ArticleTable from "@/features/admin_site/articles/index/components/ArticleTable"
 import type {
   Article,
-  ArticleColumnNames,
+  ArticleFieldNames,
 } from "@/features/admin_site/articles/index/types"
 import type { Pagination, SharedProps } from "@/types/admin_site"
 
@@ -15,7 +15,7 @@ type IndexSpecificProps = {
   headTitle: string
   pageHeaderTitle: string
   articles: Article[]
-  articleColumnNames: ArticleColumnNames
+  articleFieldNames: ArticleFieldNames
   pagination: Pagination
   noDataLabel: string
 }
@@ -26,7 +26,7 @@ export default function Index({
   headTitle,
   pageHeaderTitle,
   articles,
-  articleColumnNames,
+  articleFieldNames,
   pagination,
   noDataLabel,
 }: IndexProps) {
@@ -53,7 +53,7 @@ export default function Index({
                 <div className="mb-4">
                   <ArticleTable
                     articles={articles}
-                    articleColumnNames={articleColumnNames}
+                    articleFieldNames={articleFieldNames}
                   />
                 </div>
 

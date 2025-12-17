@@ -1,8 +1,11 @@
 import { render } from "@testing-library/react"
 import { describe, expect, it, vi } from "vitest"
+import type {
+  Article,
+  ArticleFieldNames,
+} from "@/features/admin_site/articles/index/types"
 import Index from "@/pages/admin_site/articles/index"
 import type { Pagination, SharedProps } from "@/types/admin_site"
-import type { Article, ArticleColumnNames } from "@/types/admin_site/articles"
 
 vi.mock("@inertiajs/react", async () => {
   const actual: typeof import("@inertiajs/react") =
@@ -36,7 +39,7 @@ const headTitle = "記事一覧 | Admin Site"
 const pageHeaderTitle = "記事一覧"
 const noDataLabel = "データがありません。"
 
-const articleColumnNames: ArticleColumnNames = {
+const articleFieldNames: ArticleFieldNames = {
   id: "ID",
   title: "タイトル",
   status: "ステータス",
@@ -75,7 +78,7 @@ describe("Index (記事一覧ページ)", () => {
           headTitle={headTitle}
           pageHeaderTitle={pageHeaderTitle}
           articles={articles}
-          articleColumnNames={articleColumnNames}
+          articleFieldNames={articleFieldNames}
           pagination={pagination}
           noDataLabel={noDataLabel}
         />,
@@ -130,7 +133,7 @@ describe("Index (記事一覧ページ)", () => {
           headTitle={headTitle}
           pageHeaderTitle={pageHeaderTitle}
           articles={articles}
-          articleColumnNames={articleColumnNames}
+          articleFieldNames={articleFieldNames}
           pagination={pagination}
           noDataLabel={noDataLabel}
         />,

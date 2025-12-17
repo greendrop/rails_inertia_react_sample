@@ -32,7 +32,7 @@ RSpec.describe 'AdminSite::Articles' do
           'updatedAt' => article.updated_at.as_json
         }
       end
-      expected['articleColumnNames'] = {
+      expected['articleFieldNames'] = {
         'id' => 'ID',
         'title' => 'タイトル',
         'status' => 'ステータス',
