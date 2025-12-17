@@ -59,6 +59,7 @@ RSpec.describe 'AdminSite::Articles' do
         'prevPageAriaLabel' => '前のページへ'
       }
       expected['noDataLabel'] = 'データがありません。'
+      expected['showLinkLabel'] = '詳細'
 
       except_keys = %w[flash errors sidebar]
       expect(json['props'].except(*except_keys)).to eq(expected)
