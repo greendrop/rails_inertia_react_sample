@@ -4,6 +4,7 @@ module AdminSite
   module Articles
     class ShowPropsGenerator
       include Callable
+      include ActionView::Helpers::SanitizeHelper
 
       def initialize(article:)
         @article = article
@@ -11,10 +12,10 @@ module AdminSite
 
       def call
         {
-          headTitle: generate_head_title,
-          pageHeaderTitle: generate_page_header_title,
-          article: generate_article,
-          articleFieldNames: generate_article_field_names
+          headTitle: prop_head_title,
+          pageHeaderTitle: prop_page_header_title,
+          article: prop_article,
+          articleFieldNames: prop_article_field_names
         }
       end
 
@@ -22,26 +23,26 @@ module AdminSite
 
       attr_reader :article
 
-      def generate_head_title
+      def prop_head_title
         '記事詳細 | Admin Site'
       end
 
-      def generate_page_header_title
+      def prop_page_header_title
         '記事詳細'
       end
 
-      def generate_article
+      def prop_article
         {
           id: article.id,
           title: article.title,
           status: article.status,
-          body: article.body,
+          body: sanitize(article.body),
           createdAt: article.created_at,
           updatedAt: article.updated_at
         }
       end
 
-      def generate_article_field_names
+      def prop_article_field_names
         {
           id: 'ID',
           title: 'タイトル',

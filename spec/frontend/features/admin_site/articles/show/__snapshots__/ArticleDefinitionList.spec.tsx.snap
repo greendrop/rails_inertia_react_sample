@@ -1,0 +1,92 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ArticleDefinitionList > 正しくレンダリングされること（スナップショット） 1`] = `
+<div>
+  <dl>
+    <dl
+      class="md:flex md:gap-4 mb-2"
+    >
+      <dt
+        class="font-bold w-1/4"
+      >
+        ID
+      </dt>
+      <dd
+        class="w-3/4"
+      >
+        1
+      </dd>
+    </dl>
+    <dl
+      class="md:flex md:gap-4 mb-2"
+    >
+      <dt
+        class="font-bold w-1/4"
+      >
+        タイトル
+      </dt>
+      <dd
+        class="w-3/4"
+      >
+        テストタイトル
+      </dd>
+    </dl>
+    <dl
+      class="md:flex md:gap-4 mb-2"
+    >
+      <dt
+        class="font-bold w-1/4"
+      >
+        ステータス
+      </dt>
+      <dd
+        class="w-3/4"
+      >
+        published
+      </dd>
+    </dl>
+    <dl
+      class="md:flex md:gap-4 mb-2"
+    >
+      <dt
+        class="font-bold w-1/4"
+      >
+        本文
+      </dt>
+      <dd
+        class="w-3/4"
+      >
+        本文テスト
+      </dd>
+    </dl>
+    <dl
+      class="md:flex md:gap-4 mb-2"
+    >
+      <dt
+        class="font-bold w-1/4"
+      >
+        作成日時
+      </dt>
+      <dd
+        class="w-3/4"
+      >
+        1/1/2023, 12:00:00 PM
+      </dd>
+    </dl>
+    <dl
+      class="md:flex md:gap-4 mb-2"
+    >
+      <dt
+        class="font-bold w-1/4"
+      >
+        更新日時
+      </dt>
+      <dd
+        class="w-3/4"
+      >
+        1/2/2023, 12:00:00 PM
+      </dd>
+    </dl>
+  </dl>
+</div>
+`;
