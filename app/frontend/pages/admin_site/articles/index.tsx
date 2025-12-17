@@ -9,6 +9,8 @@ import type { Pagination, SharedProps } from "@/types/admin_site"
 import type { Article, ArticleColumnNames } from "@/types/admin_site/articles"
 
 type IndexSpecificProps = {
+  headTitle: string
+  pageHeaderTitle: string
   articles: Article[]
   articleColumnNames: ArticleColumnNames
   pagination: Pagination
@@ -18,6 +20,8 @@ type IndexProps = SharedProps & IndexSpecificProps
 
 export default function Index({
   sidebar,
+  headTitle,
+  pageHeaderTitle,
   articles,
   articleColumnNames,
   pagination,
@@ -25,12 +29,12 @@ export default function Index({
 }: IndexProps) {
   return (
     <>
-      <Head title="記事一覧" />
+      <Head title={headTitle} />
       <Layout sidebar={sidebar}>
         <div className="mb-4">
           <PageHeader>
             <PageHeaderTitle>
-              <PageHeaderTitleText>記事一覧</PageHeaderTitleText>
+              <PageHeaderTitleText>{pageHeaderTitle}</PageHeaderTitleText>
             </PageHeaderTitle>
           </PageHeader>
         </div>

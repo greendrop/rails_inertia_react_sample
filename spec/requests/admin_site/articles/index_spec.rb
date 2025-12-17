@@ -19,7 +19,10 @@ RSpec.describe 'AdminSite::Articles' do
 
       expect(json['component']).to eq('admin_site/articles/index')
 
-      expected = {}
+      expected = {
+        'headTitle' => '記事一覧 | Admin Site',
+        'pageHeaderTitle' => '記事一覧'
+      }
       expected['articles'] = articles.map do |article|
         {
           'id' => article.id,
