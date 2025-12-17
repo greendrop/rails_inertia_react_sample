@@ -1,0 +1,8 @@
+{
+  "feature": "admin_site_articles_show",
+  "title": "管理画面で記事詳細を表示する",
+  "language": "ja",
+  "createdAt": "2025-12-17T12:00:25.549Z",
+  "phase": "specification",
+  "status": "initialized"
+}
