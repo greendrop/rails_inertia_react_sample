@@ -4,9 +4,12 @@ import Layout from "@/components/admin_site/shared/Layout"
 import PageHeader from "@/components/admin_site/shared/PageHeader"
 import PageHeaderTitle from "@/components/admin_site/shared/PageHeaderTitle"
 import PageHeaderTitleText from "@/components/admin_site/shared/PageHeaderTitleText"
-import ArticleTable from "@/features/admin_site/articles/index/ArticleTable"
+import ArticleTable from "@/features/admin_site/articles/index/components/ArticleTable"
+import type {
+  Article,
+  ArticleColumnNames,
+} from "@/features/admin_site/articles/index/types"
 import type { Pagination, SharedProps } from "@/types/admin_site"
-import type { Article, ArticleColumnNames } from "@/types/admin_site/articles"
 
 type IndexSpecificProps = {
   headTitle: string

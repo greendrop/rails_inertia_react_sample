@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react"
 import { describe, expect, it } from "vitest"
-import ArticleTableRow from "@/features/admin_site/articles/index/ArticleTableRow"
-import type { Article } from "@/types/admin_site/articles/index"
+import ArticleTableRow from "@/features/admin_site/articles/index/components/ArticleTableRow"
+import type { Article } from "@/features/admin_site/articles/index/types"
 
 describe("ArticleTableRow", () => {
   it("正しくレンダリングされる（スナップショット）", () => {

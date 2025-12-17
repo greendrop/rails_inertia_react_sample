@@ -5,10 +5,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/admin_site/ui/table"
-import type {
-  Article,
-  ArticleColumnNames,
-} from "@/types/admin_site/articles/index"
+import type { Article, ArticleColumnNames } from "../types"
 import ArticleTableRow from "./ArticleTableRow"
 
 export type ArticleTableProps = {

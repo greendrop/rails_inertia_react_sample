@@ -1,10 +1,10 @@
 import { render } from "@testing-library/react"
 import { describe, expect, it } from "vitest"
-import ArticleTable from "@/features/admin_site/articles/index/ArticleTable"
+import ArticleTable from "@/features/admin_site/articles/index/components/ArticleTable"
 import type {
   Article,
   ArticleColumnNames,
-} from "@/types/admin_site/articles/index"
+} from "@/features/admin_site/articles/index/types"
 
 const articles: Article[] = [
   {
