@@ -11,5 +11,11 @@ module AdminSite
       )
       render inertia: props
     end
+
+    def show
+      article = Article.find(params[:id])
+      props = AdminSite::Articles::ShowPropsGenerator.call(article:)
+      render inertia: props
+    end
   end
 end

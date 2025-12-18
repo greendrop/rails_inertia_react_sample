@@ -266,6 +266,16 @@ exports[`Index (記事一覧ページ) > 記事が存在する場合 > 正しく
                       >
                         更新日時
                       </th>
+                      <th
+                        class="text-foreground h-10 px-2 text-left align-middle font-medium whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]"
+                        data-slot="table-head"
+                      >
+                        <span
+                          class="sr-only"
+                        >
+                          操作
+                        </span>
+                      </th>
                     </tr>
                   </thead>
                   <tbody
@@ -306,6 +316,18 @@ exports[`Index (記事一覧ページ) > 記事が存在する場合 > 正しく
                       >
                         12/1/2025, 12:00:00 AM
                       </td>
+                      <td
+                        class="p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]"
+                        data-slot="table-cell"
+                      >
+                        <a
+                          class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 h-9 px-4 py-2 has-[>svg]:px-3"
+                          data-slot="button"
+                          href="/admin/articles/1"
+                        >
+                          詳細
+                        </a>
+                      </td>
                     </tr>
                     <tr
                       class="hover:bg-muted/50 data-[state=selected]:bg-muted border-b transition-colors"
@@ -340,6 +362,18 @@ exports[`Index (記事一覧ページ) > 記事が存在する場合 > 正しく
                         data-slot="table-cell"
                       >
                         12/2/2025, 12:00:00 AM
+                      </td>
+                      <td
+                        class="p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]"
+                        data-slot="table-cell"
+                      >
+                        <a
+                          class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 h-9 px-4 py-2 has-[>svg]:px-3"
+                          data-slot="button"
+                          href="/admin/articles/2"
+                        >
+                          詳細
+                        </a>
                       </td>
                     </tr>
                   </tbody>

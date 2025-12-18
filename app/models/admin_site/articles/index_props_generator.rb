@@ -4,6 +4,7 @@ module AdminSite
   module Articles
     class IndexPropsGenerator
       include Callable
+      include Rails.application.routes.url_helpers
 
       def initialize(articles:, pagination:)
         @articles = articles
@@ -12,12 +13,13 @@ module AdminSite
 
       def call
         {
-          headTitle: generate_head_title,
-          pageHeaderTitle: generate_page_header_title,
-          articles: generate_articles,
-          articleColumnNames: generate_article_column_names,
-          pagination: generate_pagination,
-          noDataLabel: generate_no_data_label
+          headTitle: prop_head_title,
+          pageHeaderTitle: prop_page_header_title,
+          articles: prop_articles,
+          articleFieldNames: prop_article_field_names,
+          pagination: prop_pagination,
+          noDataLabel: prop_no_data_label,
+          showLinkLabel: prop_show_link_label
         }
       end
 
@@ -25,37 +27,39 @@ module AdminSite
 
       attr_reader :articles, :pagination
 
-      def generate_head_title
+      def prop_head_title
         '記事一覧 | Admin Site'
       end
 
-      def generate_page_header_title
+      def prop_page_header_title
         '記事一覧'
       end
 
-      def generate_articles
+      def prop_articles
         articles.map do |article|
           {
             id: article.id,
             title: article.title,
             status: article.status,
             createdAt: article.created_at,
-            updatedAt: article.updated_at
+            updatedAt: article.updated_at,
+            showLinkHref: admin_site_article_path(id: article.id)
           }
         end
       end
 
-      def generate_article_column_names
+      def prop_article_field_names
         {
           id: 'ID',
           title: 'タイトル',
           status: 'ステータス',
           createdAt: '作成日時',
-          updatedAt: '更新日時'
+          updatedAt: '更新日時',
+          operations: '操作'
         }
       end
 
-      def generate_pagination
+      def prop_pagination
         {
           currentPath: pagination[:current_path],
           currentQueryParameters: pagination[:current_query_parameters],
@@ -77,8 +81,12 @@ module AdminSite
         }
       end
 
-      def generate_no_data_label
+      def prop_no_data_label
         'データがありません。'
+      end
+
+      def prop_show_link_label
+        '詳細'
       end
     end
   end

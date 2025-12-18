@@ -2,14 +2,16 @@ export type Article = {
   id: number
   title: string
   status: string
+  body: string
   createdAt: string
   updatedAt: string
 }
 
-export type ArticleColumnNames = {
+export type ArticleFieldNames = {
   id: string
   title: string
   status: string
+  body: string
   createdAt: string
   updatedAt: string
 }

@@ -29,15 +29,17 @@ RSpec.describe 'AdminSite::Articles' do
           'title' => article.title,
           'status' => article.status,
           'createdAt' => article.created_at.as_json,
-          'updatedAt' => article.updated_at.as_json
+          'updatedAt' => article.updated_at.as_json,
+          'showLinkHref' => "/admin/articles/#{article.id}"
         }
       end
-      expected['articleColumnNames'] = {
+      expected['articleFieldNames'] = {
         'id' => 'ID',
         'title' => 'タイトル',
         'status' => 'ステータス',
         'createdAt' => '作成日時',
-        'updatedAt' => '更新日時'
+        'updatedAt' => '更新日時',
+        'operations' => '操作'
       }
       expected['pagination'] = {
         'currentPath' => '/admin/articles',
@@ -59,6 +61,7 @@ RSpec.describe 'AdminSite::Articles' do
         'prevPageAriaLabel' => '前のページへ'
       }
       expected['noDataLabel'] = 'データがありません。'
+      expected['showLinkLabel'] = '詳細'
 
       except_keys = %w[flash errors sidebar]
       expect(json['props'].except(*except_keys)).to eq(expected)

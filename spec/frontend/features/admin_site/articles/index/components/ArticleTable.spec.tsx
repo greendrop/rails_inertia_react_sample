@@ -1,10 +1,10 @@
 import { render } from "@testing-library/react"
 import { describe, expect, it } from "vitest"
-import ArticleTable from "@/features/admin_site/articles/index/ArticleTable"
+import ArticleTable from "@/features/admin_site/articles/index/components/ArticleTable"
 import type {
   Article,
-  ArticleColumnNames,
-} from "@/types/admin_site/articles/index"
+  ArticleFieldNames,
+} from "@/features/admin_site/articles/index/types"
 
 const articles: Article[] = [
   {
@@ -13,6 +13,7 @@ const articles: Article[] = [
     status: "published",
     createdAt: "2020-01-01T00:00:00.000Z",
     updatedAt: "2020-01-02T00:00:00.000Z",
+    showLinkHref: "/admin_site/articles/1",
   },
   {
     id: 2,
@@ -20,23 +21,28 @@ const articles: Article[] = [
     status: "draft",
     createdAt: "2020-02-01T00:00:00.000Z",
     updatedAt: "2020-02-02T00:00:00.000Z",
+    showLinkHref: "/admin_site/articles/2",
   },
 ]
 
-const articleColumnNames: ArticleColumnNames = {
+const articleFieldNames: ArticleFieldNames = {
   id: "ID",
   title: "タイトル",
   status: "ステータス",
-  createdAt: "作成日",
-  updatedAt: "更新日",
+  createdAt: "作成日時",
+  updatedAt: "更新日時",
+  operations: "操作",
 }
+
+const showLinkLabel = "表示"
 
 describe("ArticleTable", () => {
   it("正しくレンダリングされる（スナップショット）", () => {
     const { container } = render(
       <ArticleTable
         articles={articles}
-        articleColumnNames={articleColumnNames}
+        articleFieldNames={articleFieldNames}
+        showLinkLabel={showLinkLabel}
       />,
     )
     expect(container).toMatchSnapshot()
