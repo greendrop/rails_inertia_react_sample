@@ -10,7 +10,7 @@ export default function ArticleDefinitionList({
   articleFieldNames,
 }: ArticleDefinitionListProps) {
   return (
-    <dl>
+    <>
       <dl className="md:flex md:gap-4 mb-2">
         <dt className="font-bold w-1/4">{articleFieldNames.id}</dt>
         <dd className="w-3/4">{article.id}</dd>
@@ -39,6 +39,6 @@ export default function ArticleDefinitionList({
           {new Date(article.updatedAt).toLocaleString()}
         </dd>
       </dl>
-    </dl>
+    </>
   )
 }

@@ -164,92 +164,90 @@ exports[`Show (記事詳細ページ) > 正しくレンダリングされる（�
           <div
             class="flex-auto"
           >
-            <dl>
-              <dl
-                class="md:flex md:gap-4 mb-2"
+            <dl
+              class="md:flex md:gap-4 mb-2"
+            >
+              <dt
+                class="font-bold w-1/4"
               >
-                <dt
-                  class="font-bold w-1/4"
-                >
-                  ID
-                </dt>
-                <dd
-                  class="w-3/4"
-                >
-                  1
-                </dd>
-              </dl>
-              <dl
-                class="md:flex md:gap-4 mb-2"
+                ID
+              </dt>
+              <dd
+                class="w-3/4"
               >
-                <dt
-                  class="font-bold w-1/4"
-                >
-                  タイトル
-                </dt>
-                <dd
-                  class="w-3/4"
-                >
-                  テスト記事
-                </dd>
-              </dl>
-              <dl
-                class="md:flex md:gap-4 mb-2"
+                1
+              </dd>
+            </dl>
+            <dl
+              class="md:flex md:gap-4 mb-2"
+            >
+              <dt
+                class="font-bold w-1/4"
               >
-                <dt
-                  class="font-bold w-1/4"
-                >
-                  ステータス
-                </dt>
-                <dd
-                  class="w-3/4"
-                >
-                  draft
-                </dd>
-              </dl>
-              <dl
-                class="md:flex md:gap-4 mb-2"
+                タイトル
+              </dt>
+              <dd
+                class="w-3/4"
               >
-                <dt
-                  class="font-bold w-1/4"
-                >
-                  本文
-                </dt>
-                <dd
-                  class="w-3/4"
-                >
-                  本文
+                テスト記事
+              </dd>
+            </dl>
+            <dl
+              class="md:flex md:gap-4 mb-2"
+            >
+              <dt
+                class="font-bold w-1/4"
+              >
+                ステータス
+              </dt>
+              <dd
+                class="w-3/4"
+              >
+                draft
+              </dd>
+            </dl>
+            <dl
+              class="md:flex md:gap-4 mb-2"
+            >
+              <dt
+                class="font-bold w-1/4"
+              >
+                本文
+              </dt>
+              <dd
+                class="w-3/4"
+              >
+                本文
 改行
-                </dd>
-              </dl>
-              <dl
-                class="md:flex md:gap-4 mb-2"
+              </dd>
+            </dl>
+            <dl
+              class="md:flex md:gap-4 mb-2"
+            >
+              <dt
+                class="font-bold w-1/4"
               >
-                <dt
-                  class="font-bold w-1/4"
-                >
-                  作成日時
-                </dt>
-                <dd
-                  class="w-3/4"
-                >
-                  12/1/2025, 12:00:00 AM
-                </dd>
-              </dl>
-              <dl
-                class="md:flex md:gap-4 mb-2"
+                作成日時
+              </dt>
+              <dd
+                class="w-3/4"
               >
-                <dt
-                  class="font-bold w-1/4"
-                >
-                  更新日時
-                </dt>
-                <dd
-                  class="w-3/4"
-                >
-                  12/1/2025, 12:00:00 AM
-                </dd>
-              </dl>
+                12/1/2025, 12:00:00 AM
+              </dd>
+            </dl>
+            <dl
+              class="md:flex md:gap-4 mb-2"
+            >
+              <dt
+                class="font-bold w-1/4"
+              >
+                更新日時
+              </dt>
+              <dd
+                class="w-3/4"
+              >
+                12/1/2025, 12:00:00 AM
+              </dd>
             </dl>
           </div>
         </div>
