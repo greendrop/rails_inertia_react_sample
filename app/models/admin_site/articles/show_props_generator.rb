@@ -36,7 +36,7 @@ module AdminSite
           id: article.id,
           title: article.title,
           status: article.status,
-          body: sanitize(article.body),
+          body: article.body,
           createdAt: article.created_at,
           updatedAt: article.updated_at
         }
