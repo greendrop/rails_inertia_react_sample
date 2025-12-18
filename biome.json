@@ -6,12 +6,7 @@
     "useIgnoreFile": true
   },
   "files": {
-    "includes": [
-      "*",
-      "app/frontend/**/*",
-      "!app/frontend/components/**/ui/**/*",
-      "spec/frontend/**/*"
-    ],
+    "includes": ["*", "app/frontend/**/*", "spec/frontend/**/*"],
     "ignoreUnknown": false
   },
   "formatter": {

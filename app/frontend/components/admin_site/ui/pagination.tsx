@@ -1,18 +1,16 @@
-import * as React from "react"
+import { Link } from "@inertiajs/react"
 import {
   ChevronLeftIcon,
   ChevronRightIcon,
   MoreHorizontalIcon,
 } from "lucide-react"
-import { Link } from "@inertiajs/react"
-
+import type * as React from "react"
+import { type Button, buttonVariants } from "~/components/admin_site/ui/button"
 import { cn } from "~/lib/utils"
-import { Button, buttonVariants } from "~/components/admin_site/ui/button"
 
 function Pagination({ className, ...props }: React.ComponentProps<"nav">) {
   return (
     <nav
-      role="navigation"
       aria-label="pagination"
       data-slot="pagination"
       className={cn("mx-auto flex w-full justify-center", className)}
@@ -59,7 +57,7 @@ function PaginationLink({
           variant: isActive ? "outline" : "ghost",
           size,
         }),
-        className
+        className,
       )}
       {...props}
     />
@@ -128,16 +126,14 @@ function PaginationPreviousDisabled({
     <span
       aria-hidden
       data-slot="pagination-disabled"
-      className={
-        cn(
-          buttonVariants({
-            variant: null,
-            size: "default",
-          }),
-          "gap-1 px-2.5 sm:pl-2.5",
-          className
-        )
-      }
+      className={cn(
+        buttonVariants({
+          variant: null,
+          size: "default",
+        }),
+        "gap-1 px-2.5 sm:pl-2.5",
+        className,
+      )}
       {...props}
     >
       <ChevronLeftIcon />
@@ -155,16 +151,14 @@ function PaginationNextDisabled({
     <span
       aria-hidden
       data-slot="pagination-disabled"
-      className={
-        cn(
-          buttonVariants({
-            variant: null,
-            size: "default",
-          }),
-          "gap-1 px-2.5 sm:pr-2.5",
-          className
-        )
-      }
+      className={cn(
+        buttonVariants({
+          variant: null,
+          size: "default",
+        }),
+        "gap-1 px-2.5 sm:pr-2.5",
+        className,
+      )}
       {...props}
     >
       <span className="hidden sm:block">{children || "Next"}</span>
@@ -176,7 +170,7 @@ function PaginationNextDisabled({
 type PaginationInertiaLinkProps = {
   isActive?: boolean
 } & Pick<React.ComponentProps<typeof Button>, "size"> &
- Omit<React.ComponentProps<typeof Link>, "size">
+  Omit<React.ComponentProps<typeof Link>, "size">
 
 function PaginationInertiaLink({
   className,
@@ -194,7 +188,7 @@ function PaginationInertiaLink({
           variant: isActive ? "outline" : "ghost",
           size,
         }),
-        className
+        className,
       )}
       {...props}
     />

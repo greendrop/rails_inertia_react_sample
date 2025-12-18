@@ -6,7 +6,6 @@ exports[`AppPagination > 1ページのみの場合 > 正しくレンダリング
     aria-label="pagination"
     class="mx-auto flex w-full justify-center"
     data-slot="pagination"
-    role="navigation"
   >
     <ul
       class="flex flex-row items-center gap-1"
@@ -100,7 +99,6 @@ exports[`AppPagination > 5ページあり、現在のページが3の場合 > �
     aria-label="pagination"
     class="mx-auto flex w-full justify-center"
     data-slot="pagination"
-    role="navigation"
   >
     <ul
       class="flex flex-row items-center gap-1"
@@ -244,7 +242,6 @@ exports[`AppPagination > 7ページあり、現在のページが4の場合 > �
     aria-label="pagination"
     class="mx-auto flex w-full justify-center"
     data-slot="pagination"
-    role="navigation"
   >
     <ul
       class="flex flex-row items-center gap-1"
@@ -410,7 +407,6 @@ exports[`AppPagination > 9ページあり、現在のページが5の場合 > �
     aria-label="pagination"
     class="mx-auto flex w-full justify-center"
     data-slot="pagination"
-    role="navigation"
   >
     <ul
       class="flex flex-row items-center gap-1"
