@@ -4,13 +4,15 @@ import {
   Pagination,
   PaginationContent,
   PaginationEllipsis,
+  PaginationItem,
+} from "../ui/pagination"
+import {
   PaginationInertiaLink,
   PaginationInertiaNext,
   PaginationInertiaPrevious,
-  PaginationItem,
   PaginationNextDisabled,
   PaginationPreviousDisabled,
-} from "../ui/pagination"
+} from "../ui-ext/pagination"
 
 export type AppPaginationProps = {
   pagination: PaginationType
