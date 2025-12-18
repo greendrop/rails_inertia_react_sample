@@ -269,7 +269,13 @@ exports[`Index (記事一覧ページ) > 記事が存在する場合 > 正しく
                       <th
                         class="text-foreground h-10 px-2 text-left align-middle font-medium whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]"
                         data-slot="table-head"
-                      />
+                      >
+                        <span
+                          class="sr-only"
+                        >
+                          操作
+                        </span>
+                      </th>
                     </tr>
                   </thead>
                   <tbody

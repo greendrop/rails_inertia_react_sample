@@ -29,8 +29,9 @@ const articleFieldNames: ArticleFieldNames = {
   id: "ID",
   title: "タイトル",
   status: "ステータス",
-  createdAt: "作成日",
-  updatedAt: "更新日",
+  createdAt: "作成日時",
+  updatedAt: "更新日時",
+  operations: "操作",
 }
 
 const showLinkLabel = "表示"

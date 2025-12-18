@@ -40,18 +40,24 @@ exports[`ArticleTable > 正しくレンダリングされる（スナップシ�
             class="text-foreground h-10 px-2 text-left align-middle font-medium whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]"
             data-slot="table-head"
           >
-            作成日
+            作成日時
           </th>
           <th
             class="text-foreground h-10 px-2 text-left align-middle font-medium whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]"
             data-slot="table-head"
           >
-            更新日
+            更新日時
           </th>
           <th
             class="text-foreground h-10 px-2 text-left align-middle font-medium whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]"
             data-slot="table-head"
-          />
+          >
+            <span
+              class="sr-only"
+            >
+              操作
+            </span>
+          </th>
         </tr>
       </thead>
       <tbody

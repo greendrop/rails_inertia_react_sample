@@ -50,7 +50,8 @@ RSpec.describe AdminSite::Articles::IndexPropsGenerator do
         title: 'タイトル',
         status: 'ステータス',
         createdAt: '作成日時',
-        updatedAt: '更新日時'
+        updatedAt: '更新日時',
+        operations: '操作'
       }
       expected[:pagination] = {
         currentPath: '/admin/articles',

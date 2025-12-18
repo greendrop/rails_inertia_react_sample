@@ -28,7 +28,9 @@ export default function ArticleTable({
           <TableHead>{articleFieldNames.status}</TableHead>
           <TableHead>{articleFieldNames.createdAt}</TableHead>
           <TableHead>{articleFieldNames.updatedAt}</TableHead>
-          <TableHead></TableHead>
+          <TableHead>
+            <span className="sr-only">{articleFieldNames.operations}</span>
+          </TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>

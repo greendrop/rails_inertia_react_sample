@@ -46,6 +46,7 @@ const articleFieldNames: ArticleFieldNames = {
   status: "ステータス",
   createdAt: "作成日時",
   updatedAt: "更新日時",
+  operations: "操作",
 }
 
 describe("Index (記事一覧ページ)", () => {

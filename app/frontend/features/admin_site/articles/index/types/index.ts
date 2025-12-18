@@ -13,4 +13,5 @@ export type ArticleFieldNames = {
   status: string
   createdAt: string
   updatedAt: string
+  operations: string
 }
