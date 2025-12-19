@@ -21,7 +21,13 @@ RSpec.describe 'AdminSite::Articles' do
 
       expected = {
         'headTitle' => '記事一覧 | Admin Site',
-        'pageHeaderTitle' => '記事一覧'
+        'pageHeaderTitle' => '記事一覧',
+        'breadcrumb' => {
+          'items' => [
+            { 'key' => 'homes#show', 'label' => 'ホーム', 'href' => '/admin', 'isActive' => false },
+            { 'key' => 'articles#index', 'label' => '記事一覧', 'href' => '/admin/articles', 'isActive' => true }
+          ]
+        }
       }
       expected['articles'] = articles.map do |article|
         {

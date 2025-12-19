@@ -23,13 +23,14 @@ export default function Show({
   sidebar,
   headTitle,
   pageHeaderTitle,
+  breadcrumb,
   article,
   articleFieldNames,
 }: ShowProps) {
   return (
     <>
       <Head title={headTitle} />
-      <Layout sidebar={sidebar}>
+      <Layout sidebar={sidebar} breadcrumb={breadcrumb}>
         <div className="mb-4">
           <PageHeader>
             <PageHeaderTitle>

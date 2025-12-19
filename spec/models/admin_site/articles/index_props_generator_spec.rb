@@ -35,6 +35,12 @@ RSpec.describe AdminSite::Articles::IndexPropsGenerator do
         headTitle: '記事一覧 | Admin Site',
         pageHeaderTitle: '記事一覧'
       }
+      expected[:breadcrumb] = {
+        items: [
+          { key: 'homes#show', label: 'ホーム', href: '/admin', isActive: false },
+          { key: 'articles#index', label: '記事一覧', href: '/admin/articles', isActive: true }
+        ]
+      }
       expected[:articles] = articles.map do |article|
         {
           id: article.id,

@@ -15,6 +15,13 @@ RSpec.describe AdminSite::Articles::ShowPropsGenerator do
       expected = {
         headTitle: '記事詳細 | Admin Site',
         pageHeaderTitle: '記事詳細',
+        breadcrumb: {
+          items: [
+            { key: 'homes#show', label: 'ホーム', href: '/admin', isActive: false },
+            { key: 'articles#index', label: '記事一覧', href: '/admin/articles', isActive: false },
+            { key: 'articles#show', label: '記事詳細', href: "/admin/articles/#{article.id}", isActive: true }
+          ]
+        },
         article: {
           id: article.id,
           title: article.title,

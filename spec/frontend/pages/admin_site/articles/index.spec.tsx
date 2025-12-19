@@ -37,6 +37,17 @@ const sidebar: SharedProps["sidebar"] = {
 }
 const headTitle = "記事一覧 | Admin Site"
 const pageHeaderTitle = "記事一覧"
+const breadcrumb = {
+  items: [
+    { key: "homes#show", label: "ホーム", href: "/admin", isActive: false },
+    {
+      key: "articles#index",
+      label: "記事一覧",
+      href: "/admin/articles",
+      isActive: true,
+    },
+  ],
+}
 const noDataLabel = "データがありません。"
 const showLinkLabel = "詳細"
 
@@ -79,6 +90,7 @@ describe("Index (記事一覧ページ)", () => {
           sidebar={sidebar}
           headTitle={headTitle}
           pageHeaderTitle={pageHeaderTitle}
+          breadcrumb={breadcrumb}
           articles={articles}
           articleFieldNames={articleFieldNames}
           pagination={pagination}
@@ -137,6 +149,7 @@ describe("Index (記事一覧ページ)", () => {
           sidebar={sidebar}
           headTitle={headTitle}
           pageHeaderTitle={pageHeaderTitle}
+          breadcrumb={breadcrumb}
           articles={articles}
           articleFieldNames={articleFieldNames}
           pagination={pagination}
