@@ -1,3 +1,4 @@
+import { Link } from "@inertiajs/react"
 import { Fragment } from "react/jsx-runtime"
 import {
   Breadcrumb,
@@ -29,7 +30,9 @@ export default function AppBreadcrumb({ items }: AppBreadcrumbProps) {
               {item.isActive ? (
                 <BreadcrumbPage>{item.label}</BreadcrumbPage>
               ) : (
-                <BreadcrumbLink href={item.href}>{item.label}</BreadcrumbLink>
+                <BreadcrumbLink asChild>
+                  <Link href={item.href}>{item.label}</Link>
+                </BreadcrumbLink>
               )}
             </BreadcrumbItem>
           </Fragment>

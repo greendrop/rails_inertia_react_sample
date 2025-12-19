@@ -8,7 +8,7 @@ import type {
   Article,
   ArticleFieldNames,
 } from "@/features/admin_site/articles/show/types"
-import type { SharedProps } from "@/types/admin_site"
+import type { PageWithSharedProps, SharedProps } from "@/types/admin_site"
 
 type ShowSpecificProps = {
   headTitle: string
@@ -20,34 +20,36 @@ type ShowSpecificProps = {
 export type ShowProps = SharedProps & ShowSpecificProps
 
 export default function Show({
-  sidebar,
   headTitle,
   pageHeaderTitle,
-  breadcrumb,
   article,
   articleFieldNames,
 }: ShowProps) {
   return (
     <>
       <Head title={headTitle} />
-      <Layout sidebar={sidebar} breadcrumb={breadcrumb}>
-        <div className="mb-4">
-          <PageHeader>
-            <PageHeaderTitle>
-              <PageHeaderTitleText>{pageHeaderTitle}</PageHeaderTitleText>
-            </PageHeaderTitle>
-          </PageHeader>
-        </div>
+      <div className="mb-4">
+        <PageHeader>
+          <PageHeaderTitle>
+            <PageHeaderTitleText>{pageHeaderTitle}</PageHeaderTitleText>
+          </PageHeaderTitle>
+        </PageHeader>
+      </div>
 
-        <div className="flex">
-          <div className="flex-auto">
-            <ArticleDefinitionList
-              article={article}
-              articleFieldNames={articleFieldNames}
-            />
-          </div>
+      <div className="flex">
+        <div className="flex-auto">
+          <ArticleDefinitionList
+            article={article}
+            articleFieldNames={articleFieldNames}
+          />
         </div>
-      </Layout>
+      </div>
     </>
   )
 }
+
+Show.layout = (page: PageWithSharedProps) => (
+  <Layout sidebar={page.props.sidebar} breadcrumb={page.props.breadcrumb}>
+    {page}
+  </Layout>
+)
