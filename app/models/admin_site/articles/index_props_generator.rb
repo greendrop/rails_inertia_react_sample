@@ -15,6 +15,7 @@ module AdminSite
         {
           headTitle: prop_head_title,
           pageHeaderTitle: prop_page_header_title,
+          breadcrumb: prop_breadcrumb,
           articles: prop_articles,
           articleFieldNames: prop_article_field_names,
           pagination: prop_pagination,
@@ -33,6 +34,15 @@ module AdminSite
 
       def prop_page_header_title
         '記事一覧'
+      end
+
+      def prop_breadcrumb
+        {
+          items: [
+            { key: 'homes#show', label: 'ホーム', href: admin_site_root_path, isActive: false },
+            { key: 'articles#index', label: '記事一覧', href: admin_site_articles_path, isActive: true }
+          ]
+        }
       end
 
       def prop_articles

@@ -26,6 +26,7 @@ export default function Index({
   sidebar,
   headTitle,
   pageHeaderTitle,
+  breadcrumb,
   articles,
   articleFieldNames,
   pagination,
@@ -35,7 +36,7 @@ export default function Index({
   return (
     <>
       <Head title={headTitle} />
-      <Layout sidebar={sidebar}>
+      <Layout sidebar={sidebar} breadcrumb={breadcrumb}>
         <div className="mb-4">
           <PageHeader>
             <PageHeaderTitle>

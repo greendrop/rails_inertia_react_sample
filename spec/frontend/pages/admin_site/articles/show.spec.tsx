@@ -24,9 +24,25 @@ const sidebar: SharedProps["sidebar"] = {
     { title: "ダッシュボード", url: "/admin/dashboard" },
   ],
 }
-
 const headTitle = "記事詳細 | Admin Site"
 const pageHeaderTitle = "記事詳細"
+const breadcrumb = {
+  items: [
+    { key: "homes#show", label: "ホーム", href: "/admin", isActive: false },
+    {
+      key: "articles#index",
+      label: "記事一覧",
+      href: "/admin/articles",
+      isActive: false,
+    },
+    {
+      key: "articles#show",
+      label: "記事詳細",
+      href: "/admin/articles/1",
+      isActive: true,
+    },
+  ],
+}
 
 const article: Article = {
   id: 1,
@@ -54,6 +70,7 @@ describe("Show (記事詳細ページ)", () => {
         sidebar={sidebar}
         headTitle={headTitle}
         pageHeaderTitle={pageHeaderTitle}
+        breadcrumb={breadcrumb}
         article={article}
         articleFieldNames={articleFieldNames}
       />,

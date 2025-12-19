@@ -190,6 +190,30 @@ exports[`Layout > 正しくレンダリングされる（スナップショッ�
           data-slot="separator"
           role="none"
         />
+        <nav
+          aria-label="breadcrumb"
+          data-slot="breadcrumb"
+        >
+          <ol
+            class="text-muted-foreground flex flex-wrap items-center gap-1.5 text-sm break-words sm:gap-2.5"
+            data-slot="breadcrumb-list"
+          >
+            <li
+              class="inline-flex items-center gap-1.5"
+              data-slot="breadcrumb-item"
+            >
+              <span
+                aria-current="page"
+                aria-disabled="true"
+                class="text-foreground font-normal"
+                data-slot="breadcrumb-page"
+                role="link"
+              >
+                ホーム
+              </span>
+            </li>
+          </ol>
+        </nav>
       </header>
       <div
         class="p-8"

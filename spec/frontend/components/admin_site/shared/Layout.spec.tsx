@@ -22,11 +22,16 @@ const sidebar: AppSidebarProps = {
     },
   ],
 }
+const breadcrumb = {
+  items: [
+    { key: "homes#show", label: "ホーム", href: "/admin", isActive: true },
+  ],
+}
 
 describe("Layout", () => {
   it("正しくレンダリングされる（スナップショット）", () => {
     const { container } = render(
-      <Layout sidebar={sidebar}>
+      <Layout sidebar={sidebar} breadcrumb={breadcrumb}>
         <div>テスト用コンテンツ</div>
       </Layout>,
     )
