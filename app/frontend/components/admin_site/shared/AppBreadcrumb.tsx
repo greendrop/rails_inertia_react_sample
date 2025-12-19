@@ -1,3 +1,4 @@
+import { Fragment } from "react/jsx-runtime"
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -22,16 +23,16 @@ export default function AppBreadcrumb({ items }: AppBreadcrumbProps) {
     <Breadcrumb>
       <BreadcrumbList>
         {items.map((item, index) => (
-          <>
+          <Fragment key={item.key}>
             {index > 0 ? <BreadcrumbSeparator /> : null}
-            <BreadcrumbItem key={item.key}>
+            <BreadcrumbItem>
               {item.isActive ? (
                 <BreadcrumbPage>{item.label}</BreadcrumbPage>
               ) : (
                 <BreadcrumbLink href={item.href}>{item.label}</BreadcrumbLink>
               )}
             </BreadcrumbItem>
-          </>
+          </Fragment>
         ))}
       </BreadcrumbList>
     </Breadcrumb>
