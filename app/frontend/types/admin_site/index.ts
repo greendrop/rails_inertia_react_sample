@@ -1,3 +1,4 @@
+import type { ReactElement } from "react"
 import type { AppBreadcrumbProps } from "@/components/admin_site/shared/AppBreadcrumb"
 import type { AppSidebarProps } from "@/components/admin_site/shared/AppSidebar"
 import type { QueryParameters } from "@/lib/query_parameter"
@@ -12,6 +13,8 @@ export type SharedProps = {
   sidebar: AppSidebarProps
   breadcrumb: AppBreadcrumbProps
 }
+
+export type PageWithSharedProps = ReactElement & { props: SharedProps }
 
 export type Pagination = {
   currentPath: string

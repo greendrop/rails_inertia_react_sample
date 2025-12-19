@@ -9,7 +9,11 @@ import type {
   Article,
   ArticleFieldNames,
 } from "@/features/admin_site/articles/index/types"
-import type { Pagination, SharedProps } from "@/types/admin_site"
+import type {
+  PageWithSharedProps,
+  Pagination,
+  SharedProps,
+} from "@/types/admin_site"
 
 type IndexSpecificProps = {
   headTitle: string
@@ -23,10 +27,8 @@ type IndexSpecificProps = {
 type IndexProps = SharedProps & IndexSpecificProps
 
 export default function Index({
-  sidebar,
   headTitle,
   pageHeaderTitle,
-  breadcrumb,
   articles,
   articleFieldNames,
   pagination,
@@ -36,39 +38,43 @@ export default function Index({
   return (
     <>
       <Head title={headTitle} />
-      <Layout sidebar={sidebar} breadcrumb={breadcrumb}>
-        <div className="mb-4">
-          <PageHeader>
-            <PageHeaderTitle>
-              <PageHeaderTitleText>{pageHeaderTitle}</PageHeaderTitleText>
-            </PageHeaderTitle>
-          </PageHeader>
-        </div>
+      <div className="mb-4">
+        <PageHeader>
+          <PageHeaderTitle>
+            <PageHeaderTitleText>{pageHeaderTitle}</PageHeaderTitleText>
+          </PageHeaderTitle>
+        </PageHeader>
+      </div>
 
-        <div className="flex">
-          <div className="flex-auto">
-            {articles.length === 0 ? (
-              <output className="my-4 text-center" aria-live="polite">
-                {noDataLabel}
-              </output>
-            ) : (
-              <>
-                <div className="mb-4">
-                  <ArticleTable
-                    articles={articles}
-                    articleFieldNames={articleFieldNames}
-                    showLinkLabel={showLinkLabel}
-                  />
-                </div>
+      <div className="flex">
+        <div className="flex-auto">
+          {articles.length === 0 ? (
+            <output className="my-4 text-center" aria-live="polite">
+              {noDataLabel}
+            </output>
+          ) : (
+            <>
+              <div className="mb-4">
+                <ArticleTable
+                  articles={articles}
+                  articleFieldNames={articleFieldNames}
+                  showLinkLabel={showLinkLabel}
+                />
+              </div>
 
-                <div className="mb-4 flex items-center justify-center">
-                  <AppPagination pagination={pagination} />
-                </div>
-              </>
-            )}
-          </div>
+              <div className="mb-4 flex items-center justify-center">
+                <AppPagination pagination={pagination} />
+              </div>
+            </>
+          )}
         </div>
-      </Layout>
+      </div>
     </>
   )
 }
+
+Index.layout = (page: PageWithSharedProps) => (
+  <Layout sidebar={page.props.sidebar} breadcrumb={page.props.breadcrumb}>
+    {page}
+  </Layout>
+)
