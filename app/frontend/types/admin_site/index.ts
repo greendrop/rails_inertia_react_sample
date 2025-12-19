@@ -14,7 +14,7 @@ export type SharedProps = {
   breadcrumb: AppBreadcrumbProps
 }
 
-export type PageWithSharedProps = ReactElement & { props: SharedProps }
+export type PageWithSharedProps = ReactElement<SharedProps>
 
 export type Pagination = {
   currentPath: string
