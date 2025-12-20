@@ -2,7 +2,8 @@
 repository: ${GITHUB_REPOSITORY}@Rspec
 coverage:
   if: true
-  path: coverage/rspec/.resultset.json
+  paths:
+    - coverage/rspec/.resultset.json
 testExecutionTime:
   if: false
 diff:

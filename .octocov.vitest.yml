@@ -2,7 +2,8 @@
 repository: ${GITHUB_REPOSITORY}@Vitest
 coverage:
   if: true
-  path: coverage/vitest/lcov.info
+  paths:
+    - coverage/vitest/lcov.info
 testExecutionTime:
   if: false
 diff:
