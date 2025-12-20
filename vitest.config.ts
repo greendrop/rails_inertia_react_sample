@@ -7,9 +7,13 @@ export default mergeConfig(
     test: {
       environment: "happy-dom",
       include: [
-        // ルートが`app/frontend`のため、親ディレクトリを指定する
         "../../spec/frontend/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}",
       ],
+      coverage: {
+        provider: "v8",
+        reporter: ["text", "lcov"],
+        reportsDirectory: "../../coverage/vitest",
+      },
     },
   }),
 )
