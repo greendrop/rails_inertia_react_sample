@@ -52,6 +52,6 @@
       "label": "Run npm run typecheck",
       "type": "shell",
       "command": "npm run typecheck"
-    },
+    }
   ]
 }
