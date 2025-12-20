@@ -7,7 +7,7 @@ testExecutionTime:
   if: false
 diff:
   datastores:
-    - artifact://${GITHUB_REPOSITORY}
+    - artifact://${GITHUB_REPOSITORY}/vitest
 comment:
   if: is_pull_request
 summary:
@@ -15,4 +15,4 @@ summary:
 report:
   if: is_default_branch
   datastores:
-    - artifact://${GITHUB_REPOSITORY}
+    - artifact://${GITHUB_REPOSITORY}/vitest
