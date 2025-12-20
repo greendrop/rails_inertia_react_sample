@@ -1,5 +1,5 @@
 ---
-repository: ${GITHUB_REPOSITORY}@Rspec
+repository: ${GITHUB_REPOSITORY}/Rspec
 coverage:
   if: true
   paths:

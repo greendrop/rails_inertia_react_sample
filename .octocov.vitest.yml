@@ -1,5 +1,5 @@
 ---
-repository: ${GITHUB_REPOSITORY}@Vitest
+repository: ${GITHUB_REPOSITORY}/Vitest
 coverage:
   if: true
   paths:
