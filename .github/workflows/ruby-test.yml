@@ -111,15 +111,15 @@ jobs:
 
       - name: Rename coverage resultset file
         run: |
-          if [ -f coverage/.resultset.json ]; then
-            mv coverage/.resultset.json coverage/.resultset-test-${{ matrix.ci_node_index }}.json
+          if [ -f coverage/rspec/.resultset.json ]; then
+            mv coverage/rspec/.resultset.json coverage/rspec/.resultset-${{ matrix.ci_node_index }}.json
           fi
 
-      - name: Upload coverage-test-resultset file to artifact
+      - name: Upload coverage-rspec-resultset file to artifact
         uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
         with:
-          name: coverage-test-resultset-${{ matrix.ci_node_index }}
-          path: coverage/.resultset-test-${{ matrix.ci_node_index }}.json
+          name: coverage-rspec-resultset-${{ matrix.ci_node_index }}
+          path: coverage/rspec/.resultset-${{ matrix.ci_node_index }}.json
           if-no-files-found: error
           include-hidden-files: true
 
@@ -146,11 +146,11 @@ jobs:
         with:
           bundler-cache: true
 
-      - name: Download coverage-test-resultset from artifact
+      - name: Download coverage-rspec-resultset from artifact
         uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7.0.0
         with:
-          path: coverage
-          pattern: coverage-test-resultset*
+          path: coverage/rspec
+          pattern: coverage-rspec-resultset*
           merge-multiple: true
 
       - name: Run rails coverage:collate
@@ -162,11 +162,13 @@ jobs:
       - name: Upload coverage to artifact
         uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
         with:
-          name: coverage
-          path: coverage
+          name: coverage-rspec
+          path: coverage/rspec
           if-no-files-found: error
           include-hidden-files: true
 
       - name: Report coverage to GitHub
         uses: k1LoW/octocov-action@73d561f65d59e66899ed5c87e4621a913b5d5c20 # v1.5.0
+        with:
+          config: .octocov.rspec.yml
         if: github.event_name == 'pull_request'

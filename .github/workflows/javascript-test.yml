@@ -13,6 +13,9 @@ jobs:
     timeout-minutes: 30
     permissions:
       contents: read
+      issues: write
+      pull-requests: write
+      actions: read
 
     steps:
       - name: Checkout code
@@ -37,4 +40,10 @@ jobs:
 
       - name: Run npm run test
         run: |
-          npm run test
+          npm run test:coverage
+
+      - name: Report coverage to GitHub
+        uses: k1LoW/octocov-action@73d561f65d59e66899ed5c87e4621a913b5d5c20 # v1.5.0
+        with:
+          config: .octocov.vitest.yml
+        if: github.event_name == 'pull_request'

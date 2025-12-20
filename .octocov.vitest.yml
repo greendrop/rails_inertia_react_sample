@@ -1,0 +1,19 @@
+---
+repository: ${GITHUB_REPOSITORY}/Vitest
+coverage:
+  if: true
+  paths:
+    - coverage/vitest/lcov.info
+testExecutionTime:
+  if: false
+diff:
+  datastores:
+    - artifact://${GITHUB_REPOSITORY}/vitest
+comment:
+  if: is_pull_request
+summary:
+  if: true
+report:
+  if: is_default_branch
+  datastores:
+    - artifact://${GITHUB_REPOSITORY}/vitest

@@ -2,6 +2,7 @@
 
 if ENV['COVERAGE']
   require 'simplecov'
+  SimpleCov.coverage_dir 'coverage/rspec'
   SimpleCov.start 'rails'
 end
 
