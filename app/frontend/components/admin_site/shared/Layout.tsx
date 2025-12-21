@@ -1,17 +1,18 @@
 import type { ReactNode } from "react"
+import usePage from "@/hooks/admin_site/usePage"
 import { Separator } from "../ui/separator"
 import { SidebarInset, SidebarProvider, SidebarTrigger } from "../ui/sidebar"
-import AppBreadcrumb, { type AppBreadcrumbProps } from "./AppBreadcrumb"
+import AppBreadcrumb from "./AppBreadcrumb"
 import AppSidebar, { type AppSidebarProps } from "./AppSidebar"
 
 export type LayoutProps = {
   children: ReactNode
-  sidebar: AppSidebarProps
-  breadcrumb: AppBreadcrumbProps
 }
 export type { AppSidebarProps }
 
-export default function Layout({ children, sidebar, breadcrumb }: LayoutProps) {
+export default function Layout({ children }: LayoutProps) {
+  const { sidebar, breadcrumb } = usePage().props
+
   return (
     <SidebarProvider>
       <AppSidebar contentItems={sidebar.contentItems} />

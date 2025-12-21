@@ -16,8 +16,8 @@ vi.mock("@inertiajs/react", async () => {
   }
 })
 
-const flash: SharedProps["flash"] = {}
-const sidebar: SharedProps["sidebar"] = {
+const _flash: SharedProps["flash"] = {}
+const _sidebar: SharedProps["sidebar"] = {
   contentItems: [
     {
       title: "記事",
@@ -37,7 +37,7 @@ const sidebar: SharedProps["sidebar"] = {
 }
 const headTitle = "記事一覧 | Admin Site"
 const pageHeaderTitle = "記事一覧"
-const breadcrumb = {
+const _breadcrumb = {
   items: [
     { key: "homes#show", label: "ホーム", href: "/admin", isActive: false },
     {
@@ -86,11 +86,8 @@ describe("Index (記事一覧ページ)", () => {
 
       const { container } = render(
         <Index
-          flash={flash}
-          sidebar={sidebar}
           headTitle={headTitle}
           pageHeaderTitle={pageHeaderTitle}
-          breadcrumb={breadcrumb}
           articles={articles}
           articleFieldNames={articleFieldNames}
           pagination={pagination}
@@ -145,11 +142,8 @@ describe("Index (記事一覧ページ)", () => {
 
       const { container } = render(
         <Index
-          flash={flash}
-          sidebar={sidebar}
           headTitle={headTitle}
           pageHeaderTitle={pageHeaderTitle}
-          breadcrumb={breadcrumb}
           articles={articles}
           articleFieldNames={articleFieldNames}
           pagination={pagination}
