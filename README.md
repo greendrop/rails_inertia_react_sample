@@ -1,24 +1,20 @@
-# README
+# Rails Inertia React Sample
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Rails で Inertia.js と React を使用したサンプルアプリケーションです。
 
-Things you may want to cover:
+## 使用技術
 
-* Ruby version
+<!--
+アイコンはこちらから
+- https://shields.io/
+- https://t8csp.csb.app/
+--->
 
-* System dependencies
+![Ruby](https://img.shields.io/badge/-Ruby-CC342D.svg?logo=ruby&style=plastic)
+![Rails](https://img.shields.io/badge/-Rails-CC0000.svg?logo=rubyonrails&style=plastic)
+![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-336791.svg?logo=postgresql&style=plastic)
 
-* Configuration
+## 開発環境
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- [開発環境構築](docs/development/setup.md)
+- [開発用コマンド](docs/development/command.md)
