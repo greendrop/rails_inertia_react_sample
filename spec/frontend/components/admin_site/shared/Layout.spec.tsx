@@ -33,6 +33,8 @@ vi.mock("@/hooks/admin_site/usePage", () => {
     default: () => {
       return {
         props: {
+          flash: {},
+          errors: {},
           sidebar,
           breadcrumb,
         },
