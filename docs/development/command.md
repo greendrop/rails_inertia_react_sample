@@ -2,16 +2,16 @@
 
 ## RSpec
 
-Rspec を実行し、テストを実行します。
+RSpec を実行し、テストを実行します。
 
 ```
 bin/rspec
 ```
 
-## Rubocop
+## RuboCop
 
 Rubocop を実行し、コードの静的解析をします。
-
+    
 ```
 bin/rubocop
 ```
