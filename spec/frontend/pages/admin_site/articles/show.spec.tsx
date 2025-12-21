@@ -5,7 +5,6 @@ import type {
   ArticleFieldNames,
 } from "@/features/admin_site/articles/show/types"
 import Show from "@/pages/admin_site/articles/show"
-import type { SharedProps } from "@/types/admin_site"
 
 vi.mock("@inertiajs/react", async () => {
   const actual: typeof import("@inertiajs/react") =
@@ -16,34 +15,8 @@ vi.mock("@inertiajs/react", async () => {
   }
 })
 
-const _flash: SharedProps["flash"] = {}
-
-const _sidebar: SharedProps["sidebar"] = {
-  contentItems: [
-    { title: "記事", url: "/admin/articles", items: [] },
-    { title: "ダッシュボード", url: "/admin/dashboard" },
-  ],
-}
 const headTitle = "記事詳細 | Admin Site"
 const pageHeaderTitle = "記事詳細"
-const _breadcrumb = {
-  items: [
-    { key: "homes#show", label: "ホーム", href: "/admin", isActive: false },
-    {
-      key: "articles#index",
-      label: "記事一覧",
-      href: "/admin/articles",
-      isActive: false,
-    },
-    {
-      key: "articles#show",
-      label: "記事詳細",
-      href: "/admin/articles/1",
-      isActive: true,
-    },
-  ],
-}
-
 const article: Article = {
   id: 1,
   title: "テスト記事",
@@ -52,7 +25,6 @@ const article: Article = {
   createdAt: "2025-12-01T00:00:00Z",
   updatedAt: "2025-12-01T00:00:00Z",
 }
-
 const articleFieldNames: ArticleFieldNames = {
   id: "ID",
   title: "タイトル",
