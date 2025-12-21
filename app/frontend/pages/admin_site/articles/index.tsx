@@ -1,4 +1,5 @@
 import { Head } from "@inertiajs/react"
+import type { ReactElement } from "react"
 import AppPagination from "@/components/admin_site/shared/AppPagination"
 import Layout from "@/components/admin_site/shared/Layout"
 import PageHeader from "@/components/admin_site/shared/PageHeader"
@@ -9,13 +10,9 @@ import type {
   Article,
   ArticleFieldNames,
 } from "@/features/admin_site/articles/index/types"
-import type {
-  PageWithSharedProps,
-  Pagination,
-  SharedProps,
-} from "@/types/admin_site"
+import type { Pagination } from "@/types/admin_site"
 
-type IndexSpecificProps = {
+type IndexProps = {
   headTitle: string
   pageHeaderTitle: string
   articles: Article[]
@@ -24,7 +21,6 @@ type IndexSpecificProps = {
   noDataLabel: string
   showLinkLabel: string
 }
-type IndexProps = SharedProps & IndexSpecificProps
 
 export default function Index({
   headTitle,
@@ -73,8 +69,4 @@ export default function Index({
   )
 }
 
-Index.layout = (page: PageWithSharedProps) => (
-  <Layout sidebar={page.props.sidebar} breadcrumb={page.props.breadcrumb}>
-    {page}
-  </Layout>
-)
+Index.layout = (page: ReactElement) => <Layout>{page}</Layout>

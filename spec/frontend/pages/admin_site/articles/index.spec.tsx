@@ -5,7 +5,7 @@ import type {
   ArticleFieldNames,
 } from "@/features/admin_site/articles/index/types"
 import Index from "@/pages/admin_site/articles/index"
-import type { Pagination, SharedProps } from "@/types/admin_site"
+import type { Pagination } from "@/types/admin_site"
 
 vi.mock("@inertiajs/react", async () => {
   const actual: typeof import("@inertiajs/react") =
@@ -16,38 +16,8 @@ vi.mock("@inertiajs/react", async () => {
   }
 })
 
-const flash: SharedProps["flash"] = {}
-const sidebar: SharedProps["sidebar"] = {
-  contentItems: [
-    {
-      title: "記事",
-      url: "/admin/articles",
-      items: [
-        {
-          title: "記事一覧",
-          url: "/admin/articles/list",
-        },
-      ],
-    },
-    {
-      title: "ダッシュボード",
-      url: "/admin/dashboard",
-    },
-  ],
-}
 const headTitle = "記事一覧 | Admin Site"
 const pageHeaderTitle = "記事一覧"
-const breadcrumb = {
-  items: [
-    { key: "homes#show", label: "ホーム", href: "/admin", isActive: false },
-    {
-      key: "articles#index",
-      label: "記事一覧",
-      href: "/admin/articles",
-      isActive: true,
-    },
-  ],
-}
 const noDataLabel = "データがありません。"
 const showLinkLabel = "詳細"
 
@@ -86,11 +56,8 @@ describe("Index (記事一覧ページ)", () => {
 
       const { container } = render(
         <Index
-          flash={flash}
-          sidebar={sidebar}
           headTitle={headTitle}
           pageHeaderTitle={pageHeaderTitle}
-          breadcrumb={breadcrumb}
           articles={articles}
           articleFieldNames={articleFieldNames}
           pagination={pagination}
@@ -145,11 +112,8 @@ describe("Index (記事一覧ページ)", () => {
 
       const { container } = render(
         <Index
-          flash={flash}
-          sidebar={sidebar}
           headTitle={headTitle}
           pageHeaderTitle={pageHeaderTitle}
-          breadcrumb={breadcrumb}
           articles={articles}
           articleFieldNames={articleFieldNames}
           pagination={pagination}

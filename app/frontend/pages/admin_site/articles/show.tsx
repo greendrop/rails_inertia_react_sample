@@ -1,4 +1,5 @@
 import { Head } from "@inertiajs/react"
+import type { ReactElement } from "react"
 import Layout from "@/components/admin_site/shared/Layout"
 import PageHeader from "@/components/admin_site/shared/PageHeader"
 import PageHeaderTitle from "@/components/admin_site/shared/PageHeaderTitle"
@@ -8,16 +9,13 @@ import type {
   Article,
   ArticleFieldNames,
 } from "@/features/admin_site/articles/show/types"
-import type { PageWithSharedProps, SharedProps } from "@/types/admin_site"
 
-type ShowSpecificProps = {
+type ShowProps = {
   headTitle: string
   pageHeaderTitle: string
   article: Article
   articleFieldNames: ArticleFieldNames
 }
-
-export type ShowProps = SharedProps & ShowSpecificProps
 
 export default function Show({
   headTitle,
@@ -48,8 +46,4 @@ export default function Show({
   )
 }
 
-Show.layout = (page: PageWithSharedProps) => (
-  <Layout sidebar={page.props.sidebar} breadcrumb={page.props.breadcrumb}>
-    {page}
-  </Layout>
-)
+Show.layout = (page: ReactElement) => <Layout>{page}</Layout>

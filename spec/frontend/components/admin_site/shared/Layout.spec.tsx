@@ -1,5 +1,5 @@
 import { render } from "@testing-library/react"
-import { describe, expect, it } from "vitest"
+import { describe, expect, it, vi } from "vitest"
 import Layout, {
   type AppSidebarProps,
 } from "@/components/admin_site/shared/Layout"
@@ -28,10 +28,25 @@ const breadcrumb = {
   ],
 }
 
+vi.mock("@/hooks/admin_site/usePage", () => {
+  return {
+    default: () => {
+      return {
+        props: {
+          flash: {},
+          errors: {},
+          sidebar,
+          breadcrumb,
+        },
+      }
+    },
+  }
+})
+
 describe("Layout", () => {
   it("正しくレンダリングされる（スナップショット）", () => {
     const { container } = render(
-      <Layout sidebar={sidebar} breadcrumb={breadcrumb}>
+      <Layout>
         <div>テスト用コンテンツ</div>
       </Layout>,
     )
