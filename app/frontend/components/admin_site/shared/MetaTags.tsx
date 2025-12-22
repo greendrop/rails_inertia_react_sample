@@ -9,7 +9,7 @@ type MetaTag = {
   headKey: string
   innerContent?: string | Record<string, unknown>
   httpEquiv?: string
-  [key: string]: string | undefined | string | Record<string, unknown>
+  [key: string]: string | undefined | Record<string, unknown>
 }
 
 const MetaTags = () => {
