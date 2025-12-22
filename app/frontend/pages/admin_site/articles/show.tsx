@@ -1,6 +1,6 @@
-import { Head } from "@inertiajs/react"
 import type { ReactElement } from "react"
 import Layout from "@/components/admin_site/shared/Layout"
+import MetaTags from "@/components/admin_site/shared/MetaTags"
 import PageHeader from "@/components/admin_site/shared/PageHeader"
 import PageHeaderTitle from "@/components/admin_site/shared/PageHeaderTitle"
 import PageHeaderTitleText from "@/components/admin_site/shared/PageHeaderTitleText"
@@ -11,21 +11,19 @@ import type {
 } from "@/features/admin_site/articles/show/types"
 
 type ShowProps = {
-  headTitle: string
   pageHeaderTitle: string
   article: Article
   articleFieldNames: ArticleFieldNames
 }
 
 export default function Show({
-  headTitle,
   pageHeaderTitle,
   article,
   articleFieldNames,
 }: ShowProps) {
   return (
     <>
-      <Head title={headTitle} />
+      <MetaTags />
       <div className="mb-4">
         <PageHeader>
           <PageHeaderTitle>

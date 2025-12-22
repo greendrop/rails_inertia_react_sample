@@ -2,9 +2,7 @@
 
 <html>
   <head>
-    <title data-inertia>
-      <%= content_for(:title) || "Rails Inertia React Sample" %>
-    </title>
+    <%= inertia_meta_tags(use_data_inertia_head_attribute: true) %>
 
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">

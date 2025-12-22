@@ -32,7 +32,6 @@ RSpec.describe AdminSite::Articles::IndexPropsGenerator do
     it '記事一覧で使用するpropsを返す' do
       response = subject
       expected = {
-        headTitle: '記事一覧 | Admin Site',
         pageHeaderTitle: '記事一覧'
       }
       expected[:breadcrumb] = {

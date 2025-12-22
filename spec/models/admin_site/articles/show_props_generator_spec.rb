@@ -13,7 +13,6 @@ RSpec.describe AdminSite::Articles::ShowPropsGenerator do
     it '記事詳細で使用するpropsを返す' do
       response = subject
       expected = {
-        headTitle: '記事詳細 | Admin Site',
         pageHeaderTitle: '記事詳細',
         breadcrumb: {
           items: [
