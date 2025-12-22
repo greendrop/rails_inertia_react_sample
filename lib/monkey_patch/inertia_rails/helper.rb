@@ -1,5 +1,9 @@
 # frozen_string_literal: true
 
+# NOTE: InertiaRails::Helper#to_tag
+#   Inertia.js の 属性は data-inertia に変更（オプトイン方式）されたため、
+#   既存の inertia: 属性を data-inertia 属性に変更するパッチを当てる。
+
 module MonkeyPatch
   module InertiaRails
     module Helper
