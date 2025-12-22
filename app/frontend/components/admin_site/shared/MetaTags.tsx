@@ -12,9 +12,13 @@ type MetaTag = {
   [key: string]: string | undefined | Record<string, unknown>
 }
 
+type SharedPropsWithMeta = {
+  _inertia_meta?: MetaTag[]
+}
+
 const MetaTags = () => {
-  const { _inertia_meta } = usePage().props
-  const metas = (_inertia_meta ?? []) as MetaTag[]
+  const { _inertia_meta } = usePage().props as SharedPropsWithMeta
+  const metas = _inertia_meta ?? []
   return (
     <Head>
       {metas.map((meta: MetaTag) => {
