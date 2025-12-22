@@ -14,7 +14,7 @@ type MetaTag = {
 
 const MetaTags = () => {
   const { _inertia_meta } = usePage().props
-  const metas = _inertia_meta as MetaTag[]
+  const metas = (_inertia_meta ?? []) as MetaTag[]
   return (
     <Head>
       {metas.map((meta: MetaTag) => {
