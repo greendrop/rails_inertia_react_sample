@@ -20,7 +20,11 @@ RSpec.describe 'AdminSite::Articles show' do
       expect(json['component']).to eq('admin_site/articles/show')
 
       expected = {
-        'headTitle' => '記事詳細 | Admin Site',
+        '_inertia_meta' => [
+          { 'headKey' => 'title',
+            'innerContent' => '記事詳細 | Rails Inertia React Sample - Admin Site',
+            'tagName' => 'title' }
+        ],
         'pageHeaderTitle' => '記事詳細',
         'breadcrumb' => {
           'items' => [

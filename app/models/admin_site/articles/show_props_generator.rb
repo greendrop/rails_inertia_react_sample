@@ -12,7 +12,6 @@ module AdminSite
 
       def call
         {
-          headTitle: prop_head_title,
           pageHeaderTitle: prop_page_header_title,
           breadcrumb: prop_breadcrumb,
           article: prop_article,
@@ -23,10 +22,6 @@ module AdminSite
       private
 
       attr_reader :article
-
-      def prop_head_title
-        '記事詳細 | Admin Site'
-      end
 
       def prop_page_header_title
         '記事詳細'

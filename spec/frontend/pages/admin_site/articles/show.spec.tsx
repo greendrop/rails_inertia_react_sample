@@ -15,7 +15,16 @@ vi.mock("@inertiajs/react", async () => {
   }
 })
 
-const headTitle = "記事詳細 | Admin Site"
+vi.mock("@/hooks/admin_site/usePage", () => {
+  return {
+    default: () => ({
+      props: {
+        _inertia_meta: [],
+      },
+    }),
+  }
+})
+
 const pageHeaderTitle = "記事詳細"
 const article: Article = {
   id: 1,
@@ -38,7 +47,6 @@ describe("Show (記事詳細ページ)", () => {
   it("正しくレンダリングされる（スナップショット）", () => {
     const { container } = render(
       <Show
-        headTitle={headTitle}
         pageHeaderTitle={pageHeaderTitle}
         article={article}
         articleFieldNames={articleFieldNames}

@@ -1,7 +1,7 @@
-import { Head } from "@inertiajs/react"
 import type { ReactElement } from "react"
 import AppPagination from "@/components/admin_site/shared/AppPagination"
 import Layout from "@/components/admin_site/shared/Layout"
+import MetaTags from "@/components/admin_site/shared/MetaTags"
 import PageHeader from "@/components/admin_site/shared/PageHeader"
 import PageHeaderTitle from "@/components/admin_site/shared/PageHeaderTitle"
 import PageHeaderTitleText from "@/components/admin_site/shared/PageHeaderTitleText"
@@ -13,7 +13,6 @@ import type {
 import type { Pagination } from "@/types/admin_site"
 
 type IndexProps = {
-  headTitle: string
   pageHeaderTitle: string
   articles: Article[]
   articleFieldNames: ArticleFieldNames
@@ -23,7 +22,6 @@ type IndexProps = {
 }
 
 export default function Index({
-  headTitle,
   pageHeaderTitle,
   articles,
   articleFieldNames,
@@ -33,7 +31,7 @@ export default function Index({
 }: IndexProps) {
   return (
     <>
-      <Head title={headTitle} />
+      <MetaTags />
       <div className="mb-4">
         <PageHeader>
           <PageHeaderTitle>

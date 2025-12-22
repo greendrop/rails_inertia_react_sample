@@ -13,7 +13,17 @@ module AdminSite
     inertia_share flash: -> { flash.to_hash }
     inertia_share sidebar: -> { AdminSite::SidebarPropsGenerator.call }
 
+    before_action :set_default_meta_tags
+
     private
+
+    def set_default_meta_tags
+      inertia_meta.add(
+        [
+          { title: 'Rails Inertia React Sample - Admin Site' }
+        ]
+      )
+    end
 
     def page_param_name
       PAGE_PARAM_NAME

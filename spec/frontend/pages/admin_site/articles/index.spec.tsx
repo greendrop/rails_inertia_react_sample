@@ -16,7 +16,16 @@ vi.mock("@inertiajs/react", async () => {
   }
 })
 
-const headTitle = "記事一覧 | Admin Site"
+vi.mock("@/hooks/admin_site/usePage", () => {
+  return {
+    default: () => ({
+      props: {
+        _inertia_meta: [],
+      },
+    }),
+  }
+})
+
 const pageHeaderTitle = "記事一覧"
 const noDataLabel = "データがありません。"
 const showLinkLabel = "詳細"
@@ -56,7 +65,6 @@ describe("Index (記事一覧ページ)", () => {
 
       const { container } = render(
         <Index
-          headTitle={headTitle}
           pageHeaderTitle={pageHeaderTitle}
           articles={articles}
           articleFieldNames={articleFieldNames}
@@ -112,7 +120,6 @@ describe("Index (記事一覧ページ)", () => {
 
       const { container } = render(
         <Index
-          headTitle={headTitle}
           pageHeaderTitle={pageHeaderTitle}
           articles={articles}
           articleFieldNames={articleFieldNames}

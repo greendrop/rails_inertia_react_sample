@@ -9,13 +9,15 @@ module AdminSite
         articles:,
         pagination: props_generator_pagination_args_by_kaminari(articles)
       )
-      render inertia: props
+      meta = AdminSite::Articles::IndexMetaGenerator.call
+      render inertia: props, meta:
     end
 
     def show
       article = Article.find(params[:id])
       props = AdminSite::Articles::ShowPropsGenerator.call(article:)
-      render inertia: props
+      meta = AdminSite::Articles::ShowMetaGenerator.call
+      render inertia: props, meta:
     end
   end
 end
