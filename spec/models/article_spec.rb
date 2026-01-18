@@ -16,5 +16,9 @@ RSpec.describe Article do
     describe 'body' do
       it { is_expected.to validate_presence_of(:body) }
     end
+
+    describe 'status' do
+      it { is_expected.to validate_presence_of(:status) }
+    end
   end
 end
