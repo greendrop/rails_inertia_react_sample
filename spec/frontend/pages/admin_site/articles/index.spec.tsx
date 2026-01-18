@@ -29,6 +29,8 @@ vi.mock("@/hooks/admin_site/usePage", () => {
 const pageHeaderTitle = "記事一覧"
 const noDataLabel = "データがありません。"
 const showLinkLabel = "詳細"
+const newLinkLabel = "新規作成"
+const newLinkHref = "/admin/articles/new"
 
 const articleFieldNames: ArticleFieldNames = {
   id: "ID",
@@ -71,6 +73,8 @@ describe("Index (記事一覧ページ)", () => {
           pagination={pagination}
           noDataLabel={noDataLabel}
           showLinkLabel={showLinkLabel}
+          newLinkLabel={newLinkLabel}
+          newLinkHref={newLinkHref}
         />,
       )
       expect(container).toMatchSnapshot()
@@ -126,6 +130,8 @@ describe("Index (記事一覧ページ)", () => {
           pagination={pagination}
           noDataLabel={noDataLabel}
           showLinkLabel={showLinkLabel}
+          newLinkLabel={newLinkLabel}
+          newLinkHref={newLinkHref}
         />,
       )
       expect(container).toMatchSnapshot()

@@ -1,0 +1,157 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`New (記事新規作成ページ) > 正しくレンダリングされる（スナップショット） 1`] = `
+<div>
+  <div
+    data-testid="meta-tags"
+  />
+  <div
+    class="mb-4"
+  >
+    <div
+      class="flex"
+    >
+      <div
+        class="flex-auto"
+      >
+        <h2
+          class="text-4xl"
+        >
+          記事新規作成
+        </h2>
+      </div>
+    </div>
+  </div>
+  <div
+    class="flex"
+  >
+    <div
+      class="flex-auto"
+    >
+      <form
+        action="/admin/articles"
+        method="post"
+      >
+        <div
+          class="mb-4"
+        >
+          <label
+            class="text-sm font-medium"
+            for="article-title"
+          >
+            タイトル
+          </label>
+          <input
+            class="file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input h-9 w-full min-w-0 rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive"
+            data-slot="input"
+            id="article-title"
+            name="article[title]"
+            value="テストタイトル"
+          />
+        </div>
+        <div
+          class="mb-4"
+        >
+          <label
+            class="text-sm font-medium"
+            for="article-body"
+          >
+            本文
+          </label>
+          <textarea
+            class="border-input placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:bg-input/30 flex field-sizing-content min-h-16 w-full rounded-md border bg-transparent px-3 py-2 text-base shadow-xs transition-[color,box-shadow] outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+            data-slot="textarea"
+            id="article-body"
+            name="article[body]"
+          >
+            テスト本文
+          </textarea>
+        </div>
+        <div
+          class="mb-4"
+        >
+          <label
+            class="text-sm font-medium"
+            for="article-status"
+          >
+            ステータス
+          </label>
+          <div
+            class="group/native-select relative has-[select:disabled]:opacity-50 w-full"
+            data-slot="native-select-wrapper"
+          >
+            <select
+              class="border-input placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 dark:hover:bg-input/50 h-9 min-w-0 appearance-none rounded-md border bg-transparent px-3 py-2 pr-9 text-sm shadow-xs transition-[color,box-shadow] outline-none disabled:pointer-events-none disabled:cursor-not-allowed data-[size=sm]:h-8 data-[size=sm]:py-1 focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive w-full"
+              data-size="default"
+              data-slot="native-select"
+              id="article-status"
+              name="article[status]"
+            >
+              <option
+                data-slot="native-select-option"
+                value="draft"
+              >
+                下書き
+              </option>
+              <option
+                data-slot="native-select-option"
+                value="published"
+              >
+                公開
+              </option>
+            </select>
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-chevron-down text-muted-foreground pointer-events-none absolute top-1/2 right-3.5 size-4 -translate-y-1/2 opacity-50 select-none"
+              data-slot="native-select-icon"
+              fill="none"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m6 9 6 6 6-6"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          class="mb-4"
+        >
+          <label
+            class="text-sm font-medium"
+            for="article-published-at"
+          >
+            公開日時
+          </label>
+          <input
+            class="file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input h-9 w-full min-w-0 rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive"
+            data-slot="input"
+            id="article-published-at"
+            name="article[published_at]"
+            type="datetime-local"
+            value="2025-01-01T00:00"
+          />
+        </div>
+        <div
+          class="mb-6"
+        >
+          <button
+            aria-busy="false"
+            class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2 has-[>svg]:px-3 w-full"
+            data-slot="button"
+            type="submit"
+          >
+            作成
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+`;

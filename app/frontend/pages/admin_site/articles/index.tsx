@@ -1,3 +1,4 @@
+import { Link } from "@inertiajs/react"
 import type { ReactElement } from "react"
 import AppPagination from "@/components/admin_site/shared/AppPagination"
 import Layout from "@/components/admin_site/shared/Layout"
@@ -5,6 +6,7 @@ import MetaTags from "@/components/admin_site/shared/MetaTags"
 import PageHeader from "@/components/admin_site/shared/PageHeader"
 import PageHeaderTitle from "@/components/admin_site/shared/PageHeaderTitle"
 import PageHeaderTitleText from "@/components/admin_site/shared/PageHeaderTitleText"
+import { Button } from "@/components/admin_site/ui/button"
 import ArticleTable from "@/features/admin_site/articles/index/components/ArticleTable"
 import type {
   Article,
@@ -19,6 +21,8 @@ type IndexProps = {
   pagination: Pagination
   noDataLabel: string
   showLinkLabel: string
+  newLinkLabel: string
+  newLinkHref: string
 }
 
 export default function Index({
@@ -28,16 +32,21 @@ export default function Index({
   pagination,
   noDataLabel,
   showLinkLabel,
+  newLinkLabel,
+  newLinkHref,
 }: IndexProps) {
   return (
     <>
       <MetaTags />
-      <div className="mb-4">
+      <div className="mb-4 flex flex-wrap items-center justify-between gap-4">
         <PageHeader>
           <PageHeaderTitle>
             <PageHeaderTitleText>{pageHeaderTitle}</PageHeaderTitleText>
           </PageHeaderTitle>
         </PageHeader>
+        <Button asChild>
+          <Link href={newLinkHref}>{newLinkLabel}</Link>
+        </Button>
       </div>
 
       <div className="flex">
