@@ -1,0 +1,19 @@
+---
+ja:
+  activerecord:
+    models:
+      article: 記事
+    attributes:
+      article:
+        id: ID
+        created_at: 登録日時
+        updated_at: 更新日時
+        title: タイトル
+        body: 本文
+        status: ステータス
+        published_at: 公開日時
+  enums:
+    article:
+      status:
+        draft: 下書き
+        published: 公開

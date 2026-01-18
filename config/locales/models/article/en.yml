@@ -1,0 +1,21 @@
+---
+en:
+  activerecord:
+    models:
+      article:
+        one: Article
+        other: Articles
+    attributes:
+      article:
+        id: ID
+        created_at: Created At
+        updated_at: Updated At
+        title: Title
+        body: Body
+        status: Status
+        published_at: Published At
+  enums:
+    article:
+      status:
+        draft: Draft
+        published: Published

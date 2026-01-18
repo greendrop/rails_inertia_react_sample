@@ -1,0 +1,8 @@
+---
+ja:
+  admin_site:
+    general:
+      new: '作成'
+      resource_new_title: '%{resource}作成'
+      resource_created_message: '%{resource}が作成されました。'
+      form_error_alert_title: '入力内容を確認してください。'
