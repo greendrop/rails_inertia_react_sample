@@ -19,7 +19,9 @@ module AdminSite
           articleFieldNames: prop_article_field_names,
           pagination: prop_pagination,
           noDataLabel: prop_no_data_label,
-          showLinkLabel: prop_show_link_label
+          showLinkLabel: prop_show_link_label,
+          newLinkLabel: prop_new_link_label,
+          newLinkHref: prop_new_link_href
         }
       end
 
@@ -92,6 +94,14 @@ module AdminSite
 
       def prop_show_link_label
         '詳細'
+      end
+
+      def prop_new_link_label
+        '新規作成'
+      end
+
+      def prop_new_link_href
+        new_admin_site_article_path
       end
     end
   end

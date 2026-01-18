@@ -79,6 +79,8 @@ RSpec.describe AdminSite::Articles::IndexPropsGenerator do
       }
       expected[:noDataLabel] = 'データがありません。'
       expected[:showLinkLabel] = '詳細'
+      expected[:newLinkLabel] = '新規作成'
+      expected[:newLinkHref] = new_admin_site_article_path
 
       expect(response).to eq(expected)
     end

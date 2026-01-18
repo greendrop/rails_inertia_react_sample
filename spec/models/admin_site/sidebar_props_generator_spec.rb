@@ -20,6 +20,10 @@ RSpec.describe AdminSite::SidebarPropsGenerator do
               {
                 title: '記事一覧',
                 url: '/admin/articles'
+              },
+              {
+                title: '記事作成',
+                url: '/admin/articles/new'
               }
             ]
           }

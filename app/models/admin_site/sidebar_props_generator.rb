@@ -26,6 +26,10 @@ module AdminSite
             {
               title: '記事一覧',
               url: admin_site_articles_path
+            },
+            {
+              title: '記事作成',
+              url: new_admin_site_article_path
             }
           ]
         }
