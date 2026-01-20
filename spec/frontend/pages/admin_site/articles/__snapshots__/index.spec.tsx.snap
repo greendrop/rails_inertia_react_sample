@@ -3,6 +3,9 @@
 exports[`Index (記事一覧ページ) > 記事が存在する場合 > 正しくレンダリングされる（スナップショット） 1`] = `
 <div>
   <div
+    data-testid="meta-tags"
+  />
+  <div
     class="mb-4 flex flex-wrap items-center justify-between gap-4"
   >
     <div
@@ -25,6 +28,13 @@ exports[`Index (記事一覧ページ) > 記事が存在する場合 > 正しく
     >
       新規作成
     </a>
+  </div>
+  <div
+    class="mb-4"
+  >
+    <div
+      data-testid="flash-alert"
+    />
   </div>
   <div
     class="flex"
@@ -456,6 +466,9 @@ exports[`Index (記事一覧ページ) > 記事が存在する場合 > 正しく
 exports[`Index (記事一覧ページ) > 記事が空の場合 > 正しくレンダリングされる（スナップショット） 1`] = `
 <div>
   <div
+    data-testid="meta-tags"
+  />
+  <div
     class="mb-4 flex flex-wrap items-center justify-between gap-4"
   >
     <div
@@ -478,6 +491,13 @@ exports[`Index (記事一覧ページ) > 記事が空の場合 > 正しくレン
     >
       新規作成
     </a>
+  </div>
+  <div
+    class="mb-4"
+  >
+    <div
+      data-testid="flash-alert"
+    />
   </div>
   <div
     class="flex"

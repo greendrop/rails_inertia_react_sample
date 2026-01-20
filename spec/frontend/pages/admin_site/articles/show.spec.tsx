@@ -6,22 +6,14 @@ import type {
 } from "@/features/admin_site/articles/show/types"
 import Show from "@/pages/admin_site/articles/show"
 
-vi.mock("@inertiajs/react", async () => {
-  const actual: typeof import("@inertiajs/react") =
-    await vi.importActual("@inertiajs/react")
+vi.mock("@/components/admin_site/shared/MetaTags", () => {
   return {
-    ...actual,
-    Head: () => null,
+    default: () => <div data-testid="meta-tags" />,
   }
 })
-
-vi.mock("@/hooks/admin_site/usePage", () => {
+vi.mock("@/components/admin_site/shared/FlashAlert", () => {
   return {
-    default: () => ({
-      props: {
-        _inertia_meta: [],
-      },
-    }),
+    default: () => <div data-testid="flash-alert" />,
   }
 })
 

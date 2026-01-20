@@ -12,6 +12,11 @@ vi.mock("@/components/admin_site/shared/MetaTags", () => {
     default: () => <div data-testid="meta-tags" />,
   }
 })
+vi.mock("@/components/admin_site/shared/FlashAlert", () => {
+  return {
+    default: () => <div data-testid="flash-alert" />,
+  }
+})
 
 describe("New (記事新規作成ページ)", () => {
   it("正しくレンダリングされる（スナップショット）", () => {

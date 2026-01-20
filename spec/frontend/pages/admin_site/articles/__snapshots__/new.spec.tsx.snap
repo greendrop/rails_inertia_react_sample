@@ -23,6 +23,13 @@ exports[`New (記事新規作成ページ) > 正しくレンダリングされ�
     </div>
   </div>
   <div
+    class="mb-4"
+  >
+    <div
+      data-testid="flash-alert"
+    />
+  </div>
+  <div
     class="flex"
   >
     <div
