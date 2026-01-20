@@ -14,6 +14,7 @@ module AdminSite
     end
 
     def show
+      flash.now[:notice] = I18n.t('admin_site.general.resource_created_message', resource: Article.model_name.human)
       article = Article.find(params[:id])
       props = AdminSite::Articles::ShowPropsGenerator.call(article:)
       meta = AdminSite::Articles::ShowMetaGenerator.call
@@ -31,7 +32,7 @@ module AdminSite
 
       if article.save
         flash[:notice] = I18n.t('admin_site.general.resource_created_message', resource: Article.model_name.human)
-        redirect_to admin_site_articles_path
+        redirect_to admin_site_article_path(id: article.to_param)
       else
         props = AdminSite::Articles::NewPropsGenerator.call(article:)
         meta = AdminSite::Articles::NewMetaGenerator.call

@@ -18,7 +18,7 @@ RSpec.describe 'AdminSite::Articles create' do
 
     it '有効なパラメータなら記事を作成して一覧へリダイレクトする' do
       expect { post '/admin/articles', params: valid_params }.to change(Article, :count).by(1)
-      expect(response).to redirect_to('/admin/articles')
+      expect(response).to redirect_to("/admin/articles/#{Article.last.id}")
       expect(flash[:notice]).to eq('記事が作成されました。')
     end
 
