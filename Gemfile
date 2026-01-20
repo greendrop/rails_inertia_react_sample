@@ -11,7 +11,7 @@ gem 'inertia_rails'
 gem 'jbuilder'
 gem 'kamal', require: false
 gem 'kaminari'
-gem 'pg', '~> 1.1'
+gem 'pg', '~> 1.6'
 gem 'propshaft'
 gem 'puma', '>= 5.0'
 gem 'solid_cable'
