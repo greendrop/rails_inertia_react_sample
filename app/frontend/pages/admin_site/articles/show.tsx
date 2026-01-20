@@ -1,4 +1,5 @@
 import type { ReactElement } from "react"
+import FlashAlert from "@/components/admin_site/shared/FlashAlert"
 import Layout from "@/components/admin_site/shared/Layout"
 import MetaTags from "@/components/admin_site/shared/MetaTags"
 import PageHeader from "@/components/admin_site/shared/PageHeader"
@@ -30,6 +31,10 @@ export default function Show({
             <PageHeaderTitleText>{pageHeaderTitle}</PageHeaderTitleText>
           </PageHeaderTitle>
         </PageHeader>
+      </div>
+
+      <div className="mb-4">
+        <FlashAlert />
       </div>
 
       <div className="flex">

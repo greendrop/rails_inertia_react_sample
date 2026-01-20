@@ -1,6 +1,7 @@
 import { Link } from "@inertiajs/react"
 import type { ReactElement } from "react"
 import AppPagination from "@/components/admin_site/shared/AppPagination"
+import FlashAlert from "@/components/admin_site/shared/FlashAlert"
 import Layout from "@/components/admin_site/shared/Layout"
 import MetaTags from "@/components/admin_site/shared/MetaTags"
 import PageHeader from "@/components/admin_site/shared/PageHeader"
@@ -47,6 +48,10 @@ export default function Index({
         <Button asChild>
           <Link href={newLinkHref}>{newLinkLabel}</Link>
         </Button>
+      </div>
+
+      <div className="mb-4">
+        <FlashAlert />
       </div>
 
       <div className="flex">
