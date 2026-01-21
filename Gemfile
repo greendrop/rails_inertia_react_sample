@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-gem 'rails', '~> 8.1.1'
+gem 'rails', '~> 8.1.2'
 
 gem 'bootsnap', require: false
 gem 'image_processing', '~> 1.2'
