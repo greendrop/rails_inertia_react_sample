@@ -13,7 +13,7 @@ import type {
   ArticleStatusOption,
 } from "../types"
 
-type ArticleFormConentProps = {
+type ArticleFormContentProps = {
   form: ArticleForm
   formFieldNames: ArticleFormFieldNames
   statusOptions: ArticleStatusOption[]
@@ -23,7 +23,7 @@ type ArticleFormConentProps = {
   processing: boolean
 }
 
-export default function ArticleFormConent({
+export default function ArticleFormContent({
   form,
   formFieldNames,
   statusOptions,
@@ -31,7 +31,7 @@ export default function ArticleFormConent({
   formErrorAlertTitle,
   errors,
   processing,
-}: ArticleFormConentProps) {
+}: ArticleFormContentProps) {
   const {
     hasErrors,
     errorMessages,
