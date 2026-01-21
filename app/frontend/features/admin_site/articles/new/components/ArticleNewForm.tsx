@@ -1,5 +1,5 @@
 import { Form } from "@inertiajs/react"
-import ArticleFormConent from "../../components/ArticleFormContent"
+import ArticleFormContent from "../../components/ArticleFormContent"
 import type {
   ArticleForm,
   ArticleFormFieldNames,
@@ -27,7 +27,7 @@ export default function ArticleNewForm({
     <Form action={formAction} method="post">
       {({ errors, processing }) => {
         return (
-          <ArticleFormConent
+          <ArticleFormContent
             form={form}
             formFieldNames={formFieldNames}
             statusOptions={statusOptions}
