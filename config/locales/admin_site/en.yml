@@ -1,0 +1,8 @@
+---
+en:
+  admin_site:
+    general:
+      new: 'Create'
+      resource_new_title: 'New %{resource}'
+      resource_created_message: '%{resource} has been created.'
+      form_error_alert_title: 'Please check the input content.'

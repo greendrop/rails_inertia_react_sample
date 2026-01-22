@@ -7,9 +7,11 @@ export type Flash = {
   alert?: string
 }
 
+export type Errors = Record<string, string[]>
+
 export type SharedProps = {
   flash: Flash
-  errors: Record<string, string[]>
+  errors: Errors
   sidebar: AppSidebarProps
   breadcrumb: AppBreadcrumbProps
 }

@@ -7,28 +7,22 @@ import type {
 import Index from "@/pages/admin_site/articles/index"
 import type { Pagination } from "@/types/admin_site"
 
-vi.mock("@inertiajs/react", async () => {
-  const actual: typeof import("@inertiajs/react") =
-    await vi.importActual("@inertiajs/react")
+vi.mock("@/components/admin_site/shared/MetaTags", () => {
   return {
-    ...actual,
-    Head: () => null,
+    default: () => <div data-testid="meta-tags" />,
   }
 })
-
-vi.mock("@/hooks/admin_site/usePage", () => {
+vi.mock("@/components/admin_site/shared/FlashAlert", () => {
   return {
-    default: () => ({
-      props: {
-        _inertia_meta: [],
-      },
-    }),
+    default: () => <div data-testid="flash-alert" />,
   }
 })
 
 const pageHeaderTitle = "記事一覧"
 const noDataLabel = "データがありません。"
 const showLinkLabel = "詳細"
+const newLinkLabel = "新規作成"
+const newLinkHref = "/admin/articles/new"
 
 const articleFieldNames: ArticleFieldNames = {
   id: "ID",
@@ -71,6 +65,8 @@ describe("Index (記事一覧ページ)", () => {
           pagination={pagination}
           noDataLabel={noDataLabel}
           showLinkLabel={showLinkLabel}
+          newLinkLabel={newLinkLabel}
+          newLinkHref={newLinkHref}
         />,
       )
       expect(container).toMatchSnapshot()
@@ -126,6 +122,8 @@ describe("Index (記事一覧ページ)", () => {
           pagination={pagination}
           noDataLabel={noDataLabel}
           showLinkLabel={showLinkLabel}
+          newLinkLabel={newLinkLabel}
+          newLinkHref={newLinkHref}
         />,
       )
       expect(container).toMatchSnapshot()

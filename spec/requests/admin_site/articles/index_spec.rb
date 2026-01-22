@@ -72,6 +72,8 @@ RSpec.describe 'AdminSite::Articles' do
       }
       expected['noDataLabel'] = 'データがありません。'
       expected['showLinkLabel'] = '詳細'
+      expected['newLinkLabel'] = '新規作成'
+      expected['newLinkHref'] = '/admin/articles/new'
 
       except_keys = %w[flash errors sidebar]
       expect(json['props'].except(*except_keys)).to eq(expected)
