@@ -14,7 +14,6 @@ module AdminSite
     end
 
     def show
-      flash.now[:notice] = I18n.t('admin_site.general.resource_created_message', resource: Article.model_name.human)
       article = Article.find(params[:id])
       props = AdminSite::Articles::ShowPropsGenerator.call(article:)
       meta = AdminSite::Articles::ShowMetaGenerator.call
