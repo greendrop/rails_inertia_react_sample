@@ -12,7 +12,7 @@ RSpec.describe 'AdminSite::Articles#new,create', :js do
       fill_in 'タイトル', with: 'New Article Title'
       fill_in '本文', with: 'This is the body of the new article.'
       select '公開', from: 'ステータス'
-      fill_in '公開日時', with: '2024-07-01T10:00'
+      fill_in '公開日時', with: 3.days.from_now.strftime('%Y-%m-%dT%H:%M')
 
       click_button '作成'
     end
