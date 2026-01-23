@@ -1,0 +1,12 @@
+{
+  "feature": "admin_site_articles_destroy",
+  "description": "管理画面で記事を削除する",
+  "language": "ja",
+  "status": {
+    "requirements": "draft",
+    "design": "draft",
+    "tasks": "draft",
+    "implementation": "not_started"
+  },
+  "created_at": "2026-01-22T20:29:46.468Z"
+}
