@@ -4,6 +4,7 @@ import FlashAlert from "@/components/admin_site/shared/FlashAlert"
 import Layout from "@/components/admin_site/shared/Layout"
 import MetaTags from "@/components/admin_site/shared/MetaTags"
 import PageHeader from "@/components/admin_site/shared/PageHeader"
+import PageHeaderAction from "@/components/admin_site/shared/PageHeaderAction"
 import PageHeaderTitle from "@/components/admin_site/shared/PageHeaderTitle"
 import PageHeaderTitleText from "@/components/admin_site/shared/PageHeaderTitleText"
 import { Button } from "@/components/admin_site/ui/button"
@@ -41,15 +42,17 @@ export default function Show({
   return (
     <>
       <MetaTags />
-      <div className="mb-4 flex flex-wrap items-center justify-between gap-4">
+      <div className="mb-4">
         <PageHeader>
           <PageHeaderTitle>
             <PageHeaderTitleText>{pageHeaderTitle}</PageHeaderTitleText>
           </PageHeaderTitle>
+          <PageHeaderAction>
+            <Button type="button" variant="destructive" onClick={handleDestroy}>
+              {destroyButtonLabel}
+            </Button>
+          </PageHeaderAction>
         </PageHeader>
-        <Button type="button" variant="destructive" onClick={handleDestroy}>
-          {destroyButtonLabel}
-        </Button>
       </div>
 
       <div className="mb-4">
