@@ -36,11 +36,7 @@ export default function ArticleTableRow({
           <Button asChild variant="outline">
             <Link href={article.showLinkHref}>{showLinkLabel}</Link>
           </Button>
-          <Button
-            type="button"
-            variant="destructive"
-            onClick={handleDestroy}
-          >
+          <Button type="button" variant="destructive" onClick={handleDestroy}>
             {destroyButtonLabel}
           </Button>
         </div>
