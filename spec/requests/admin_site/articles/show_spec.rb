@@ -49,7 +49,10 @@ RSpec.describe 'AdminSite::Articles show' do
           'body' => '本文',
           'createdAt' => '作成日時',
           'updatedAt' => '更新日時'
-        }
+        },
+        'destroyButtonLabel' => '削除',
+        'destroyConfirmMessage' => 'この記事を削除しますか？',
+        'destroyLinkHref' => "/admin/articles/#{article.id}"
       }
       except_keys = %w[flash errors sidebar]
       expect(json['props'].except(*except_keys)).to eq(expected)

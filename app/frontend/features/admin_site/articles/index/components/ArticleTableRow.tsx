@@ -1,4 +1,4 @@
-import { Link } from "@inertiajs/react"
+import { Link, router } from "@inertiajs/react"
 import { Button } from "@/components/admin_site/ui/button"
 import { TableCell, TableRow } from "@/components/admin_site/ui/table"
 import type { Article } from "../types"
@@ -6,12 +6,24 @@ import type { Article } from "../types"
 export type ArticleTableRowProps = {
   article: Article
   showLinkLabel: string
+  destroyButtonLabel: string
+  destroyConfirmMessage: string
 }
 
 export default function ArticleTableRow({
   article,
   showLinkLabel,
+  destroyButtonLabel,
+  destroyConfirmMessage,
 }: ArticleTableRowProps) {
+  const handleDestroy = () => {
+    if (!window.confirm(destroyConfirmMessage)) {
+      return
+    }
+
+    router.delete(article.destroyLinkHref)
+  }
+
   return (
     <TableRow>
       <TableCell>{article.id}</TableCell>
@@ -20,9 +32,18 @@ export default function ArticleTableRow({
       <TableCell>{new Date(article.createdAt).toLocaleString()}</TableCell>
       <TableCell>{new Date(article.updatedAt).toLocaleString()}</TableCell>
       <TableCell>
-        <Button asChild variant="outline">
-          <Link href={article.showLinkHref}>{showLinkLabel}</Link>
-        </Button>
+        <div className="flex flex-wrap gap-2">
+          <Button asChild variant="outline">
+            <Link href={article.showLinkHref}>{showLinkLabel}</Link>
+          </Button>
+          <Button
+            type="button"
+            variant="destructive"
+            onClick={handleDestroy}
+          >
+            {destroyButtonLabel}
+          </Button>
+        </div>
       </TableCell>
     </TableRow>
   )

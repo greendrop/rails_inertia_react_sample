@@ -5,6 +5,7 @@ export type Article = {
   createdAt: string
   updatedAt: string
   showLinkHref: string
+  destroyLinkHref: string
 }
 
 export type ArticleFieldNames = {

@@ -6,3 +6,8 @@ ja:
       resource_new_title: '%{resource}作成'
       resource_created_message: '%{resource}が作成されました。'
       form_error_alert_title: '入力内容を確認してください。'
+    articles:
+      destroy_button_label: '削除'
+      destroy_confirm_message: 'この記事を削除しますか？'
+      destroyed_message: '記事を削除しました。'
+      destroy_failed_message: '記事の削除に失敗しました。'

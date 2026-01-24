@@ -24,6 +24,8 @@ type IndexProps = {
   showLinkLabel: string
   newLinkLabel: string
   newLinkHref: string
+  destroyButtonLabel: string
+  destroyConfirmMessage: string
 }
 
 export default function Index({
@@ -35,6 +37,8 @@ export default function Index({
   showLinkLabel,
   newLinkLabel,
   newLinkHref,
+  destroyButtonLabel,
+  destroyConfirmMessage,
 }: IndexProps) {
   return (
     <>
@@ -67,6 +71,8 @@ export default function Index({
                   articles={articles}
                   articleFieldNames={articleFieldNames}
                   showLinkLabel={showLinkLabel}
+                  destroyButtonLabel={destroyButtonLabel}
+                  destroyConfirmMessage={destroyConfirmMessage}
                 />
               </div>
 
