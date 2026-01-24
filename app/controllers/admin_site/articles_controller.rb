@@ -42,9 +42,11 @@ module AdminSite
 
     def destroy
       if article.destroy
-        flash[:notice] = I18n.t('admin_site.articles.destroyed_message')
+        flash[:notice] =
+          I18n.t('admin_site.general.resource_destroyed_message', resource: Article.model_name.human)
       else
-        flash[:alert] = I18n.t('admin_site.articles.destroy_failed_message')
+        flash[:alert] =
+          I18n.t('admin_site.general.resource_destroy_failed_message', resource: Article.model_name.human)
       end
 
       redirect_to admin_site_articles_path, status: :see_other

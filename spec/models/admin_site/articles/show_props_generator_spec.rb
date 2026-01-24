@@ -36,7 +36,10 @@ RSpec.describe AdminSite::Articles::ShowPropsGenerator do
           body: '本文',
           createdAt: '作成日時',
           updatedAt: '更新日時'
-        }
+        },
+        destroyButtonLabel: '削除',
+        destroyConfirmMessage: '記事を削除しますか？',
+        destroyLinkHref: "/admin/articles/#{article.id}"
       }
       expect(response).to eq(expected)
     end

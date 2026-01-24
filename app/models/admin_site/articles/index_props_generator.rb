@@ -108,11 +108,11 @@ module AdminSite
       end
 
       def prop_destroy_button_label
-        I18n.t('admin_site.articles.destroy_button_label')
+        I18n.t('admin_site.general.destroy')
       end
 
       def prop_destroy_confirm_message
-        I18n.t('admin_site.articles.destroy_confirm_message')
+        I18n.t('admin_site.general.resource_destroy_confirm_message', resource: Article.model_name.human)
       end
     end
   end

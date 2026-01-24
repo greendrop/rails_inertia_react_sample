@@ -13,7 +13,7 @@ RSpec.describe 'AdminSite::Articles destroy' do
 
       expect(response).to have_http_status(:see_other)
       expect(response).to redirect_to('/admin/articles')
-      expect(flash[:notice]).to eq('記事を削除しました。')
+      expect(flash[:notice]).to eq('記事が削除されました。')
     end
 
     it '存在しないIDでは404を返す' do

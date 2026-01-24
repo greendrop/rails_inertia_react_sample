@@ -3,6 +3,10 @@ en:
   admin_site:
     general:
       new: 'Create'
+      destroy: 'Delete'
       resource_new_title: 'New %{resource}'
       resource_created_message: '%{resource} has been created.'
+      resource_destroyed_message: '%{resource} has been deleted.'
+      resource_destroy_failed_message: 'Failed to delete %{resource}.'
+      resource_destroy_confirm_message: 'Are you sure you want to delete %{resource}?'
       form_error_alert_title: 'Please check the input content.'

@@ -40,7 +40,8 @@ RSpec.describe 'AdminSite::Articles' do
           'status' => article.status,
           'createdAt' => article.created_at.as_json,
           'updatedAt' => article.updated_at.as_json,
-          'showLinkHref' => "/admin/articles/#{article.id}"
+          'showLinkHref' => "/admin/articles/#{article.id}",
+          'destroyLinkHref' => "/admin/articles/#{article.id}"
         }
       end
       expected['articleFieldNames'] = {
@@ -74,6 +75,8 @@ RSpec.describe 'AdminSite::Articles' do
       expected['showLinkLabel'] = '詳細'
       expected['newLinkLabel'] = '新規作成'
       expected['newLinkHref'] = '/admin/articles/new'
+      expected['destroyButtonLabel'] = '削除'
+      expected['destroyConfirmMessage'] = '記事を削除しますか？'
 
       except_keys = %w[flash errors sidebar]
       expect(json['props'].except(*except_keys)).to eq(expected)

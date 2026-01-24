@@ -51,7 +51,7 @@ RSpec.describe 'AdminSite::Articles show' do
           'updatedAt' => '更新日時'
         },
         'destroyButtonLabel' => '削除',
-        'destroyConfirmMessage' => 'この記事を削除しますか？',
+        'destroyConfirmMessage' => '記事を削除しますか？',
         'destroyLinkHref' => "/admin/articles/#{article.id}"
       }
       except_keys = %w[flash errors sidebar]

@@ -47,7 +47,8 @@ RSpec.describe AdminSite::Articles::IndexPropsGenerator do
           status: article.status,
           createdAt: article.created_at,
           updatedAt: article.updated_at,
-          showLinkHref: admin_site_article_path(id: article.id)
+          showLinkHref: admin_site_article_path(id: article.id),
+          destroyLinkHref: admin_site_article_path(id: article.id)
         }
       end
       expected[:articleFieldNames] = {
@@ -81,6 +82,8 @@ RSpec.describe AdminSite::Articles::IndexPropsGenerator do
       expected[:showLinkLabel] = '詳細'
       expected[:newLinkLabel] = '新規作成'
       expected[:newLinkHref] = new_admin_site_article_path
+      expected[:destroyButtonLabel] = '削除'
+      expected[:destroyConfirmMessage] = '記事を削除しますか？'
 
       expect(response).to eq(expected)
     end
