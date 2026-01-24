@@ -35,6 +35,10 @@ const articleFieldNames: ArticleFieldNames = {
   updatedAt: "更新日時",
 }
 
+const destroyButtonLabel = "削除"
+const destroyLinkHref = "/admin_site/articles/1"
+const destroyConfirmMessage = "記事を削除しますか？"
+
 describe("Show (記事詳細ページ)", () => {
   it("正しくレンダリングされる（スナップショット）", () => {
     const { container } = render(
@@ -42,6 +46,9 @@ describe("Show (記事詳細ページ)", () => {
         pageHeaderTitle={pageHeaderTitle}
         article={article}
         articleFieldNames={articleFieldNames}
+        destroyButtonLabel={destroyButtonLabel}
+        destroyLinkHref={destroyLinkHref}
+        destroyConfirmMessage={destroyConfirmMessage}
       />,
     )
     expect(container).toMatchSnapshot()
