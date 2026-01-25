@@ -1,5 +1,7 @@
+import type { ReactNode } from "react"
+
 export type PageHeaderActionProps = {
-  children?: React.ReactNode
+  children?: ReactNode
 }
 
 export default function PageHeaderAction({ children }: PageHeaderActionProps) {

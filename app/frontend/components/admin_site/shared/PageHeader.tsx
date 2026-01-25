@@ -1,5 +1,7 @@
+import type { ReactNode } from "react"
+
 export type PageHeaderProps = {
-  children?: React.ReactNode
+  children?: ReactNode
 }
 
 export default function PageHeader({ children }: PageHeaderProps) {
