@@ -15,7 +15,10 @@ module AdminSite
           pageHeaderTitle: prop_page_header_title,
           breadcrumb: prop_breadcrumb,
           article: prop_article,
-          articleFieldNames: prop_article_field_names
+          articleFieldNames: prop_article_field_names,
+          destroyButtonLabel: prop_destroy_button_label,
+          destroyConfirmMessage: prop_destroy_confirm_message,
+          destroyLinkHref: prop_destroy_link_href
         }
       end
 
@@ -57,6 +60,18 @@ module AdminSite
           createdAt: '作成日時',
           updatedAt: '更新日時'
         }
+      end
+
+      def prop_destroy_button_label
+        I18n.t('admin_site.general.destroy')
+      end
+
+      def prop_destroy_confirm_message
+        I18n.t('admin_site.general.resource_destroy_confirm_message', resource: Article.model_name.human)
+      end
+
+      def prop_destroy_link_href
+        admin_site_article_path(id: article.id)
       end
     end
   end

@@ -5,6 +5,7 @@ import FlashAlert from "@/components/admin_site/shared/FlashAlert"
 import Layout from "@/components/admin_site/shared/Layout"
 import MetaTags from "@/components/admin_site/shared/MetaTags"
 import PageHeader from "@/components/admin_site/shared/PageHeader"
+import PageHeaderAction from "@/components/admin_site/shared/PageHeaderAction"
 import PageHeaderTitle from "@/components/admin_site/shared/PageHeaderTitle"
 import PageHeaderTitleText from "@/components/admin_site/shared/PageHeaderTitleText"
 import { Button } from "@/components/admin_site/ui/button"
@@ -24,6 +25,8 @@ type IndexProps = {
   showLinkLabel: string
   newLinkLabel: string
   newLinkHref: string
+  destroyButtonLabel: string
+  destroyConfirmMessage: string
 }
 
 export default function Index({
@@ -35,19 +38,23 @@ export default function Index({
   showLinkLabel,
   newLinkLabel,
   newLinkHref,
+  destroyButtonLabel,
+  destroyConfirmMessage,
 }: IndexProps) {
   return (
     <>
       <MetaTags />
-      <div className="mb-4 flex flex-wrap items-center justify-between gap-4">
+      <div className="mb-4">
         <PageHeader>
           <PageHeaderTitle>
             <PageHeaderTitleText>{pageHeaderTitle}</PageHeaderTitleText>
           </PageHeaderTitle>
+          <PageHeaderAction>
+            <Button asChild>
+              <Link href={newLinkHref}>{newLinkLabel}</Link>
+            </Button>
+          </PageHeaderAction>
         </PageHeader>
-        <Button asChild>
-          <Link href={newLinkHref}>{newLinkLabel}</Link>
-        </Button>
       </div>
 
       <div className="mb-4">
@@ -67,6 +74,8 @@ export default function Index({
                   articles={articles}
                   articleFieldNames={articleFieldNames}
                   showLinkLabel={showLinkLabel}
+                  destroyButtonLabel={destroyButtonLabel}
+                  destroyConfirmMessage={destroyConfirmMessage}
                 />
               </div>
 

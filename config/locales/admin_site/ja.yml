@@ -3,6 +3,10 @@ ja:
   admin_site:
     general:
       new: '作成'
+      destroy: '削除'
       resource_new_title: '%{resource}作成'
       resource_created_message: '%{resource}が作成されました。'
+      resource_destroyed_message: '%{resource}が削除されました。'
+      resource_destroy_failed_message: '%{resource}の削除に失敗しました。'
+      resource_destroy_confirm_message: '%{resource}を削除しますか？'
       form_error_alert_title: '入力内容を確認してください。'

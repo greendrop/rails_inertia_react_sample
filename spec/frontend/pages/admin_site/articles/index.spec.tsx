@@ -23,6 +23,8 @@ const noDataLabel = "データがありません。"
 const showLinkLabel = "詳細"
 const newLinkLabel = "新規作成"
 const newLinkHref = "/admin/articles/new"
+const destroyButtonLabel = "削除"
+const destroyConfirmMessage = "記事を削除しますか？"
 
 const articleFieldNames: ArticleFieldNames = {
   id: "ID",
@@ -67,6 +69,8 @@ describe("Index (記事一覧ページ)", () => {
           showLinkLabel={showLinkLabel}
           newLinkLabel={newLinkLabel}
           newLinkHref={newLinkHref}
+          destroyButtonLabel={destroyButtonLabel}
+          destroyConfirmMessage={destroyConfirmMessage}
         />,
       )
       expect(container).toMatchSnapshot()
@@ -83,6 +87,7 @@ describe("Index (記事一覧ページ)", () => {
           createdAt: "2025-12-01T00:00:00Z",
           updatedAt: "2025-12-01T00:00:00Z",
           showLinkHref: "/admin/articles/1",
+          destroyLinkHref: "/admin/articles/1",
         },
         {
           id: 2,
@@ -91,6 +96,7 @@ describe("Index (記事一覧ページ)", () => {
           createdAt: "2025-12-02T00:00:00Z",
           updatedAt: "2025-12-02T00:00:00Z",
           showLinkHref: "/admin/articles/2",
+          destroyLinkHref: "/admin/articles/2",
         },
       ]
 
@@ -124,6 +130,8 @@ describe("Index (記事一覧ページ)", () => {
           showLinkLabel={showLinkLabel}
           newLinkLabel={newLinkLabel}
           newLinkHref={newLinkHref}
+          destroyButtonLabel={destroyButtonLabel}
+          destroyConfirmMessage={destroyConfirmMessage}
         />,
       )
       expect(container).toMatchSnapshot()

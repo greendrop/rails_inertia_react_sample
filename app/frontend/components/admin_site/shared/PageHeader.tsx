@@ -1,7 +1,9 @@
+import type { ReactNode } from "react"
+
 export type PageHeaderProps = {
-  children?: React.ReactNode
+  children?: ReactNode
 }
 
 export default function PageHeader({ children }: PageHeaderProps) {
-  return <div className="flex">{children}</div>
+  return <div className="flex flex-wrap items-center gap-4">{children}</div>
 }

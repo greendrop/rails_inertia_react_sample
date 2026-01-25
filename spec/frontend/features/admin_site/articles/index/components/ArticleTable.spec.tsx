@@ -14,6 +14,7 @@ const articles: Article[] = [
     createdAt: "2020-01-01T00:00:00.000Z",
     updatedAt: "2020-01-02T00:00:00.000Z",
     showLinkHref: "/admin_site/articles/1",
+    destroyLinkHref: "/admin_site/articles/1",
   },
   {
     id: 2,
@@ -22,6 +23,7 @@ const articles: Article[] = [
     createdAt: "2020-02-01T00:00:00.000Z",
     updatedAt: "2020-02-02T00:00:00.000Z",
     showLinkHref: "/admin_site/articles/2",
+    destroyLinkHref: "/admin_site/articles/2",
   },
 ]
 
@@ -35,6 +37,8 @@ const articleFieldNames: ArticleFieldNames = {
 }
 
 const showLinkLabel = "表示"
+const destroyButtonLabel = "削除"
+const destroyConfirmMessage = "記事を削除しますか？"
 
 describe("ArticleTable", () => {
   it("正しくレンダリングされる（スナップショット）", () => {
@@ -43,6 +47,8 @@ describe("ArticleTable", () => {
         articles={articles}
         articleFieldNames={articleFieldNames}
         showLinkLabel={showLinkLabel}
+        destroyButtonLabel={destroyButtonLabel}
+        destroyConfirmMessage={destroyConfirmMessage}
       />,
     )
     expect(container).toMatchSnapshot()

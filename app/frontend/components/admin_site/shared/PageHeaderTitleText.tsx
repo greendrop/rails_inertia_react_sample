@@ -1,5 +1,7 @@
+import type { ReactNode } from "react"
+
 export type PageHeaderTitleTextProps = {
-  children?: React.ReactNode
+  children?: ReactNode
 }
 
 export default function PageHeaderTitleText({

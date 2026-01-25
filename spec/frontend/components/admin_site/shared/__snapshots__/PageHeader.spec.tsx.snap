@@ -3,7 +3,7 @@
 exports[`PageHeader > 正しくレンダリングされること（スナップショット） 1`] = `
 <div>
   <div
-    class="flex"
+    class="flex flex-wrap items-center gap-4"
   >
     <div
       class="flex-auto"

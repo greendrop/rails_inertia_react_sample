@@ -12,12 +12,18 @@ describe("ArticleTableRow", () => {
       createdAt: "2020-01-01T00:00:00.000Z",
       updatedAt: "2020-01-02T00:00:00.000Z",
       showLinkHref: "/admin_site/articles/1",
+      destroyLinkHref: "/admin_site/articles/1",
     }
 
     const { container } = render(
       <table>
         <tbody>
-          <ArticleTableRow article={article} showLinkLabel="詳細" />
+          <ArticleTableRow
+            article={article}
+            showLinkLabel="詳細"
+            destroyButtonLabel="削除"
+            destroyConfirmMessage="記事を削除しますか？"
+          />
         </tbody>
       </table>,
     )

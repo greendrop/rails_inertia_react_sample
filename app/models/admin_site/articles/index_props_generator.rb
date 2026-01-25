@@ -21,7 +21,9 @@ module AdminSite
           noDataLabel: prop_no_data_label,
           showLinkLabel: prop_show_link_label,
           newLinkLabel: prop_new_link_label,
-          newLinkHref: prop_new_link_href
+          newLinkHref: prop_new_link_href,
+          destroyButtonLabel: prop_destroy_button_label,
+          destroyConfirmMessage: prop_destroy_confirm_message
         }
       end
 
@@ -50,7 +52,8 @@ module AdminSite
             status: article.status,
             createdAt: article.created_at,
             updatedAt: article.updated_at,
-            showLinkHref: admin_site_article_path(id: article.id)
+            showLinkHref: admin_site_article_path(id: article.id),
+            destroyLinkHref: admin_site_article_path(id: article.id)
           }
         end
       end
@@ -102,6 +105,14 @@ module AdminSite
 
       def prop_new_link_href
         new_admin_site_article_path
+      end
+
+      def prop_destroy_button_label
+        I18n.t('admin_site.general.destroy')
+      end
+
+      def prop_destroy_confirm_message
+        I18n.t('admin_site.general.resource_destroy_confirm_message', resource: Article.model_name.human)
       end
     end
   end

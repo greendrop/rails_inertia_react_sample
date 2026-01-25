@@ -12,12 +12,16 @@ export type ArticleTableProps = {
   articles: Article[]
   articleFieldNames: ArticleFieldNames
   showLinkLabel: string
+  destroyButtonLabel: string
+  destroyConfirmMessage: string
 }
 
 export default function ArticleTable({
   articles,
   articleFieldNames,
   showLinkLabel,
+  destroyButtonLabel,
+  destroyConfirmMessage,
 }: ArticleTableProps) {
   return (
     <Table>
@@ -39,6 +43,8 @@ export default function ArticleTable({
             key={article.id}
             article={article}
             showLinkLabel={showLinkLabel}
+            destroyButtonLabel={destroyButtonLabel}
+            destroyConfirmMessage={destroyConfirmMessage}
           />
         ))}
       </TableBody>
