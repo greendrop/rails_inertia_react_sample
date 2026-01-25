@@ -27,7 +27,7 @@ RSpec.describe 'AdminSite::Articles destroy' do
       it '記事の削除に失敗し、一覧へリダイレクトする' do
         delete "/admin/articles/#{article.id}"
         expect(response).to have_http_status(:see_other)
-        expect(flash[:alert]).to include('記事の削除に失敗しました。')
+        expect(flash[:alert]).to eq('記事の削除に失敗しました。')
       end
     end
 
