@@ -1,26 +1,51 @@
-# Requirements Document
+# 管理画面で記事を編集する（admin_site_articles_edit）
 
-## Introduction
-{{INTRODUCTION}}
+## 概要
+- 管理者が管理画面から既存の記事を編集・更新できるようにする。
+- 誤った記事内容やステータスを修正し、最新の情報を保てることを目的とする。
 
-## Requirements
+## 前提条件
+- 記事（Article）モデルが既に存在し、作成機能が利用可能であること。
+- 管理者として認証済みであること（一般ユーザーはアクセス不可）。
 
-### Requirement 1: {{REQUIREMENT_AREA_1}}
-<!-- Requirement headings MUST include a leading numeric ID only (for example: "Requirement 1: ...", "1. Overview", "2 Feature: ..."). Alphabetic IDs like "Requirement A" are not allowed. -->
-**Objective:** As a {{ROLE}}, I want {{CAPABILITY}}, so that {{BENEFIT}}
+## 機能要件
+- 既存の記事に対して編集画面を表示できること。
+  - URL例: `/admin/articles/:id/edit`。
+  - 存在しないIDを指定した場合は404相当の応答となること。
+- 編集フォームでは以下の項目を編集できること。
+  - タイトル（title）
+  - 本文（body）
+  - ステータス（status: draft/published）
+  - 公開日時（published_at）
+  - スラッグ（slug）
+  - タグ（tags）
+  - カテゴリ（category）
+  - サムネイルURL（thumbnail_url）
+- フォームには既存の記事の値が初期表示されること（編集前の値をそのまま表示）。
+- 「更新」アクションにより、入力値で記事が更新されること。
+- 更新成功時は、適切なページ（例: 一覧または詳細）へ遷移し、成功メッセージが表示されること。
+- 更新失敗時（バリデーションエラーなど）は、同じ編集画面に留まり、入力値とエラーメッセージが表示されること。
 
-#### Acceptance Criteria
-1. When [event], the [system] shall [response/action]
-2. If [trigger], then the [system] shall [response/action]
-3. While [precondition], the [system] shall [response/action]
-4. Where [feature is included], the [system] shall [response/action]
-5. The [system] shall [response/action]
+## バリデーション要件
+- タイトル: 必須、空文字不可、最大255文字程度。
+- 本文: 必須、空文字不可。
+- ステータス: `draft` または `published` のみ許可。
+- スラッグ: 入力されている場合は一意であること。
+- 公開日時: `published` の場合のみ設定可能（`draft` の場合は未設定または任意）とするポリシーに従うこと。
 
-### Requirement 2: {{REQUIREMENT_AREA_2}}
-**Objective:** As a {{ROLE}}, I want {{CAPABILITY}}, so that {{BENEFIT}}
+## 画面・UX要件
+- UIはInertia + Reactで実装する。
+- 編集フォームは新規作成画面と統一感のあるデザインと項目構成とする。
+- バリデーションエラーは各項目の近くにメッセージを表示し、フォーム上部などに共通エラーがあればまとめて表示してもよい。
+- 戻る/キャンセル手段を提供し、編集を破棄して一覧（または詳細）へ戻れること。
 
-#### Acceptance Criteria
-1. When [event], the [system] shall [response/action]
-2. When [event] and [condition], the [system] shall [response/action]
+## 非機能要件
+- サーバーサイドはRailsで実装する。
+- 認証・認可は既存の管理画面の仕組みに従う。
+- ログや監査が既にある場合は、更新操作も同様に記録できること（必須でなければ任意要件として扱う）。
 
-<!-- Additional requirements follow the same pattern -->
+## 受け入れ基準
+- 管理者が既存の記事の編集画面を開き、各項目の値が現在の状態で表示されること。
+- 正常な入力で「更新」を行うと、記事の内容が更新され、成功メッセージが表示されること。
+- 不正な入力（必須項目の空や不正なstatus等）の場合は更新されず、適切なエラーメッセージが表示されること。
+- 存在しない記事IDにアクセスした場合は404相当となり、管理画面の他機能に影響を与えないこと。
