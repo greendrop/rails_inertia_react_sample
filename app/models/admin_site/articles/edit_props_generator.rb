@@ -35,9 +35,24 @@ module AdminSite
       def prop_breadcrumb
         {
           items: [
-            { key: 'homes#show', label: 'ホーム', href: admin_site_root_path, isActive: false },
-            { key: 'articles#index', label: '記事一覧', href: admin_site_articles_path, isActive: false },
-            { key: 'articles#show', label: '記事詳細', href: admin_site_article_path(id: article.id), isActive: false },
+            {
+              key: 'homes#show',
+              label: I18n.t('admin_site.general.home'),
+              href: admin_site_root_path,
+              isActive: false
+            },
+            {
+              key: 'articles#index',
+              label: I18n.t('admin_site.general.resource_index_title', resource: Article.model_name.human),
+              href: admin_site_articles_path,
+              isActive: false
+            },
+            {
+              key: 'articles#show',
+              label: I18n.t('admin_site.general.resource_show_title', resource: Article.model_name.human),
+              href: admin_site_article_path(id: article.id),
+              isActive: false
+            },
             {
               key: 'articles#edit',
               label: I18n.t('admin_site.general.resource_edit_title', resource: Article.model_name.human),
