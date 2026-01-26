@@ -1,0 +1,60 @@
+import { render } from "@testing-library/react"
+import { describe, expect, it, vi } from "vitest"
+import type {
+  ArticleForm,
+  ArticleFormFieldNames,
+  ArticleStatusOption,
+} from "@/features/admin_site/articles/types"
+import Edit from "@/pages/admin_site/articles/edit"
+
+vi.mock("@/components/admin_site/shared/MetaTags", () => {
+  return {
+    default: () => <div data-testid="meta-tags" />,
+  }
+})
+vi.mock("@/components/admin_site/shared/FlashAlert", () => {
+  return {
+    default: () => <div data-testid="flash-alert" />,
+  }
+})
+
+describe("Edit (記事編集ページ)", () => {
+  it("正しくレンダリングされる（スナップショット）", () => {
+    const pageHeaderTitle = "記事編集"
+    const formAction = "/admin/articles/1"
+    const submitButtonLabel = "更新"
+    const formErrorAlertTitle = "入力内容を確認してください。"
+
+    const form: ArticleForm = {
+      title: "テストタイトル",
+      body: "テスト本文",
+      status: "draft",
+      publishedAt: "2025-01-01T00:00",
+    }
+
+    const formFieldNames: ArticleFormFieldNames = {
+      title: "タイトル",
+      body: "本文",
+      status: "ステータス",
+      publishedAt: "公開日時",
+    }
+
+    const statusOptions: ArticleStatusOption[] = [
+      { label: "下書き", value: "draft" },
+      { label: "公開", value: "published" },
+    ]
+
+    const { container } = render(
+      <Edit
+        pageHeaderTitle={pageHeaderTitle}
+        formAction={formAction}
+        form={form}
+        formFieldNames={formFieldNames}
+        statusOptions={statusOptions}
+        submitButtonLabel={submitButtonLabel}
+        formErrorAlertTitle={formErrorAlertTitle}
+      />,
+    )
+    expect(container).toMatchSnapshot()
+  })
+})

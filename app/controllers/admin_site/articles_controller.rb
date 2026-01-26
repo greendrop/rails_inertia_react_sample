@@ -2,7 +2,7 @@
 
 module AdminSite
   class ArticlesController < AdminSite::ApplicationController
-    before_action :set_article, only: %i[show destroy]
+    before_action :set_article, only: %i[show edit update destroy]
 
     def index
       articles = Article.order(id: :asc).page(page).per(per_page)
@@ -27,6 +27,12 @@ module AdminSite
       render inertia: props, meta:
     end
 
+    def edit
+      props = AdminSite::Articles::EditPropsGenerator.call(article:)
+      meta = AdminSite::Articles::EditMetaGenerator.call
+      render inertia: props, meta:
+    end
+
     def create
       article = Article.new(article_params)
 
@@ -37,6 +43,17 @@ module AdminSite
         props = AdminSite::Articles::NewPropsGenerator.call(article:)
         meta = AdminSite::Articles::NewMetaGenerator.call
         render inertia: 'admin_site/articles/new', props:, meta:, status: :unprocessable_content
+      end
+    end
+
+    def update
+      if article.update(article_params)
+        flash[:notice] = I18n.t('admin_site.general.resource_updated_message', resource: Article.model_name.human)
+        redirect_to admin_site_article_path(id: article.to_param)
+      else
+        props = AdminSite::Articles::EditPropsGenerator.call(article:)
+        meta = AdminSite::Articles::EditMetaGenerator.call
+        render inertia: 'admin_site/articles/edit', props:, meta:, status: :unprocessable_content
       end
     end
 

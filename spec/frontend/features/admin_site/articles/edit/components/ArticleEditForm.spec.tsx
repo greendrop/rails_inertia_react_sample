@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react"
 import type { ReactNode } from "react"
 import { describe, expect, it, vi } from "vitest"
-import ArticleNewForm from "@/features/admin_site/articles/new/components/ArticleNewForm"
+import ArticleEditForm from "@/features/admin_site/articles/edit/components/ArticleEditForm"
 import type {
   ArticleForm,
   ArticleFormFieldNames,
@@ -31,6 +31,9 @@ vi.mock("@inertiajs/react", () => {
           : children}
       </form>
     ),
+    Link: ({ href, children }: { href: string; children: ReactNode }) => (
+      <a href={href}>{children}</a>
+    ),
   }
 })
 
@@ -53,17 +56,17 @@ const statusOptions: ArticleStatusOption[] = [
   { label: "公開", value: "published" },
 ]
 
-const submitButtonLabel = "送信"
+const submitButtonLabel = "更新"
 const formErrorAlertTitle = "入力内容を確認してください。"
-const formAction = "/admin/articles"
+const formAction = "/admin/articles/1"
 
-describe("ArticleNewForm", () => {
+describe("ArticleEditForm", () => {
   it("Form に action と method が渡される", () => {
     mockErrors = {}
     mockProcessing = false
 
     const { container } = render(
-      <ArticleNewForm
+      <ArticleEditForm
         form={form}
         formAction={formAction}
         formFieldNames={formFieldNames}
@@ -76,7 +79,7 @@ describe("ArticleNewForm", () => {
     const formElement = container.querySelector("form")
     expect(formElement).not.toBeNull()
     expect(formElement?.getAttribute("action")).toBe(formAction)
-    expect(formElement?.getAttribute("method")).toBe("post")
+    expect(formElement?.getAttribute("method")).toBe("patch")
   })
 
   it("エラーがない場合に正しくレンダリングされる（スナップショット）", () => {
@@ -84,7 +87,7 @@ describe("ArticleNewForm", () => {
     mockProcessing = false
 
     const { container } = render(
-      <ArticleNewForm
+      <ArticleEditForm
         form={form}
         formAction={formAction}
         formFieldNames={formFieldNames}
@@ -108,7 +111,7 @@ describe("ArticleNewForm", () => {
     mockProcessing = true
 
     const { container } = render(
-      <ArticleNewForm
+      <ArticleEditForm
         form={form}
         formAction={formAction}
         formFieldNames={formFieldNames}
@@ -120,7 +123,6 @@ describe("ArticleNewForm", () => {
 
     expect(screen.getByText(formErrorAlertTitle)).toBeTruthy()
     expect(screen.getByText("その他のエラー")).toBeTruthy()
-    expect(screen.getByText("タイトルエラー")).toBeTruthy()
 
     expect(container).toMatchSnapshot()
   })

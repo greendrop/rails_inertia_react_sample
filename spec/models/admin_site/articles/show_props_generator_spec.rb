@@ -37,6 +37,8 @@ RSpec.describe AdminSite::Articles::ShowPropsGenerator do
           createdAt: '作成日時',
           updatedAt: '更新日時'
         },
+        editButtonLabel: '編集',
+        editLinkHref: "/admin/articles/#{article.id}/edit",
         destroyButtonLabel: '削除',
         destroyConfirmMessage: '記事を削除しますか？',
         destroyLinkHref: "/admin/articles/#{article.id}"

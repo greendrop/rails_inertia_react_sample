@@ -16,6 +16,8 @@ module AdminSite
           breadcrumb: prop_breadcrumb,
           article: prop_article,
           articleFieldNames: prop_article_field_names,
+          editButtonLabel: prop_edit_button_label,
+          editLinkHref: prop_edit_link_href,
           destroyButtonLabel: prop_destroy_button_label,
           destroyConfirmMessage: prop_destroy_confirm_message,
           destroyLinkHref: prop_destroy_link_href
@@ -60,6 +62,14 @@ module AdminSite
           createdAt: '作成日時',
           updatedAt: '更新日時'
         }
+      end
+
+      def prop_edit_button_label
+        I18n.t('admin_site.general.edit')
+      end
+
+      def prop_edit_link_href
+        edit_admin_site_article_path(id: article.id)
       end
 
       def prop_destroy_button_label

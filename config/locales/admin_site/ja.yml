@@ -3,9 +3,14 @@ ja:
   admin_site:
     general:
       new: '作成'
+      edit: '編集'
+      update: '更新'
+      cancel: 'キャンセル'
       destroy: '削除'
       resource_new_title: '%{resource}作成'
+      resource_edit_title: '%{resource}編集'
       resource_created_message: '%{resource}が作成されました。'
+      resource_updated_message: '%{resource}が更新されました。'
       resource_destroyed_message: '%{resource}が削除されました。'
       resource_destroy_failed_message: '%{resource}の削除に失敗しました。'
       resource_destroy_confirm_message: '%{resource}を削除しますか？'
