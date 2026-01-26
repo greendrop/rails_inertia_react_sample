@@ -33,6 +33,8 @@ RSpec.describe 'AdminSite::Articles edit/update' do
           'items' => [
             { 'key' => 'homes#show', 'label' => 'ホーム', 'href' => '/admin', 'isActive' => false },
             { 'key' => 'articles#index', 'label' => '記事一覧', 'href' => '/admin/articles', 'isActive' => false },
+            { 'key' => 'articles#show', 'label' => '記事詳細', 'href' => "/admin/articles/#{article.id}",
+              'isActive' => false },
             { 'key' => 'articles#edit', 'label' => '記事編集', 'href' => "/admin/articles/#{article.id}/edit",
               'isActive' => true }
           ]
@@ -55,9 +57,7 @@ RSpec.describe 'AdminSite::Articles edit/update' do
           { 'label' => '公開', 'value' => 'published' }
         ],
         'submitButtonLabel' => '更新',
-        'formErrorAlertTitle' => '入力内容を確認してください。',
-        'cancelLinkHref' => "/admin/articles/#{article.id}",
-        'cancelButtonLabel' => 'キャンセル'
+        'formErrorAlertTitle' => '入力内容を確認してください。'
       }
 
       except_keys = %w[flash errors sidebar]

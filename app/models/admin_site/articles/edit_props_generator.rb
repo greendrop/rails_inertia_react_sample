@@ -20,9 +20,7 @@ module AdminSite
           statusOptions: prop_status_options,
           submitButtonLabel: prop_submit_button_label,
           errors: prop_errors,
-          formErrorAlertTitle: prop_form_error_alert_title,
-          cancelLinkHref: prop_cancel_link_href,
-          cancelButtonLabel: prop_cancel_button_label
+          formErrorAlertTitle: prop_form_error_alert_title
         }
       end
 
@@ -39,6 +37,7 @@ module AdminSite
           items: [
             { key: 'homes#show', label: 'ホーム', href: admin_site_root_path, isActive: false },
             { key: 'articles#index', label: '記事一覧', href: admin_site_articles_path, isActive: false },
+            { key: 'articles#show', label: '記事詳細', href: admin_site_article_path(id: article.id), isActive: false },
             {
               key: 'articles#edit',
               label: I18n.t('admin_site.general.resource_edit_title', resource: Article.model_name.human),
@@ -91,14 +90,6 @@ module AdminSite
 
       def prop_form_error_alert_title
         I18n.t('admin_site.general.form_error_alert_title')
-      end
-
-      def prop_cancel_link_href
-        admin_site_article_path(id: article.id)
-      end
-
-      def prop_cancel_button_label
-        I18n.t('admin_site.general.cancel')
       end
 
       def formatted_datetime(value)
