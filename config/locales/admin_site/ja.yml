@@ -2,11 +2,17 @@
 ja:
   admin_site:
     general:
+      home: 'ホーム'
       new: '作成'
+      create: '作成'
       edit: '編集'
       update: '更新'
       cancel: 'キャンセル'
       destroy: '削除'
+      show: '詳細'
+      operations: '操作'
+      no_data_message: 'データがありません。'
+      resource_index_title: '%{resource}一覧'
       resource_new_title: '%{resource}作成'
       resource_edit_title: '%{resource}編集'
       resource_created_message: '%{resource}が作成されました。'
@@ -15,3 +21,8 @@ ja:
       resource_destroy_failed_message: '%{resource}の削除に失敗しました。'
       resource_destroy_confirm_message: '%{resource}を削除しますか？'
       form_error_alert_title: '入力内容を確認してください。'
+    pagination:
+      previous: '前へ'
+      next: '次へ'
+      previous_aria_label: '前のページへ'
+      next_aria_label: '次のページへ'

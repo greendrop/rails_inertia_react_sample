@@ -32,14 +32,20 @@ module AdminSite
       attr_reader :articles, :pagination
 
       def prop_page_header_title
-        '記事一覧'
+        I18n.t('admin_site.general.resource_index_title', resource: Article.model_name.human)
       end
 
       def prop_breadcrumb
         {
           items: [
-            { key: 'homes#show', label: 'ホーム', href: admin_site_root_path, isActive: false },
-            { key: 'articles#index', label: '記事一覧', href: admin_site_articles_path, isActive: true }
+            { key: 'homes#show',
+              label: I18n.t('admin_site.general.home'),
+              href: admin_site_root_path,
+              isActive: false },
+            { key: 'articles#index',
+              label: I18n.t('admin_site.general.resource_index_title', resource: Article.model_name.human),
+              href: admin_site_articles_path,
+              isActive: true }
           ]
         }
       end
@@ -60,12 +66,12 @@ module AdminSite
 
       def prop_article_field_names
         {
-          id: 'ID',
-          title: 'タイトル',
-          status: 'ステータス',
-          createdAt: '作成日時',
-          updatedAt: '更新日時',
-          operations: '操作'
+          id: Article.human_attribute_name(:id),
+          title: Article.human_attribute_name(:title),
+          status: Article.human_attribute_name(:status),
+          createdAt: Article.human_attribute_name(:created_at),
+          updatedAt: Article.human_attribute_name(:updated_at),
+          operations: I18n.t('admin_site.general.operations')
         }
       end
 
@@ -84,23 +90,23 @@ module AdminSite
           isFirstPage: pagination[:first_page?],
           isLastPage: pagination[:last_page?],
           isOutOfRange: pagination[:out_of_range?],
-          nextPageLabel: '次へ',
-          prevPageLabel: '前へ',
-          nextPageAriaLabel: '次のページへ',
-          prevPageAriaLabel: '前のページへ'
+          nextPageLabel: I18n.t('admin_site.pagination.next'),
+          prevPageLabel: I18n.t('admin_site.pagination.previous'),
+          nextPageAriaLabel: I18n.t('admin_site.pagination.next_aria_label'),
+          prevPageAriaLabel: I18n.t('admin_site.pagination.previous_aria_label')
         }
       end
 
       def prop_no_data_label
-        'データがありません。'
+        I18n.t('admin_site.general.no_data_message')
       end
 
       def prop_show_link_label
-        '詳細'
+        I18n.t('admin_site.general.show')
       end
 
       def prop_new_link_label
-        '新規作成'
+        I18n.t('admin_site.general.new')
       end
 
       def prop_new_link_href
