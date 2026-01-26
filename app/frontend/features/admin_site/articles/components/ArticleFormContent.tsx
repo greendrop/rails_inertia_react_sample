@@ -1,3 +1,4 @@
+import { Link } from "@inertiajs/react"
 import { Button } from "@/components/admin_site/ui/button"
 import { Input } from "@/components/admin_site/ui/input"
 import { Textarea } from "@/components/admin_site/ui/textarea"
@@ -21,6 +22,8 @@ type ArticleFormContentProps = {
   formErrorAlertTitle: string
   errors: Record<string, string | string[]>
   processing: boolean
+  cancelLinkHref?: string
+  cancelLinkLabel?: string
 }
 
 export default function ArticleFormContent({
@@ -31,6 +34,8 @@ export default function ArticleFormContent({
   formErrorAlertTitle,
   errors,
   processing,
+  cancelLinkHref,
+  cancelLinkLabel,
 }: ArticleFormContentProps) {
   const {
     hasErrors,
@@ -172,6 +177,14 @@ export default function ArticleFormContent({
           {submitButtonLabel}
         </Button>
       </div>
+
+      {cancelLinkHref && cancelLinkLabel && (
+        <div className="mt-2">
+          <Button asChild variant="outline" className="w-full">
+            <Link href={cancelLinkHref}>{cancelLinkLabel}</Link>
+          </Button>
+        </div>
+      )}
     </>
   )
 }

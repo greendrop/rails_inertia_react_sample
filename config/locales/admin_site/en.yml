@@ -3,9 +3,14 @@ en:
   admin_site:
     general:
       new: 'Create'
+      edit: 'Edit'
+      update: 'Update'
+      cancel: 'Cancel'
       destroy: 'Delete'
       resource_new_title: 'New %{resource}'
+      resource_edit_title: 'Edit %{resource}'
       resource_created_message: '%{resource} has been created.'
+      resource_updated_message: '%{resource} has been updated.'
       resource_destroyed_message: '%{resource} has been deleted.'
       resource_destroy_failed_message: 'Failed to delete %{resource}.'
       resource_destroy_confirm_message: 'Are you sure you want to delete %{resource}?'
