@@ -15,6 +15,7 @@ ja:
       resource_index_title: '%{resource}一覧'
       resource_new_title: '%{resource}作成'
       resource_edit_title: '%{resource}編集'
+      resource_show_title: '%{resource}詳細'
       resource_created_message: '%{resource}が作成されました。'
       resource_updated_message: '%{resource}が更新されました。'
       resource_destroyed_message: '%{resource}が削除されました。'

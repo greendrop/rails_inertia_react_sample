@@ -15,6 +15,7 @@ en:
       resource_index_title: '%{resource} Index'
       resource_new_title: 'New %{resource}'
       resource_edit_title: 'Edit %{resource}'
+      resource_show_title: '%{resource} Details'
       resource_created_message: '%{resource} has been created.'
       resource_updated_message: '%{resource} has been updated.'
       resource_destroyed_message: '%{resource} has been deleted.'

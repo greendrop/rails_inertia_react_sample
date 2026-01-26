@@ -34,7 +34,7 @@ RSpec.describe AdminSite::Articles::ShowPropsGenerator do
           title: 'タイトル',
           status: 'ステータス',
           body: '本文',
-          createdAt: '作成日時',
+          createdAt: '登録日時',
           updatedAt: '更新日時'
         },
         editButtonLabel: '編集',
