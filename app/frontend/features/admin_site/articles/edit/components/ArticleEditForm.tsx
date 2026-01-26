@@ -13,8 +13,6 @@ export type ArticleEditFormProps = {
   statusOptions: ArticleStatusOption[]
   submitButtonLabel: string
   formErrorAlertTitle: string
-  cancelLinkHref: string
-  cancelButtonLabel: string
 }
 
 export default function ArticleEditForm({
@@ -24,8 +22,6 @@ export default function ArticleEditForm({
   statusOptions,
   submitButtonLabel,
   formErrorAlertTitle,
-  cancelLinkHref,
-  cancelButtonLabel,
 }: ArticleEditFormProps) {
   return (
     <Form action={formAction} method="patch">
@@ -39,8 +35,6 @@ export default function ArticleEditForm({
             formErrorAlertTitle={formErrorAlertTitle}
             errors={errors}
             processing={processing}
-            cancelLinkHref={cancelLinkHref}
-            cancelLinkLabel={cancelButtonLabel}
           />
         )
       }}

@@ -67,22 +67,4 @@ describe("ArticleFormContent", () => {
 
     expect(container).toMatchSnapshot()
   })
-
-  it("キャンセルリンクが表示される", () => {
-    const { getByRole } = render(
-      <ArticleFormContent
-        form={form}
-        formFieldNames={formFieldNames}
-        statusOptions={statusOptions}
-        submitButtonLabel={submitButtonLabel}
-        formErrorAlertTitle={formErrorAlertTitle}
-        errors={{}}
-        processing={false}
-        cancelLinkHref="/admin/articles/1"
-        cancelLinkLabel="キャンセル"
-      />,
-    )
-
-    expect(getByRole("link", { name: "キャンセル" })).toBeTruthy()
-  })
 })

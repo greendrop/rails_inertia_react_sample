@@ -237,15 +237,6 @@ exports[`ArticleEditForm > エラーがある場合に正しくレンダリン�
         更新
       </button>
     </div>
-    <div
-      class="mt-2"
-    >
-      <a
-        href="/admin/articles/1"
-      >
-        キャンセル
-      </a>
-    </div>
   </form>
 </div>
 `;
@@ -373,15 +364,6 @@ exports[`ArticleEditForm > エラーがない場合に正しくレンダリン�
       >
         更新
       </button>
-    </div>
-    <div
-      class="mt-2"
-    >
-      <a
-        href="/admin/articles/1"
-      >
-        キャンセル
-      </a>
     </div>
   </form>
 </div>

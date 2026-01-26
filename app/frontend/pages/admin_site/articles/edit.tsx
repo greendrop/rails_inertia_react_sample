@@ -20,8 +20,6 @@ export type EditProps = {
   statusOptions: ArticleStatusOption[]
   submitButtonLabel: string
   formErrorAlertTitle: string
-  cancelLinkHref: string
-  cancelButtonLabel: string
 }
 
 export default function Edit({
@@ -32,8 +30,6 @@ export default function Edit({
   statusOptions,
   submitButtonLabel,
   formErrorAlertTitle,
-  cancelLinkHref,
-  cancelButtonLabel,
 }: EditProps) {
   return (
     <>
@@ -59,8 +55,6 @@ export default function Edit({
             statusOptions={statusOptions}
             submitButtonLabel={submitButtonLabel}
             formErrorAlertTitle={formErrorAlertTitle}
-            cancelLinkHref={cancelLinkHref}
-            cancelButtonLabel={cancelButtonLabel}
           />
         </div>
       </div>
