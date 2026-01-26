@@ -59,8 +59,6 @@ const statusOptions: ArticleStatusOption[] = [
 const submitButtonLabel = "更新"
 const formErrorAlertTitle = "入力内容を確認してください。"
 const formAction = "/admin/articles/1"
-const cancelLinkHref = "/admin/articles/1"
-const cancelButtonLabel = "キャンセル"
 
 describe("ArticleEditForm", () => {
   it("Form に action と method が渡される", () => {
@@ -75,8 +73,6 @@ describe("ArticleEditForm", () => {
         statusOptions={statusOptions}
         submitButtonLabel={submitButtonLabel}
         formErrorAlertTitle={formErrorAlertTitle}
-        cancelLinkHref={cancelLinkHref}
-        cancelButtonLabel={cancelButtonLabel}
       />,
     )
 
@@ -98,8 +94,6 @@ describe("ArticleEditForm", () => {
         statusOptions={statusOptions}
         submitButtonLabel={submitButtonLabel}
         formErrorAlertTitle={formErrorAlertTitle}
-        cancelLinkHref={cancelLinkHref}
-        cancelButtonLabel={cancelButtonLabel}
       />,
     )
 
@@ -124,8 +118,6 @@ describe("ArticleEditForm", () => {
         statusOptions={statusOptions}
         submitButtonLabel={submitButtonLabel}
         formErrorAlertTitle={formErrorAlertTitle}
-        cancelLinkHref={cancelLinkHref}
-        cancelButtonLabel={cancelButtonLabel}
       />,
     )
 

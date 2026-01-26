@@ -24,8 +24,6 @@ describe("Edit (記事編集ページ)", () => {
     const formAction = "/admin/articles/1"
     const submitButtonLabel = "更新"
     const formErrorAlertTitle = "入力内容を確認してください。"
-    const cancelLinkHref = "/admin/articles/1"
-    const cancelButtonLabel = "キャンセル"
 
     const form: ArticleForm = {
       title: "テストタイトル",
@@ -55,8 +53,6 @@ describe("Edit (記事編集ページ)", () => {
         statusOptions={statusOptions}
         submitButtonLabel={submitButtonLabel}
         formErrorAlertTitle={formErrorAlertTitle}
-        cancelLinkHref={cancelLinkHref}
-        cancelButtonLabel={cancelButtonLabel}
       />,
     )
     expect(container).toMatchSnapshot()
