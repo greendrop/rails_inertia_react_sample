@@ -35,6 +35,8 @@ const articleFieldNames: ArticleFieldNames = {
   updatedAt: "更新日時",
 }
 
+const editButtonLabel = "編集"
+const editLinkHref = "/admin_site/articles/1/edit"
 const destroyButtonLabel = "削除"
 const destroyLinkHref = "/admin_site/articles/1"
 const destroyConfirmMessage = "記事を削除しますか？"
@@ -46,6 +48,8 @@ describe("Show (記事詳細ページ)", () => {
         pageHeaderTitle={pageHeaderTitle}
         article={article}
         articleFieldNames={articleFieldNames}
+        editButtonLabel={editButtonLabel}
+        editLinkHref={editLinkHref}
         destroyButtonLabel={destroyButtonLabel}
         destroyLinkHref={destroyLinkHref}
         destroyConfirmMessage={destroyConfirmMessage}

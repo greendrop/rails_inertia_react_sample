@@ -18,6 +18,8 @@ type ShowProps = {
   pageHeaderTitle: string
   article: Article
   articleFieldNames: ArticleFieldNames
+  editButtonLabel: string
+  editLinkHref: string
   destroyButtonLabel: string
   destroyConfirmMessage: string
   destroyLinkHref: string
@@ -27,6 +29,8 @@ export default function Show({
   pageHeaderTitle,
   article,
   articleFieldNames,
+  editButtonLabel,
+  editLinkHref,
   destroyButtonLabel,
   destroyConfirmMessage,
   destroyLinkHref,
@@ -48,6 +52,9 @@ export default function Show({
             <PageHeaderTitleText>{pageHeaderTitle}</PageHeaderTitleText>
           </PageHeaderTitle>
           <PageHeaderAction>
+            <Button asChild>
+              <a href={editLinkHref}>{editButtonLabel}</a>
+            </Button>
             <Button type="button" variant="destructive" onClick={handleDestroy}>
               {destroyButtonLabel}
             </Button>
