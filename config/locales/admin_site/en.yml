@@ -2,11 +2,17 @@
 en:
   admin_site:
     general:
-      new: 'Create'
+      home: 'Home'
+      new: 'New'
+      create: 'Create'
       edit: 'Edit'
       update: 'Update'
       cancel: 'Cancel'
       destroy: 'Delete'
+      show: 'Show'
+      operations: 'Operations'
+      no_data_message: 'No data available.'
+      resource_index_title: '%{resource} Index'
       resource_new_title: 'New %{resource}'
       resource_edit_title: 'Edit %{resource}'
       resource_created_message: '%{resource} has been created.'
@@ -15,3 +21,8 @@ en:
       resource_destroy_failed_message: 'Failed to delete %{resource}.'
       resource_destroy_confirm_message: 'Are you sure you want to delete %{resource}?'
       form_error_alert_title: 'Please check the input content.'
+    pagination:
+      previous: 'Previous'
+      next: 'Next'
+      previous_aria_label: 'Go to previous page'
+      next_aria_label: 'Go to next page'
