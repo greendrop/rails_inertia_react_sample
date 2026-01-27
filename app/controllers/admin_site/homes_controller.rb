@@ -3,7 +3,9 @@
 module AdminSite
   class HomesController < AdminSite::ApplicationController
     def show
-      render inertia: {}
+      props = AdminSite::Homes::ShowPropsGenerator.call
+      meta = AdminSite::Homes::ShowMetaGenerator.call
+      render inertia: props, meta:
     end
   end
 end
