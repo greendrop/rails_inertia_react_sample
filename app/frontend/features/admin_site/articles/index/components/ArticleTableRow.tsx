@@ -1,6 +1,9 @@
 import { Link, router } from "@inertiajs/react"
-import { Button } from "@/components/admin_site/ui/button"
-import { TableCell, TableRow } from "@/components/admin_site/ui/table"
+import { Button } from "@/features/admin_site/shared/components/ui/button"
+import {
+  TableCell,
+  TableRow,
+} from "@/features/admin_site/shared/components/ui/table"
 import type { Article } from "../types"
 
 export type ArticleTableRowProps = {

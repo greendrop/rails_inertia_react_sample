@@ -1,16 +1,16 @@
 import type { ReactElement } from "react"
-import FlashAlert from "@/components/admin_site/shared/FlashAlert"
-import Layout from "@/components/admin_site/shared/Layout"
-import MetaTags from "@/components/admin_site/shared/MetaTags"
-import PageHeader from "@/components/admin_site/shared/PageHeader"
-import PageHeaderTitle from "@/components/admin_site/shared/PageHeaderTitle"
-import PageHeaderTitleText from "@/components/admin_site/shared/PageHeaderTitleText"
 import ArticleNewForm from "@/features/admin_site/articles/new/components/ArticleNewForm"
 import type {
   ArticleForm,
   ArticleFormFieldNames,
   ArticleStatusOption,
 } from "@/features/admin_site/articles/types"
+import FlashAlert from "@/features/admin_site/shared/components/FlashAlert"
+import Layout from "@/features/admin_site/shared/components/Layout"
+import MetaTags from "@/features/admin_site/shared/components/MetaTags"
+import PageHeader from "@/features/admin_site/shared/components/PageHeader"
+import PageHeaderTitle from "@/features/admin_site/shared/components/PageHeaderTitle"
+import PageHeaderTitleText from "@/features/admin_site/shared/components/PageHeaderTitleText"
 
 type NewProps = {
   pageHeaderTitle: string

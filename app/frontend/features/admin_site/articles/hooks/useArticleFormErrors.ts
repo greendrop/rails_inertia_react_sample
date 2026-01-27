@@ -1,9 +1,6 @@
 import { useMemo } from "react"
-import {
-  getErrorMessages,
-  parseInertiaFormErrors,
-} from "@/lib/admin_site/form_error"
-import type { Errors } from "@/types/admin_site"
+import type { Errors } from "@/features/admin_site/shared/types"
+import { getErrorMessages, parseInertiaFormErrors } from "@/lib/form_error"
 
 type UseArticleFormErrorsParams = {
   errors: Record<string, string | string[]>

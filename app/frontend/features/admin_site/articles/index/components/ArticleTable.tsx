@@ -4,7 +4,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/admin_site/ui/table"
+} from "@/features/admin_site/shared/components/ui/table"
 import type { Article, ArticleFieldNames } from "../types"
 import ArticleTableRow from "./ArticleTableRow"
 

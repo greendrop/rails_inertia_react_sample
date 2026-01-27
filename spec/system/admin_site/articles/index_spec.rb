@@ -14,7 +14,7 @@ RSpec.describe 'AdminSite::Articles#index', :js do
         expect(page).to have_content('記事一覧')
         expect(page).to have_content('First Article')
         expect(page).to have_content('Second Article')
-        expect(page).to have_css('nav[role="navigation"]')
+        expect(page).to have_css('nav[aria-label="pagination"]')
       end
     end
   end

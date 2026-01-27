@@ -7,12 +7,12 @@ import type {
 } from "@/features/admin_site/articles/types"
 import New from "@/pages/admin_site/articles/new"
 
-vi.mock("@/components/admin_site/shared/MetaTags", () => {
+vi.mock("@/features/admin_site/shared/components/MetaTags", () => {
   return {
     default: () => <div data-testid="meta-tags" />,
   }
 })
-vi.mock("@/components/admin_site/shared/FlashAlert", () => {
+vi.mock("@/features/admin_site/shared/components/FlashAlert", () => {
   return {
     default: () => <div data-testid="flash-alert" />,
   }

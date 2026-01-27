@@ -1,0 +1,55 @@
+import { render } from "@testing-library/react"
+import { describe, expect, it, vi } from "vitest"
+import Layout, {
+  type AppSidebarProps,
+} from "@/features/admin_site/shared/components/Layout"
+
+const sidebar: AppSidebarProps = {
+  contentItems: [
+    {
+      title: "記事",
+      url: "/admin/articles",
+      items: [
+        {
+          title: "記事一覧",
+          url: "/admin/articles/list",
+        },
+      ],
+    },
+    {
+      title: "ダッシュボード",
+      url: "/admin/dashboard",
+    },
+  ],
+}
+const breadcrumb = {
+  items: [
+    { key: "homes#show", label: "ホーム", href: "/admin", isActive: true },
+  ],
+}
+
+vi.mock("@/features/admin_site/shared/hooks/usePage", () => {
+  return {
+    default: () => {
+      return {
+        props: {
+          flash: {},
+          errors: {},
+          sidebar,
+          breadcrumb,
+        },
+      }
+    },
+  }
+})
+
+describe("Layout", () => {
+  it("正しくレンダリングされる（スナップショット）", () => {
+    const { container } = render(
+      <Layout>
+        <div>テスト用コンテンツ</div>
+      </Layout>,
+    )
+    expect(container).toMatchSnapshot()
+  })
+})
