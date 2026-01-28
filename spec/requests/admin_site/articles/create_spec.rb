@@ -4,8 +4,8 @@ require 'rails_helper'
 require 'cgi'
 
 RSpec.describe 'AdminSite::Articles create' do
-  describe 'POST /admin/articles' do
-    let(:valid_params) do
+  describe 'POST /admin/articles', :inertia do
+    let!(:valid_params) do
       {
         article: {
           title: '新しい記事',
@@ -27,17 +27,19 @@ RSpec.describe 'AdminSite::Articles create' do
       invalid_params[:article][:title] = ''
 
       expect { post '/admin/articles', params: invalid_params }.not_to change(Article, :count)
+
       expect(response).to have_http_status(:unprocessable_content)
 
-      match = response.body.match(/data-page="([^"]+)"/)
-      expect(match).not_to be_nil
-
-      page_json = CGI.unescapeHTML(match[1])
-      json = JSON.parse(page_json)
-
-      expect(json['component']).to eq('admin_site/articles/new')
-      expect(json['props']['errors']).to include('title' => include('タイトルを入力してください'))
-      expect(json['props']['form']).to include('body' => '本文')
+      expect(inertia).to render_component('admin_site/articles/new')
+      expect(inertia.props[:errors]).to eq({ title: ['タイトルを入力してください'] })
+      expect(inertia.props[:form]).to eq(
+        {
+          title: '',
+          body: '本文',
+          status: 'draft',
+          publishedAt: ''
+        }
+      )
     end
   end
 end
