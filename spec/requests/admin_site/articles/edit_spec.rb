@@ -68,5 +68,10 @@ RSpec.describe 'AdminSite::Articles edit' do
       }
       expect(actual).to eq(expected)
     end
+
+    it '存在しないIDでは404を返す' do
+      get "/admin/articles/#{article.id + 999_999}"
+      expect(response).to have_http_status(:not_found)
+    end
   end
 end
