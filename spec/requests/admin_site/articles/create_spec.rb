@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
-require 'cgi'
 
 RSpec.describe 'AdminSite::Articles create' do
   describe 'POST /admin/articles', :inertia do
