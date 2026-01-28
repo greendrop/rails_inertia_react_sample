@@ -4,15 +4,15 @@ import type {
   Article,
   ArticleFieldNames,
 } from "@/features/admin_site/articles/index/types"
+import type { Pagination } from "@/features/admin_site/shared/types"
 import Index from "@/pages/admin_site/articles/index"
-import type { Pagination } from "@/types/admin_site"
 
-vi.mock("@/components/admin_site/shared/MetaTags", () => {
+vi.mock("@/features/admin_site/shared/components/MetaTags", () => {
   return {
     default: () => <div data-testid="meta-tags" />,
   }
 })
-vi.mock("@/components/admin_site/shared/FlashAlert", () => {
+vi.mock("@/features/admin_site/shared/components/FlashAlert", () => {
   return {
     default: () => <div data-testid="flash-alert" />,
   }

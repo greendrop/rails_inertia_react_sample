@@ -1,20 +1,20 @@
 import { Link } from "@inertiajs/react"
 import type { ReactElement } from "react"
-import AppPagination from "@/components/admin_site/shared/AppPagination"
-import FlashAlert from "@/components/admin_site/shared/FlashAlert"
-import Layout from "@/components/admin_site/shared/Layout"
-import MetaTags from "@/components/admin_site/shared/MetaTags"
-import PageHeader from "@/components/admin_site/shared/PageHeader"
-import PageHeaderAction from "@/components/admin_site/shared/PageHeaderAction"
-import PageHeaderTitle from "@/components/admin_site/shared/PageHeaderTitle"
-import PageHeaderTitleText from "@/components/admin_site/shared/PageHeaderTitleText"
-import { Button } from "@/components/admin_site/ui/button"
 import ArticleTable from "@/features/admin_site/articles/index/components/ArticleTable"
 import type {
   Article,
   ArticleFieldNames,
 } from "@/features/admin_site/articles/index/types"
-import type { Pagination } from "@/types/admin_site"
+import AppPagination from "@/features/admin_site/shared/components/AppPagination"
+import FlashAlert from "@/features/admin_site/shared/components/FlashAlert"
+import Layout from "@/features/admin_site/shared/components/Layout"
+import MetaTags from "@/features/admin_site/shared/components/MetaTags"
+import PageHeader from "@/features/admin_site/shared/components/PageHeader"
+import PageHeaderAction from "@/features/admin_site/shared/components/PageHeaderAction"
+import PageHeaderTitle from "@/features/admin_site/shared/components/PageHeaderTitle"
+import PageHeaderTitleText from "@/features/admin_site/shared/components/PageHeaderTitleText"
+import { Button } from "@/features/admin_site/shared/components/ui/button"
+import type { Pagination } from "@/features/admin_site/shared/types"
 
 type IndexProps = {
   pageHeaderTitle: string

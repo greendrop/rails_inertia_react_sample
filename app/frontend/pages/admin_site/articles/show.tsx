@@ -1,18 +1,18 @@
 import { router } from "@inertiajs/react"
 import type { ReactElement } from "react"
-import FlashAlert from "@/components/admin_site/shared/FlashAlert"
-import Layout from "@/components/admin_site/shared/Layout"
-import MetaTags from "@/components/admin_site/shared/MetaTags"
-import PageHeader from "@/components/admin_site/shared/PageHeader"
-import PageHeaderAction from "@/components/admin_site/shared/PageHeaderAction"
-import PageHeaderTitle from "@/components/admin_site/shared/PageHeaderTitle"
-import PageHeaderTitleText from "@/components/admin_site/shared/PageHeaderTitleText"
-import { Button } from "@/components/admin_site/ui/button"
 import ArticleDefinitionList from "@/features/admin_site/articles/show/components/ArticleDefinitionList"
 import type {
   Article,
   ArticleFieldNames,
 } from "@/features/admin_site/articles/show/types"
+import FlashAlert from "@/features/admin_site/shared/components/FlashAlert"
+import Layout from "@/features/admin_site/shared/components/Layout"
+import MetaTags from "@/features/admin_site/shared/components/MetaTags"
+import PageHeader from "@/features/admin_site/shared/components/PageHeader"
+import PageHeaderAction from "@/features/admin_site/shared/components/PageHeaderAction"
+import PageHeaderTitle from "@/features/admin_site/shared/components/PageHeaderTitle"
+import PageHeaderTitleText from "@/features/admin_site/shared/components/PageHeaderTitleText"
+import { Button } from "@/features/admin_site/shared/components/ui/button"
 
 type ShowProps = {
   pageHeaderTitle: string

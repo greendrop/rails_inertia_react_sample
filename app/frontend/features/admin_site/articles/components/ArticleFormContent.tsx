@@ -1,11 +1,11 @@
-import { Button } from "@/components/admin_site/ui/button"
-import { Input } from "@/components/admin_site/ui/input"
-import { Textarea } from "@/components/admin_site/ui/textarea"
+import FormErrorAlert from "@/features/admin_site/shared/components/FormErrorAlert"
+import { Button } from "@/features/admin_site/shared/components/ui/button"
+import { Input } from "@/features/admin_site/shared/components/ui/input"
+import { Textarea } from "@/features/admin_site/shared/components/ui/textarea"
 import {
   NativeSelect,
   NativeSelectOption,
-} from "@/components/admin_site/ui-ext/native-select"
-import FormErrorAlert from "../../components/FormErrorAlert"
+} from "@/features/admin_site/shared/components/ui-ext/native-select"
 import { useArticleFormErrors } from "../hooks/useArticleFormErrors"
 import type {
   ArticleForm,

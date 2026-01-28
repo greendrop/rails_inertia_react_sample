@@ -10,6 +10,8 @@
       "*",
       "app/frontend/**/*",
       "!app/frontend/components/**/ui/**/*",
+      "!app/frontend/features/admin_site/shared/components/ui/**/*",
+      "!app/frontend/features/user_site/shared/components/ui/**/*",
       "spec/frontend/**/*"
     ],
     "ignoreUnknown": false
