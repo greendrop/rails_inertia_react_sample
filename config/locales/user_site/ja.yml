@@ -1,0 +1,10 @@
+---
+ja:
+  user_site:
+    general:
+      home: 'ホーム'
+      show: '詳細'
+      no_data_message: 'データがありません。'
+      read_more: '続きを読む'
+      resource_index_title: '%{resource}一覧'
+      resource_show_title: '%{resource}詳細'

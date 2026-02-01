@@ -1,0 +1,10 @@
+---
+en:
+  user_site:
+    general:
+      home: 'Home'
+      show: 'Show'
+      no_data_message: 'No data available.'
+      read_more: 'Read more'
+      resource_index_title: '%{resource} Index'
+      resource_show_title: '%{resource} Details'

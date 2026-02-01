@@ -7,11 +7,10 @@ module UserSite
     BODY_PREVIEW_LENGTH = 120
 
     def index
-      render inertia: {
-        page_title: DEFAULT_PAGE_TITLE,
-        empty_message: EMPTY_STATE_MESSAGE,
-        articles: serialized_articles
-      }
+      articles = Article.published.order(published_at: :desc, created_at: :desc, id: :desc)
+      props = UserSite::Articles::IndexPropsGenerator.call(articles:)
+      meta = UserSite::Articles::IndexMetaGenerator.call
+      render inertia: props, meta:
     end
 
     def show
