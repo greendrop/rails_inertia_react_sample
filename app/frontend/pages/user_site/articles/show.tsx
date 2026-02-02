@@ -1,60 +1,39 @@
-import { Head, Link } from "@inertiajs/react"
-
-const dateFormatter = new Intl.DateTimeFormat("ja-JP", {
-  dateStyle: "medium",
-  timeStyle: "short",
-})
-
-type ArticleDetail = {
-  id: number
-  title: string
-  body: string
-  published_at: string | null
-}
+import type { ReactElement } from "react"
+import type { Article } from "@/features/user_site/articles/index/types"
+import ArticleCard from "@/features/user_site/articles/show/components/ArticleCard"
+import FlashAlert from "@/features/user_site/shared/components/FlashAlert"
+import Layout from "@/features/user_site/shared/components/Layout"
+import MetaTags from "@/features/user_site/shared/components/MetaTags"
+import PageHeader from "@/features/user_site/shared/components/PageHeader"
+import PageHeaderTitle from "@/features/user_site/shared/components/PageHeaderTitle"
+import PageHeaderTitleText from "@/features/user_site/shared/components/PageHeaderTitleText"
 
 type ShowProps = {
-  page_title: string
-  index_url: string
-  article: ArticleDetail
+  pageHeaderTitle: string
+  article: Article
 }
 
-function formatPublishedAt(value: string | null): string {
-  if (!value) {
-    return "公開日未設定"
-  }
-
-  const date = new Date(value)
-  if (Number.isNaN(date.getTime())) {
-    return value
-  }
-
-  return dateFormatter.format(date)
-}
-
-export default function Show({ page_title: pageTitle, index_url: indexUrl, article }: ShowProps) {
+export default function Show({ pageHeaderTitle, article }: ShowProps) {
   return (
     <>
-      <Head title={pageTitle} />
-      <section className="mx-auto flex max-w-3xl flex-col gap-6 px-4 py-8">
-        <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
-          <p className="text-xs font-semibold uppercase tracking-wide text-gray-500">
-            {formatPublishedAt(article.published_at)}
-          </p>
-          <h1 className="mt-2 text-3xl font-bold text-gray-900">{article.title}</h1>
-          <div className="mt-6 whitespace-pre-line text-base leading-relaxed text-gray-800">
-            {article.body}
-          </div>
-        </div>
+      <MetaTags />
+      <div className="mb-4">
+        <PageHeader>
+          <PageHeaderTitle>
+            <PageHeaderTitleText>{pageHeaderTitle}</PageHeaderTitleText>
+          </PageHeaderTitle>
+        </PageHeader>
+      </div>
 
-        <div>
-          <Link
-            href={indexUrl}
-            className="text-sm font-semibold text-blue-700 hover:underline focus-visible:underline"
-          >
-            ← 記事一覧に戻る
-          </Link>
-        </div>
+      <div className="mb-4">
+        <FlashAlert />
+      </div>
+
+      <section>
+        <ArticleCard article={article} />
       </section>
     </>
   )
 }
+
+Show.layout = (page: ReactElement) => <Layout>{page}</Layout>

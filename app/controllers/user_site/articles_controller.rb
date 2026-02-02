@@ -14,13 +14,10 @@ module UserSite
     end
 
     def show
-      article = published_articles.find(params[:id])
-
-      render inertia: {
-        page_title: article.title,
-        index_url: user_site_articles_path,
-        article: serialize_full_article(article)
-      }
+      article = Article.published.find(params[:id])
+      props = UserSite::Articles::ShowPropsGenerator.call(article:)
+      meta = UserSite::Articles::ShowMetaGenerator.call
+      render inertia: props, meta:
     end
 
     private

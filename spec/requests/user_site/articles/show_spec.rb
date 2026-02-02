@@ -1,42 +1,54 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
-require 'cgi'
 
 RSpec.describe 'UserSite::Articles::Show' do
-  describe 'GET /articles/:id' do
-    it 'returns published article data' do
-      article = create(:article, :published, title: 'Published title', body: "First line\nSecond line")
+  describe 'GET /articles/:id', :inertia do
+    context '公開中の記事の場合' do
+      let!(:article) { create(:article, :published, title: 'タイトル', body: '本文') }
 
-      get "/articles/#{article.id}"
+      it '200を返し、Inertiaペイロードが含まれていること' do
+        get "/articles/#{article.id}"
 
-      expect(response).to have_http_status(:ok)
-      json = inertia_page_json(response)
-      expect(json['component']).to eq('user_site/articles/show')
-      props = json['props']
-      expect(props['page_title']).to eq(article.title)
-      expect(props['index_url']).to eq('/articles')
-      expect(props['article']).to include(
-        'id' => article.id,
-        'title' => article.title,
-        'body' => article.body
-      )
+        expect(response).to have_http_status(:ok)
+
+        expect(inertia).to render_component('user_site/articles/show')
+
+        actual = inertia.props
+        actual[:_inertia_meta] = actual[:_inertia_meta].as_json
+        expected = {
+          flash: {},
+          errors: {},
+          _inertia_meta: [
+            { headKey: 'title',
+              innerContent: '記事詳細 | Rails Inertia React Sample',
+              tagName: :title }
+          ],
+          pageHeaderTitle: '記事詳細',
+          article: {
+            id: article.id,
+            title: article.title,
+            body: article.body
+          }
+        }
+        expect(actual).to eq(expected)
+      end
     end
 
-    it 'responds with 404 for non-published article' do
-      article = create(:article, :draft)
+    context '非公開の記事の場合' do
+      let!(:article) { create(:article, :draft, title: 'タイトル', body: '本文') }
 
-      get "/articles/#{article.id}"
-
-      expect(response).to have_http_status(:not_found)
+      it '404を返すこと' do
+        get "/articles/#{article.id}"
+        expect(response).to have_http_status(:not_found)
+      end
     end
-  end
 
-  def inertia_page_json(response)
-    match = response.body.match(/data-page="([^"]+)"/)
-    expect(match).not_to be_nil
-
-    page_json = CGI.unescapeHTML(match[1])
-    JSON.parse(page_json)
+    context '存在しない記事IDの場合' do
+      it '404を返すこと' do
+        get '/articles/999999'
+        expect(response).to have_http_status(:not_found)
+      end
+    end
   end
 end
