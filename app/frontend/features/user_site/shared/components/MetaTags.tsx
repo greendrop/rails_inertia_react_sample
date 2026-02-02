@@ -2,7 +2,7 @@
 
 import { Head } from "@inertiajs/react"
 import React from "react"
-import usePage from "@/features/admin_site/shared/hooks/usePage"
+import usePage from "@/features/user_site/shared/hooks/usePage"
 
 type MetaTag = {
   tagName: string

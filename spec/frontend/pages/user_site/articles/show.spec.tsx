@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react"
 import { describe, expect, it, vi } from "vitest"
-import type { Article } from "@/features/user_site/articles/index/types"
+import type { Article } from "@/features/user_site/articles/show/types"
 import Show from "@/pages/user_site/articles/show"
 
 vi.mock("@/features/user_site/shared/components/MetaTags", () => {
