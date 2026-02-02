@@ -1,0 +1,78 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Index (ユーザーサイト 記事一覧ページ) > 記事が存在する場合 > Articles が表示される（スナップショット） 1`] = `
+<div>
+  <div
+    data-testid="meta-tags"
+  />
+  <div
+    class="mb-4"
+  >
+    <div
+      class="flex flex-wrap items-center gap-4"
+    >
+      <div
+        class="flex-auto"
+      >
+        <h2
+          class="text-4xl"
+        >
+          記事一覧
+        </h2>
+      </div>
+    </div>
+  </div>
+  <div
+    class="mb-4"
+  >
+    <div
+      data-testid="flash-alert"
+    />
+  </div>
+  <section>
+    <div
+      data-testid="articles"
+    />
+  </section>
+</div>
+`;
+
+exports[`Index (ユーザーサイト 記事一覧ページ) > 記事が空の場合 > 正しくレンダリングされる（スナップショット） 1`] = `
+<div>
+  <div
+    data-testid="meta-tags"
+  />
+  <div
+    class="mb-4"
+  >
+    <div
+      class="flex flex-wrap items-center gap-4"
+    >
+      <div
+        class="flex-auto"
+      >
+        <h2
+          class="text-4xl"
+        >
+          記事一覧
+        </h2>
+      </div>
+    </div>
+  </div>
+  <div
+    class="mb-4"
+  >
+    <div
+      data-testid="flash-alert"
+    />
+  </div>
+  <section>
+    <output
+      aria-live="polite"
+      class="my-4 text-center"
+    >
+      記事がありません
+    </output>
+  </section>
+</div>
+`;

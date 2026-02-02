@@ -1,0 +1,59 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Show (ユーザーサイト 記事詳細ページ) > 正しくレンダリングされる（スナップショット） 1`] = `
+<div>
+  <div
+    data-testid="meta-tags"
+  />
+  <div
+    class="mb-4"
+  >
+    <div
+      class="flex flex-wrap items-center gap-4"
+    >
+      <div
+        class="flex-auto"
+      >
+        <h2
+          class="text-4xl"
+        >
+          記事詳細
+        </h2>
+      </div>
+    </div>
+  </div>
+  <div
+    class="mb-4"
+  >
+    <div
+      data-testid="flash-alert"
+    />
+  </div>
+  <section>
+    <div
+      class="bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm"
+      data-slot="card"
+    >
+      <div
+        class="@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-2 px-6 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6"
+        data-slot="card-header"
+      >
+        <div
+          class="leading-none font-semibold"
+          data-slot="card-title"
+        >
+          記事タイトル
+        </div>
+      </div>
+      <div
+        class="px-6"
+        data-slot="card-content"
+      >
+        <p>
+          記事本文
+        </p>
+      </div>
+    </div>
+  </section>
+</div>
+`;
