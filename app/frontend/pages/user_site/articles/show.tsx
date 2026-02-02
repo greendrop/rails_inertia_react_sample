@@ -1,6 +1,6 @@
 import type { ReactElement } from "react"
-import type { Article } from "@/features/user_site/articles/index/types"
 import ArticleCard from "@/features/user_site/articles/show/components/ArticleCard"
+import type { Article } from "@/features/user_site/articles/show/types"
 import FlashAlert from "@/features/user_site/shared/components/FlashAlert"
 import Layout from "@/features/user_site/shared/components/Layout"
 import MetaTags from "@/features/user_site/shared/components/MetaTags"

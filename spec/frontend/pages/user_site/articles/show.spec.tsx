@@ -21,7 +21,6 @@ describe("Show (ユーザーサイト 記事詳細ページ)", () => {
       id: 1,
       title: "記事タイトル",
       body: "記事本文",
-      showLinkHref: "/articles/1",
     }
 
     const { container } = render(
