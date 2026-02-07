@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe 'AdminSite::Articles show' do
-  describe 'GET /admin/articles/:id', :inertia do
+  describe 'GET /admin/articles/:id' do
     let!(:article) { create(:article) }
 
     it '200を返し、Inertiaペイロードが含まれていること' do
@@ -66,7 +66,7 @@ RSpec.describe 'AdminSite::Articles show' do
         destroyConfirmMessage: '記事を削除しますか？',
         destroyLinkHref: "/admin/articles/#{article.id}"
       }
-      expect(actual).to eq(expected)
+      expect(actual).to match(expected)
     end
 
     it '存在しないIDでは404を返す' do

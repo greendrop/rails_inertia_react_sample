@@ -4,7 +4,7 @@ require 'rails_helper'
 require 'cgi'
 
 RSpec.describe 'UserSite::Articles::Index' do
-  describe 'GET /articles', :inertia do
+  describe 'GET /articles' do
     context '公開中の記事が存在する場合' do
       let!(:unpublished_article) { create(:article, :draft) }
       let!(:published_article1) { create(:article, :published, title: 'Published 1') }
@@ -45,7 +45,7 @@ RSpec.describe 'UserSite::Articles::Index' do
           noDataLabel: 'データがありません。',
           readMoreLabel: '続きを読む'
         }
-        expect(actual).to eq(expected)
+        expect(actual).to match(expected)
       end
     end
 
@@ -70,7 +70,7 @@ RSpec.describe 'UserSite::Articles::Index' do
           noDataLabel: 'データがありません。',
           readMoreLabel: '続きを読む'
         }
-        expect(actual).to eq(expected)
+        expect(actual).to match(expected)
       end
     end
   end

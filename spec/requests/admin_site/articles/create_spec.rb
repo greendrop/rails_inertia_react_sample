@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe 'AdminSite::Articles create' do
-  describe 'POST /admin/articles', :inertia do
+  describe 'POST /admin/articles' do
     context '有効なパラメーターの場合' do
       let!(:valid_params) do
         {
@@ -41,8 +41,8 @@ RSpec.describe 'AdminSite::Articles create' do
         expect(response).to have_http_status(:unprocessable_content)
 
         expect(inertia).to render_component('admin_site/articles/new')
-        expect(inertia.props[:errors]).to eq({ title: ['タイトルを入力してください'] })
-        expect(inertia.props[:form]).to eq(
+        expect(inertia.props[:errors]).to match({ title: ['タイトルを入力してください'] })
+        expect(inertia.props[:form]).to match(
           {
             title: '',
             body: '本文',
