@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe 'AdminSite::Articles update' do
-  describe 'PATCH /admin/articles/:id', :inertia do
+  describe 'PATCH /admin/articles/:id' do
     let!(:article) { create(:article) }
 
     context '有効なパラメーターの場合' do
@@ -50,8 +50,8 @@ RSpec.describe 'AdminSite::Articles update' do
         expect(response).to have_http_status(:unprocessable_content)
 
         expect(inertia).to render_component('admin_site/articles/edit')
-        expect(inertia.props[:errors]).to eq({ title: ['タイトルを入力してください'] })
-        expect(inertia.props[:form]).to eq(
+        expect(inertia.props[:errors]).to match({ title: ['タイトルを入力してください'] })
+        expect(inertia.props[:form]).to match(
           {
             title: '',
             body: '更新後の本文',

@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe 'AdminSite::Articles' do
-  describe 'GET /admin/articles', :inertia do
+  describe 'GET /admin/articles' do
     let!(:articles) { create_list(:article, 3) }
 
     it '200を返し、Inertiaペイロードが含まれていること' do
@@ -87,7 +87,7 @@ RSpec.describe 'AdminSite::Articles' do
       expected[:newLinkHref] = '/admin/articles/new'
       expected[:destroyButtonLabel] = '削除'
       expected[:destroyConfirmMessage] = '記事を削除しますか？'
-      expect(actual).to eq(expected)
+      expect(actual).to match(expected)
     end
   end
 end

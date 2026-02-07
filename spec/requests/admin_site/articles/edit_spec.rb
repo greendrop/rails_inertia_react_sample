@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe 'AdminSite::Articles edit' do
-  describe 'GET /admin/articles/:id/edit', :inertia do
+  describe 'GET /admin/articles/:id/edit' do
     let!(:article) { create(:article) }
 
     it '200を返し、Inertiaペイロードが含まれていること' do
@@ -66,7 +66,7 @@ RSpec.describe 'AdminSite::Articles edit' do
         submitButtonLabel: '更新',
         formErrorAlertTitle: '入力内容を確認してください。'
       }
-      expect(actual).to eq(expected)
+      expect(actual).to match(expected)
     end
 
     it '存在しないIDでは404を返す' do

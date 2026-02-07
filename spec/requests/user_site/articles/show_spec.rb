@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe 'UserSite::Articles::Show' do
-  describe 'GET /articles/:id', :inertia do
+  describe 'GET /articles/:id' do
     context '公開中の記事の場合' do
       let!(:article) { create(:article, :published, title: 'タイトル', body: '本文') }
 
@@ -31,7 +31,7 @@ RSpec.describe 'UserSite::Articles::Show' do
             body: article.body
           }
         }
-        expect(actual).to eq(expected)
+        expect(actual).to match(expected)
       end
     end
 

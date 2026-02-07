@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe 'AdminSite::Articles new' do
-  describe 'GET /admin/articles/new', :inertia do
+  describe 'GET /admin/articles/new' do
     it '200を返し、Inertiaペイロードが含まれていること' do
       get '/admin/articles/new'
 
@@ -60,7 +60,7 @@ RSpec.describe 'AdminSite::Articles new' do
         submitButtonLabel: '作成',
         formErrorAlertTitle: '入力内容を確認してください。'
       }
-      expect(actual).to eq(expected)
+      expect(actual).to match(expected)
     end
   end
 end
